@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,7 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        setupKeyboard()
+        checkAppLang()
+        Localizer.doTheExChange()
+        
         return true
     }
 
@@ -29,6 +34,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
+    
+    //MARK: - func setup keyboard
+    private func setupKeyboard() {
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.layoutIfNeededOnUpdate = true
+        IQKeyboardManager.shared.keyboardConfiguration.overrideAppearance = true
+        IQKeyboardManager.shared.resignOnTouchOutside = true
+        IQKeyboardManager.shared.toolbarConfiguration.placeholderConfiguration.showPlaceholder = true
+        IQKeyboardManager.shared.goNext()
+        IQKeyboardManager.shared.goPrevious()
+        IQKeyboardManager.shared.resignFirstResponder()
+    }
+    
+    //MARK: - Check App Lang
+    private func checkAppLang() {
+        let lang = Language.currentLanguage()
+        if lang == "zh-Hans-AE" || lang == "zh-Hans" {
+            Language.setAppLanguage(lang: "zh-Hans")
+        }else{
+            Language.setAppLanguage(lang: "en")
+        }
     }
 
 

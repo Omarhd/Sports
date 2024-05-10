@@ -1,0 +1,54 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "5Ss-fv-wZp.title" : {
+      "comment" : "Class = \"UITabBarItem\"; title = \"Item\"; ObjectID = \"5Ss-fv-wZp\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Item"
+          }
+        }
+      }
+    },
+    "OXB-rN-4Ji.title" : {
+      "comment" : "Class = \"UITabBarItem\"; title = \"Item\"; ObjectID = \"OXB-rN-4Ji\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Item"
+          }
+        }
+      }
+    },
+    "PMc-lP-Cty.title" : {
+      "comment" : "Class = \"UITabBarItem\"; title = \"Item\"; ObjectID = \"PMc-lP-Cty\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Item"
+          }
+        }
+      }
+    },
+    "vBZ-kF-IdA.title" : {
+      "comment" : "Class = \"UITabBarItem\"; title = \"Item\"; ObjectID = \"vBZ-kF-IdA\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Item"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

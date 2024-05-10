@@ -1,0 +1,16 @@
+//
+//  Development.xcconfig
+//  Configuration and Flags
+//
+//  Created by ios Dev on 06/05/2024.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+SLASH = /
+
+ACCENT_COLOR = DevAccentColor
+BASE_URL = https:/${SLASH}www.google.com
+
+TOURNAMENTS = http:${SLASH}/199.241.1.88:4049/api/
