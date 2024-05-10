@@ -21,5 +21,20 @@
 			</array>
 		</dict>
 	</dict>
+	<key>TOURNAMENTS</key>
+	<string>$(TOURNAMENTS)</string>
+	<key>BASE_URL</key>
+	<string>$(BASE_URL)</string>
+	<key>SLASH</key>
+	<string>$(SLASH)</string>
+	<key>ACCENT_COLOR</key>
+	<string>$(ACCENT_COLOR)</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict/>
+	</dict>
 </dict>
 </plist>

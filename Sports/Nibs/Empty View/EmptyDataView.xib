@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="PlusJakartaSans-Regular.ttf">
+            <string>PlusJakartaSans-Regular</string>
+        </array>
+        <array key="PlusJakartaSans-SemiBold.ttf">
+            <string>PlusJakartaSans-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EmptyDataView" customModule="FootballApp" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="C7D-q5-1Qz"/>
+                <outlet property="emptyImg" destination="dA8-a3-ibe" id="7pB-r1-cr0"/>
+                <outlet property="messageLb" destination="73I-H1-JTy" id="OtQ-Vc-ag2"/>
+                <outlet property="titleLb" destination="PhD-zE-OKw" id="v2f-Sq-dvj"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="P9Z-Ey-a3C">
+                    <rect key="frame" x="16" y="105.66666666666669" width="361" height="641"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ySc-r3-7S1">
+                            <rect key="frame" x="0.0" y="0.0" width="361" height="641"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shippingbox" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dA8-a3-ibe">
+                                    <rect key="frame" x="80.666666666666686" y="0.3333333333333286" width="200" height="160"/>
+                                    <color key="tintColor" name="on-primary"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="200" id="KQ4-zM-8f5"/>
+                                        <constraint firstAttribute="height" constant="160" id="jtI-Cv-NKE"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Data" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PhD-zE-OKw">
+                                    <rect key="frame" x="0.0" y="176" width="361" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="21" id="6xw-ev-SGs"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="PlusJakartaSans-SemiBold" family="Plus Jakarta Sans" pointSize="14"/>
+                                    <color key="textColor" name="Black-3"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Data" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73I-H1-JTy">
+                                    <rect key="frame" x="20" y="205" width="321" height="436"/>
+                                    <fontDescription key="fontDescription" name="PlusJakartaSans-Regular" family="Plus Jakarta Sans" pointSize="12"/>
+                                    <color key="textColor" name="White-4"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="73I-H1-JTy" secondAttribute="bottom" id="3qu-aJ-2jD"/>
+                                <constraint firstAttribute="trailing" secondItem="PhD-zE-OKw" secondAttribute="trailing" id="4rQ-TQ-TIe"/>
+                                <constraint firstItem="dA8-a3-ibe" firstAttribute="top" secondItem="ySc-r3-7S1" secondAttribute="top" id="B3o-jv-3do"/>
+                                <constraint firstAttribute="trailing" secondItem="73I-H1-JTy" secondAttribute="trailing" constant="20" id="Rsi-0U-bLv"/>
+                                <constraint firstItem="dA8-a3-ibe" firstAttribute="centerX" secondItem="ySc-r3-7S1" secondAttribute="centerX" id="Sye-f4-FpJ"/>
+                                <constraint firstItem="73I-H1-JTy" firstAttribute="leading" secondItem="ySc-r3-7S1" secondAttribute="leading" constant="20" id="TmM-pu-Gd7"/>
+                                <constraint firstItem="73I-H1-JTy" firstAttribute="top" secondItem="PhD-zE-OKw" secondAttribute="bottom" constant="8" id="UNE-cP-8hZ"/>
+                                <constraint firstItem="PhD-zE-OKw" firstAttribute="top" secondItem="dA8-a3-ibe" secondAttribute="bottom" constant="16" id="jki-Ne-yet"/>
+                                <constraint firstItem="PhD-zE-OKw" firstAttribute="leading" secondItem="ySc-r3-7S1" secondAttribute="leading" id="yOp-xM-bw4"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="ySc-r3-7S1" secondAttribute="trailing" id="H5f-wX-RZX"/>
+                        <constraint firstAttribute="bottom" secondItem="ySc-r3-7S1" secondAttribute="bottom" id="Hfc-YP-7Bp"/>
+                        <constraint firstItem="ySc-r3-7S1" firstAttribute="leading" secondItem="P9Z-Ey-a3C" secondAttribute="leading" id="b6g-KB-fCp"/>
+                        <constraint firstItem="ySc-r3-7S1" firstAttribute="top" secondItem="P9Z-Ey-a3C" secondAttribute="top" id="bjx-qU-tj9"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" name="White-1"/>
+            <constraints>
+                <constraint firstItem="P9Z-Ey-a3C" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="F85-MH-4Zq"/>
+                <constraint firstAttribute="trailing" secondItem="P9Z-Ey-a3C" secondAttribute="trailing" constant="16" id="XLY-Fh-5CI"/>
+                <constraint firstItem="P9Z-Ey-a3C" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="vuT-sF-Fwu"/>
+            </constraints>
+            <point key="canvasLocation" x="132" y="-11"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="shippingbox" catalog="system" width="128" height="123"/>
+        <namedColor name="Black-3">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White-1">
+            <color red="0.98000001907348633" green="0.98000001907348633" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White-4">
+            <color red="0.49019607843137253" green="0.49019607843137253" blue="0.49019607843137253" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="on-primary">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

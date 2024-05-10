@@ -17,27 +17,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ze8-rm-ACS">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shippingbox" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="T0C-FO-RtA">
+                                <rect key="frame" x="76.666666666666686" y="362.33333333333331" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="Kxw-4g-thC"/>
+                                    <constraint firstAttribute="width" constant="240" id="bwt-29-iDE"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PPS-dA-yaf">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="agc-eN-flt"/>
-                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="0gc-bG-poN"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ze8-rm-ACS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="5re-Fr-6BE"/>
-                            <constraint firstAttribute="bottom" secondItem="ze8-rm-ACS" secondAttribute="bottom" id="XQr-Ti-Ful"/>
-                            <constraint firstItem="ze8-rm-ACS" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="dzF-nl-263"/>
-                            <constraint firstItem="ze8-rm-ACS" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="yiI-Tg-bvl"/>
+                            <constraint firstItem="PPS-dA-yaf" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="4R9-dt-d2e"/>
+                            <constraint firstItem="PPS-dA-yaf" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="AKe-cO-CRT"/>
+                            <constraint firstItem="PPS-dA-yaf" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="EOq-LT-UXV"/>
+                            <constraint firstItem="T0C-FO-RtA" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="HBO-IC-XgD"/>
+                            <constraint firstItem="PPS-dA-yaf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="KgM-HT-mf3"/>
+                            <constraint firstItem="T0C-FO-RtA" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="SJW-c2-aoj"/>
+                            <constraint firstItem="PPS-dA-yaf" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="eLD-9O-Bi7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9db-4Y-CmP"/>
                     <connections>
-                        <outlet property="homeTableView" destination="ze8-rm-ACS" id="8if-vg-R1V"/>
+                        <outlet property="tableView" destination="PPS-dA-yaf" id="CaC-Dl-uwJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -67,6 +73,7 @@
     </scenes>
     <resources>
         <image name="house" catalog="system" width="128" height="104"/>
+        <image name="shippingbox" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

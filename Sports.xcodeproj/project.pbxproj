@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A40A0672BEE016F00F44877 /* ConnectPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A40A0602BEE016F00F44877 /* ConnectPresenter.swift */; };
+		6A40A0682BEE016F00F44877 /* ConnectRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A40A0612BEE016F00F44877 /* ConnectRouter.swift */; };
+		6A40A0692BEE016F00F44877 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A40A0622BEE016F00F44877 /* ConnectViewController.swift */; };
+		6A40A06A2BEE016F00F44877 /* ConnectInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A40A0632BEE016F00F44877 /* ConnectInteractor.swift */; };
+		6A40A06B2BEE016F00F44877 /* ConnectConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A40A0642BEE016F00F44877 /* ConnectConfigurator.swift */; };
+		6A40A06C2BEE016F00F44877 /* ConnectEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A40A0652BEE016F00F44877 /* ConnectEntity.swift */; };
+		6A40A06D2BEE016F00F44877 /* ConnectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A40A0662BEE016F00F44877 /* ConnectViewController.xib */; };
+		6A40A06F2BEE047B00F44877 /* HomeViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A40A06E2BEE047B00F44877 /* HomeViewControllerExtensions.swift */; };
+		6A40A0732BEE0D3A00F44877 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A40A0722BEE0D3A00F44877 /* UIViewControllerExtensions.swift */; };
+		6A40A0752BEE0D9B00F44877 /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A40A0742BEE0D9B00F44877 /* Cells.swift */; };
+		6A40A0792BEE0E1D00F44877 /* EmptyDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A40A0772BEE0E1D00F44877 /* EmptyDataView.swift */; };
+		6A40A07A2BEE0E1D00F44877 /* EmptyDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A40A0782BEE0E1D00F44877 /* EmptyDataView.xib */; };
+		6A40A07D2BEE117F00F44877 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A40A07C2BEE117F00F44877 /* UITableViewExtension.swift */; };
 		6AC388692BECF1EA0034A0B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC388682BECF1EA0034A0B6 /* AppDelegate.swift */; };
 		6AC3886B2BECF1EA0034A0B6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC3886A2BECF1EA0034A0B6 /* SceneDelegate.swift */; };
 		6AC388702BECF1EA0034A0B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AC3886E2BECF1EA0034A0B6 /* Main.storyboard */; };
@@ -55,6 +68,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6A40A0602BEE016F00F44877 /* ConnectPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectPresenter.swift; sourceTree = "<group>"; };
+		6A40A0612BEE016F00F44877 /* ConnectRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectRouter.swift; sourceTree = "<group>"; };
+		6A40A0622BEE016F00F44877 /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
+		6A40A0632BEE016F00F44877 /* ConnectInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectInteractor.swift; sourceTree = "<group>"; };
+		6A40A0642BEE016F00F44877 /* ConnectConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectConfigurator.swift; sourceTree = "<group>"; };
+		6A40A0652BEE016F00F44877 /* ConnectEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectEntity.swift; sourceTree = "<group>"; };
+		6A40A0662BEE016F00F44877 /* ConnectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConnectViewController.xib; sourceTree = "<group>"; };
+		6A40A06E2BEE047B00F44877 /* HomeViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerExtensions.swift; sourceTree = "<group>"; };
+		6A40A0722BEE0D3A00F44877 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		6A40A0742BEE0D9B00F44877 /* Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
+		6A40A0772BEE0E1D00F44877 /* EmptyDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyDataView.swift; sourceTree = "<group>"; };
+		6A40A0782BEE0E1D00F44877 /* EmptyDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyDataView.xib; sourceTree = "<group>"; };
+		6A40A07C2BEE117F00F44877 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		6AC388652BECF1EA0034A0B6 /* Sports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AC388682BECF1EA0034A0B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AC3886A2BECF1EA0034A0B6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +143,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A40A05F2BEE015700F44877 /* Connect */ = {
+			isa = PBXGroup;
+			children = (
+				6A40A0602BEE016F00F44877 /* ConnectPresenter.swift */,
+				6A40A0612BEE016F00F44877 /* ConnectRouter.swift */,
+				6A40A0622BEE016F00F44877 /* ConnectViewController.swift */,
+				6A40A0632BEE016F00F44877 /* ConnectInteractor.swift */,
+				6A40A0642BEE016F00F44877 /* ConnectConfigurator.swift */,
+				6A40A0652BEE016F00F44877 /* ConnectEntity.swift */,
+				6A40A0662BEE016F00F44877 /* ConnectViewController.xib */,
+			);
+			path = Connect;
+			sourceTree = "<group>";
+		};
+		6A40A0762BEE0DF800F44877 /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				6A40A07B2BEE0E2000F44877 /* Empty View */,
+			);
+			path = Nibs;
+			sourceTree = "<group>";
+		};
+		6A40A07B2BEE0E2000F44877 /* Empty View */ = {
+			isa = PBXGroup;
+			children = (
+				6A40A0772BEE0E1D00F44877 /* EmptyDataView.swift */,
+				6A40A0782BEE0E1D00F44877 /* EmptyDataView.xib */,
+			);
+			path = "Empty View";
+			sourceTree = "<group>";
+		};
 		6AC3885C2BECF1EA0034A0B6 = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +193,7 @@
 		6AC388672BECF1EA0034A0B6 /* Sports */ = {
 			isa = PBXGroup;
 			children = (
+				6A40A0762BEE0DF800F44877 /* Nibs */,
 				6AC388972BECF79A0034A0B6 /* UserDefaults */,
 				6AC388962BECF7870034A0B6 /* Extensions */,
 				6AC388952BECF77D0034A0B6 /* Utilites */,
@@ -175,6 +233,7 @@
 		6AC388922BECF7210034A0B6 /* Scense */ = {
 			isa = PBXGroup;
 			children = (
+				6A40A05F2BEE015700F44877 /* Connect */,
 				6AC388CF2BECFA4C0034A0B6 /* Home */,
 				6AC388CC2BECF9CA0034A0B6 /* Tabbar */,
 			);
@@ -218,6 +277,9 @@
 			children = (
 				6AC388AD2BECF8270034A0B6 /* UIViewExtensions.swift */,
 				6AC388AF2BECF82E0034A0B6 /* StringExtensions.swift */,
+				6A40A0722BEE0D3A00F44877 /* UIViewControllerExtensions.swift */,
+				6A40A0742BEE0D9B00F44877 /* Cells.swift */,
+				6A40A07C2BEE117F00F44877 /* UITableViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -302,6 +364,7 @@
 				6AC388D32BECFA620034A0B6 /* HomeInteractor.swift */,
 				6AC388D42BECFA620034A0B6 /* HomeConfigurator.swift */,
 				6AC388D52BECFA620034A0B6 /* HomeEntity.swift */,
+				6A40A06E2BEE047B00F44877 /* HomeViewControllerExtensions.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -394,7 +457,9 @@
 				6AC388DF2BECFA780034A0B6 /* Home.storyboard in Resources */,
 				6AC3889E2BECF7ED0034A0B6 /* Debug.xcconfig in Resources */,
 				6AC388EB2BEDEC660034A0B6 /* Settings.storyboard in Resources */,
+				6A40A06D2BEE016F00F44877 /* ConnectViewController.xib in Resources */,
 				6AC388752BECF1EC0034A0B6 /* LaunchScreen.storyboard in Resources */,
+				6A40A07A2BEE0E1D00F44877 /* EmptyDataView.xib in Resources */,
 				6AC388E62BEDEC4A0034A0B6 /* SocialMedia.storyboard in Resources */,
 				6AC388A22BECF7F50034A0B6 /* Release.xcconfig in Resources */,
 				6AC388E42BEDE8910034A0B6 /* TournamentTableViewCell.xib in Resources */,
@@ -415,27 +480,38 @@
 				6AC388D72BECFA620034A0B6 /* HomePresenter.swift in Sources */,
 				6AC388C22BECF88C0034A0B6 /* NetworkError.swift in Sources */,
 				6AC3889C2BECF7E80034A0B6 /* Configuration.swift in Sources */,
+				6A40A06C2BEE016F00F44877 /* ConnectEntity.swift in Sources */,
 				6AC388DA2BECFA620034A0B6 /* HomeInteractor.swift in Sources */,
 				6AC388C52BECF8A20034A0B6 /* NetworkChecker.swift in Sources */,
 				6AC388A82BECF80F0034A0B6 /* LocalizerHelper.swift in Sources */,
+				6A40A06F2BEE047B00F44877 /* HomeViewControllerExtensions.swift in Sources */,
 				6AC388BE2BECF87B0034A0B6 /* ViewState.swift in Sources */,
 				6AC388D92BECFA620034A0B6 /* HomeViewController.swift in Sources */,
 				6AC388B02BECF82F0034A0B6 /* StringExtensions.swift in Sources */,
 				6AC388DB2BECFA620034A0B6 /* HomeConfigurator.swift in Sources */,
 				6AC388BC2BECF87B0034A0B6 /* HTTPHeader.swift in Sources */,
+				6A40A0752BEE0D9B00F44877 /* Cells.swift in Sources */,
+				6A40A0672BEE016F00F44877 /* ConnectPresenter.swift in Sources */,
 				6AC388AA2BECF8140034A0B6 /* LaguageHelper.swift in Sources */,
 				6AC388A42BECF8010034A0B6 /* HeroHelper.swift in Sources */,
 				6AC388BD2BECF87B0034A0B6 /* NetworkService.swift in Sources */,
+				6A40A0692BEE016F00F44877 /* ConnectViewController.swift in Sources */,
 				6AC388CE2BECFA200034A0B6 /* TabBarViewController.swift in Sources */,
+				6A40A06B2BEE016F00F44877 /* ConnectConfigurator.swift in Sources */,
 				6AC388B52BECF8680034A0B6 /* BaseURLs.swift in Sources */,
 				6AC388AC2BECF8200034A0B6 /* UserDefaultsKeys.swift in Sources */,
+				6A40A07D2BEE117F00F44877 /* UITableViewExtension.swift in Sources */,
 				6AC388BF2BECF87B0034A0B6 /* NetworkRequestable.swift in Sources */,
+				6A40A0792BEE0E1D00F44877 /* EmptyDataView.swift in Sources */,
 				6AC388A62BECF8080034A0B6 /* SwiftMessagesHelper.swift in Sources */,
 				6AC388C32BECF88C0034A0B6 /* NetworkErrorExtension.swift in Sources */,
 				6AC388BB2BECF87B0034A0B6 /* Session.swift in Sources */,
 				6AC388692BECF1EA0034A0B6 /* AppDelegate.swift in Sources */,
+				6A40A0732BEE0D3A00F44877 /* UIViewControllerExtensions.swift in Sources */,
 				6AC388E32BEDE8910034A0B6 /* TournamentTableViewCell.swift in Sources */,
 				6AC388AE2BECF8270034A0B6 /* UIViewExtensions.swift in Sources */,
+				6A40A0682BEE016F00F44877 /* ConnectRouter.swift in Sources */,
+				6A40A06A2BEE016F00F44877 /* ConnectInteractor.swift in Sources */,
 				6AC388DC2BECFA620034A0B6 /* HomeEntity.swift in Sources */,
 				6AC3886B2BECF1EA0034A0B6 /* SceneDelegate.swift in Sources */,
 				6AC388D82BECFA620034A0B6 /* HomeRouter.swift in Sources */,

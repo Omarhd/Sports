@@ -14,12 +14,12 @@ import Combine
 class HomeViewController: UIViewController {
     
     // MARK: Outlets
-    @IBOutlet private weak var homeTableView: UITableView!
-
+    @IBOutlet weak var tableView: UITableView!
+    
     // MARK: Properties
     var presenter: HomePresenterProtocol?
     let messageHelper: SwiftMessagesHelper
-
+    
     // MARK: - Initialiser
     init(messageHelper: SwiftMessagesHelper = .shared) {
         self.messageHelper = messageHelper
@@ -36,11 +36,10 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         presenter?.viewDidLoad()
-        let nib = UINib(nibName: TournamentTableViewCell.viewIdentifier(), bundle: nil)
-        homeTableView.register(nib, forCellReuseIdentifier: TournamentTableViewCell.viewIdentifier())
-        homeTableView.showGradientSkeleton()
-        homeTableView.startSkeletonAnimation()
-        homeTableView.hideSkeleton(reloadDataAfter: true)
+        tableView.registerCell(cell: TournamentTableViewCell.self)
+        
+        tableView.showGradientSkeleton()
+        tableView.startSkeletonAnimation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,35 +56,43 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return presenter?.numberOfTournament ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let homeCell = homeTableView.dequeueReusableCell(withIdentifier: TournamentTableViewCell.viewIdentifier(), for: indexPath) as? TournamentTableViewCell else { return TournamentTableViewCell() }
-        
+        print("tor \(indexPath.row)")
+        guard let homeCell = tableView.dequeueReusableCell(withIdentifier: TournamentTableViewCell.viewIdentifier(), for: indexPath) as? TournamentTableViewCell else { return UITableViewCell() }
+
+        presenter?.configureCell(with: homeCell, for: indexPath.row)
+       
         return homeCell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let detailsViewController = MatchDetailsViewController()
-//        detailsViewController.view.backgroundColor = .blue
-//        showHero(detailsViewController, navigationAnimationType: .zoom)
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100.0
     }
-    
+        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.didSelect(for: indexPath.row)
+    }
 }
 
 extension HomeViewController: HomeControllerProtocol {
-   
+    
+    func loadTableView() {
+//        tableView.setupTableView(viewController: self)
+//        loadTableAndCollection(tableView: tableView)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.reloadData()
+    }
+    
     func setEmptyState() {
-        
+        setEmptyCase(imgName: "", title: "No Data", message: "Try agani Later", containerView: self.view)
     }
     
     func showFailureAlert(with error: String) {
-        messageHelper.showMessage(title: "\(error)", body: "Error While Fetching Data".localized(), theme: .error, presentationStyle: .top, duration: .seconds(seconds: 3.0))
-    }
-   
-    func loadTableView() {
-        homeTableView.reloadData()
+//        messageHelper.showMessage(title: "\(error)", body: "Error While Fetching Data".localized(), theme: .error, presentationStyle: .top, duration: .seconds(seconds: 3.0))
     }
     
 }

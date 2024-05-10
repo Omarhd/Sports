@@ -11,10 +11,14 @@ import IQKeyboardManagerSwift
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
+        let tabBarController = setupTabBarController()
+        window?.rootViewController = tabBarController
+        window?.makeKeyAndVisible()
+        
         setupKeyboard()
         checkAppLang()
         Localizer.doTheExChange()
@@ -57,7 +61,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Language.setAppLanguage(lang: "en")
         }
     }
+    
+    func setupTabBarController() -> UITabBarController {
+        // Create your view controllers
+        let homeViewController = HomeConfigurator.viewController(input: .init())
+        let socialMediaViewController = UIViewController()
+        let newsViewController = UIViewController()
+        let settingsViewController = UIViewController()
 
+        homeViewController.title = "Home".localized()
+        homeViewController.tabBarItem = UITabBarItem(title: "Home".localized(), image: UIImage(named: "house"), selectedImage: UIImage(named: "house.fill"))
+
+        socialMediaViewController.title = "Connect".localized()
+        socialMediaViewController.tabBarItem = UITabBarItem(title: "Connect".localized(), image: UIImage(named: "link.circle"), selectedImage: UIImage(named: "link.circle.fill"))
+
+        newsViewController.title = "News".localized()
+        newsViewController.tabBarItem = UITabBarItem(title: "News".localized(), image: UIImage(named: "newspaper"), selectedImage: UIImage(named: "newspaper.fill"))
+
+        settingsViewController.title = "Settings".localized()
+        settingsViewController.tabBarItem = UITabBarItem(title: "Settings".localized(), image: UIImage(named: "gear"), selectedImage: UIImage(named: "gear.fill"))
+
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [homeViewController, socialMediaViewController, newsViewController, settingsViewController]
+
+        return tabBarController
+    }
 
 }
 

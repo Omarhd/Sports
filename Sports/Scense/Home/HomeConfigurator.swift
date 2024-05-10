@@ -15,12 +15,13 @@ final class HomeConfigurator {
     
     // MARK: Configuration
     class func viewController(input: HomeInput) -> HomeViewController {
-        let view = HomeViewController()
+        let storyBoard = UIStoryboard.init(name: "Home", bundle: nil)
+        guard let view = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController else { return HomeViewController() }
         let interactor = HomeInteractor()
         let router = HomeRouter(viewController: view)
         let presenter = HomePresenter(view: view,
-                                                          interactor: interactor,
-                                                          router: router)
+                                      interactor: interactor,
+                                      router: router)
         view.presenter = presenter
         interactor.presenter = presenter
         return view
@@ -29,7 +30,10 @@ final class HomeConfigurator {
 // MARK: - Protocols
 // Controller --> Presenter
 protocol HomePresenterProtocol: AnyObject {
+    var numberOfTournament: Int { get }
     func viewDidLoad()
+    func configureCell(with cell: TournamentTableViewCell, for index: Int)
+    func didSelect(for index: Int)
 }
 
 // Presenter --> Controller
@@ -37,7 +41,6 @@ protocol HomeControllerProtocol: AnyObject {
     func setEmptyState()
     func showFailureAlert(with error: String)
     func loadTableView()
-    
 }
 
 // Presenter --> Interactor
@@ -50,7 +53,14 @@ protocol HomeInteractorOutput: AnyObject {
     func succeedReceivedTournaments(tournamentData: HomeEntity)
     func didFailedLoadingTournaments(error: Error)
 }
+
 // Presenter --> Router
 protocol HomeRouterProtocol: AnyObject {
     func popViewController()
+    func navigateToDetails()
+}
+
+// Cell --> Protocol
+protocol TournamentCellProtocol: AnyObject {
+    func displayName(name: String)
 }

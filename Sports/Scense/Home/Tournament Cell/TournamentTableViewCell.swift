@@ -7,8 +7,10 @@
 
 import UIKit
 
-class TournamentTableViewCell: UITableViewCell {
+class TournamentTableViewCell: UITableViewCell, TournamentCellProtocol {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -18,6 +20,10 @@ class TournamentTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func displayName(name: String) {
+        titleLabel.text = name
     }
     
 }

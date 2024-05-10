@@ -21,4 +21,7 @@ extension HomeRouter: HomeRouterProtocol {
     func popViewController() {
         self.viewController?.navigationController?.popViewController(animated: true)
     }
+    func navigateToDetails() {
+        
+    }
 }

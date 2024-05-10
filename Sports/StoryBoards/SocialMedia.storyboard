@@ -16,8 +16,21 @@
                     <view key="view" contentMode="scaleToFill" id="8N9-Z8-a66">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shippingbox" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="OlF-rd-Udg">
+                                <rect key="frame" x="76.666666666666686" y="362.33333333333331" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="1PC-8H-sus"/>
+                                    <constraint firstAttribute="height" constant="128" id="fol-sv-BbC"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="003-Wr-gj0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OlF-rd-Udg" firstAttribute="centerX" secondItem="8N9-Z8-a66" secondAttribute="centerX" id="2Tt-j5-CaI"/>
+                            <constraint firstItem="OlF-rd-Udg" firstAttribute="centerY" secondItem="8N9-Z8-a66" secondAttribute="centerY" id="pmz-kX-Pcy"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Hdd-1u-aRn"/>
                 </viewController>
@@ -48,6 +61,7 @@
     </scenes>
     <resources>
         <image name="link.circle" catalog="system" width="128" height="123"/>
+        <image name="shippingbox" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
