@@ -23,12 +23,12 @@ extension UIViewController {
     }
     
     //MARK: - func setup empty case
-    func setEmptyCase(imgName: String, title: String, message: String, tableViewData: UITableView? = nil, collectionViewData: UICollectionView? = nil, containerView: UIView) {
+    func setEmptyCase(imageName: String, title: String, message: String, tableViewData: UITableView? = nil, collectionViewData: UICollectionView? = nil, containerView: UIView) {
         deleteEmptyView()
         var emptyData = EmptyDataView()
         emptyData = EmptyDataView.init(frame: .zero)
         emptyData.setupViewConstraint(vu: containerView)
-        emptyData.setupView(imageName: imgName, title: title, message: message)
+        emptyData.setupView(imageName: imageName, title: title, message: message)
         tableViewData?.isHidden = true
         collectionViewData?.isHidden = true
     }

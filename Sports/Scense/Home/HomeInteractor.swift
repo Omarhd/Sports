@@ -24,12 +24,17 @@ class HomeInteractor {
 extension HomeInteractor: HomePresenterInteractorProtocol {
     
     func fetchHotMatches(parameters: TournamentRequest) {
-        guard let url = URL(string: base + "football/gettournament/unique") else { fatalError("Invalid URL") }
+        guard let url = URL(string: base + "football/getttournament/unique") else { fatalError("Invalid URL") }
         let tournament: AnyPublisher<HomeEntity, Error> = session.requestQuery(from: url, withQueryParams: parameters)
         
         tournament.receive(on: RunLoop.main)
-            .sink { [ weak self ] error in
-                self?.presenter?.didFailedLoadingTournaments(error: error as! Error)
+            .sink { [weak self] completion in
+                switch completion {
+                case .failure(let error):
+                    self?.presenter?.didFailedLoadingTournaments(error: error)
+                case .finished:
+                    break
+                }
             } receiveValue: { [weak self] tournaments in
                 self?.presenter?.succeedReceivedTournaments(tournamentData: tournaments)
             }

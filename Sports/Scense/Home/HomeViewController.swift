@@ -80,19 +80,16 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 extension HomeViewController: HomeControllerProtocol {
     
     func loadTableView() {
-//        tableView.setupTableView(viewController: self)
-//        loadTableAndCollection(tableView: tableView)
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.reloadData()
+        tableView.setupTableView(viewController: self)
+        loadTableAndCollection(tableView: tableView)
     }
     
     func setEmptyState() {
-        setEmptyCase(imgName: "", title: "No Data", message: "Try agani Later", containerView: self.view)
+        setEmptyCase(imageName: "", title: "No Data", message: "Try agani Later", containerView: self.view)
     }
     
     func showFailureAlert(with error: String) {
-//        messageHelper.showMessage(title: "\(error)", body: "Error While Fetching Data".localized(), theme: .error, presentationStyle: .top, duration: .seconds(seconds: 3.0))
+        messageHelper.showMessage(title: "\(error)", body: "Error While Fetching Data".localized(), theme: .error, presentationStyle: .top, duration: .seconds(seconds: 3.0))
     }
     
 }

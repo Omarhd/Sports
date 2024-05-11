@@ -15,7 +15,7 @@ final class HomeConfigurator {
     
     // MARK: Configuration
     class func viewController(input: HomeInput) -> HomeViewController {
-        let storyBoard = UIStoryboard.init(name: "Home", bundle: nil)
+        let storyBoard = UIStoryboard.init(name: HomeStoryboard, bundle: nil)
         guard let view = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController else { return HomeViewController() }
         let interactor = HomeInteractor()
         let router = HomeRouter(viewController: view)
