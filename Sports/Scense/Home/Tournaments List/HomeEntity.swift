@@ -16,11 +16,11 @@ struct TournamentRequest: Encodable {
 // MARK: - HomeEntity
 struct HomeEntity: Codable {
     let currentPage, totalPages: Int?
-    let results: [Result]?
+    let results: [Tournament]?
 }
 
 // MARK: - Result
-struct Result: Codable {
+struct Tournament: Codable {
     let id, categoryID: String?
     let countryID: String?
     let name, shortName: String?

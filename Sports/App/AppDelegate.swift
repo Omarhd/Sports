@@ -69,17 +69,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let newsViewController = UIViewController()
         let settingsViewController = UIViewController()
 
-        homeViewController.title = "Home".localized()
-        homeViewController.tabBarItem = UITabBarItem(title: "Home".localized(), image: UIImage(named: "house"), selectedImage: UIImage(named: "house.fill"))
+        homeViewController.title = "Home".localized
+        homeViewController.tabBarItem = UITabBarItem(title: "Home".localized, image: UIImage(named: "house"), selectedImage: UIImage(named: "house.fill"))
 
-        socialMediaViewController.title = "Connect".localized()
-        socialMediaViewController.tabBarItem = UITabBarItem(title: "Connect".localized(), image: UIImage(named: "link.circle"), selectedImage: UIImage(named: "link.circle.fill"))
+        socialMediaViewController.title = "Connect".localized
+        socialMediaViewController.tabBarItem = UITabBarItem(title: "Connect".localized, image: UIImage(named: "link.circle"), selectedImage: UIImage(named: "link.circle.fill"))
 
-        newsViewController.title = "News".localized()
-        newsViewController.tabBarItem = UITabBarItem(title: "News".localized(), image: UIImage(named: "newspaper"), selectedImage: UIImage(named: "newspaper.fill"))
+        newsViewController.title = "News".localized
+        newsViewController.tabBarItem = UITabBarItem(title: "News".localized, image: UIImage(named: "newspaper"), selectedImage: UIImage(named: "newspaper.fill"))
 
-        settingsViewController.title = "Settings".localized()
-        settingsViewController.tabBarItem = UITabBarItem(title: "Settings".localized(), image: UIImage(named: "gear"), selectedImage: UIImage(named: "gear.fill"))
+        settingsViewController.title = "Settings".localized
+        settingsViewController.tabBarItem = UITabBarItem(title: "Settings".localized, image: UIImage(named: "gear"), selectedImage: UIImage(named: "gear.fill"))
 
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = [homeViewController, socialMediaViewController, newsViewController, settingsViewController]

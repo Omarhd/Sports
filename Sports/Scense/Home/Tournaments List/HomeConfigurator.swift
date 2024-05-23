@@ -57,10 +57,10 @@ protocol HomeInteractorOutput: AnyObject {
 // Presenter --> Router
 protocol HomeRouterProtocol: AnyObject {
     func popViewController()
-    func navigateToDetails()
+    func navigateToDetails(tournament: Tournament)
 }
 
 // Cell --> Protocol
 protocol TournamentCellProtocol: AnyObject {
-    func displayName(name: String)
+    func configureCellUI(tournament: Tournament)
 }

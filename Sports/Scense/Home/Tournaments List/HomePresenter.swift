@@ -14,7 +14,7 @@ final class HomePresenter: NSObject {
     private var interactor: HomePresenterInteractorProtocol?
     private var router: HomeRouterProtocol?
     
-    var tournaments: [Result] = []
+    var tournaments: [Tournament] = []
     var numberOfTournament: Int { return tournaments.count }
     
     // MARK: - Init
@@ -30,26 +30,28 @@ final class HomePresenter: NSObject {
 extension HomePresenter: HomePresenterProtocol {
     
     func viewDidLoad() {
-        let parameters: TournamentRequest = TournamentRequest(pageNumber: 1)
+        let tournamentsParameters = TournamentRequest(pageNumber: 1)
+        let parameters: TournamentRequest = tournamentsParameters
         interactor?.fetchHotMatches(parameters: parameters)
     }
     
     func configureCell(with cell: TournamentTableViewCell, for index: Int) {
         let cellData = tournaments[index]
-        cell.displayName(name: cellData.name ?? "")
+        cell.configureCellUI(tournament: cellData)
     }
     
-    func didSelect(for index: Int) {
-        let cellData = tournaments[index]
-        router?.navigateToDetails()
+    func didSelect(for index: Int = 0) {
+        let tournament = tournaments[index]
+        router?.navigateToDetails(tournament: tournament)
     }
+    
 }
 // MARK: Conform to HomeInteractorOutput
 extension HomePresenter: HomeInteractorOutput {
     
     func succeedReceivedTournaments(tournamentData: HomeEntity) {
         tournaments = tournamentData.results ?? []
-        tournamentData.results?.isEmpty ?? false ? (view?.setEmptyState()) : (view?.loadTableView())
+        tournaments.isEmpty ? (view?.setEmptyState()) : (view?.loadTableView())
     }
     
     func didFailedLoadingTournaments(error: Error) {

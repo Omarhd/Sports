@@ -9,9 +9,9 @@ import UIKit
 
 class EmptyDataView: UIView {
 
-    @IBOutlet weak var emptyImg: UIImageView!
-    @IBOutlet weak var titleLb: UILabel!
-    @IBOutlet weak var messageLb: UILabel!
+    @IBOutlet weak var emptyImage: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet var contentView: UIView!
     
     override init(frame: CGRect) {
@@ -32,21 +32,23 @@ class EmptyDataView: UIView {
         contentView.frame = self.bounds
         contentView.autoresizingMask  = [.flexibleHeight,.flexibleWidth]
     }
+    
     // MARK: - func of add loader
     func setupView(imageName: String, title: String, message: String) {
-        emptyImg.image = UIImage(named: imageName)
-        titleLb.text = title
-        messageLb.text = message
+        imageName == "" ? (emptyImage.image = UIImage(systemName: "imageName")) : (emptyImage.image = UIImage(named: imageName))
+        title == "" ? (titleLabel.text = "Yekies, Error".localized) : (titleLabel.text = title)
+        message == "" ? (messageLabel.text = "Unable to get Data from Server for Now, try again Later.".localized) : (messageLabel.text = message)
     }
-    func setupViewConstraint(vu: UIView)
-    {
-        vu.addSubview(self)
+    
+    func setupViewConstraint(view: UIView) {
+        view.addSubview(self)
         self.translatesAutoresizingMaskIntoConstraints = false
-        vu.addConstraint(NSLayoutConstraint(item: self as Any, attribute: .trailing, relatedBy: .equal, toItem: vu, attribute: .trailing, multiplier: 1, constant: 0))
-        vu.addConstraint(NSLayoutConstraint(item: self as Any, attribute: .leading, relatedBy: .equal, toItem: vu, attribute: .leading, multiplier: 1, constant: 0))
-        vu.addConstraint(NSLayoutConstraint(item: self as Any, attribute: .top, relatedBy: .equal, toItem: vu, attribute: .top, multiplier: 1, constant: 0))
-        vu.addConstraint(NSLayoutConstraint(item: self as Any, attribute: .bottom, relatedBy: .equal, toItem: vu, attribute: .bottom, multiplier: 1, constant: 0))
+        view.addConstraint(NSLayoutConstraint(item: self as Any, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: 0))
+        view.addConstraint(NSLayoutConstraint(item: self as Any, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 0))
+        view.addConstraint(NSLayoutConstraint(item: self as Any, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: 0))
+        view.addConstraint(NSLayoutConstraint(item: self as Any, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0))
     }
+    
     //MARK: - func delete empty case
     func deleteView() {
         self.removeFromSuperview()

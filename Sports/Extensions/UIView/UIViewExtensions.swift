@@ -8,10 +8,12 @@
 import UIKit
 
 extension UIView {
+    
     // MARK: - View Identifier
     public static func viewIdentifier() -> String {
         return String(describing: self)
     }
+    
     // MARK: - Convert to UIImage
     func asImage() -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(bounds.size, isHidden, 0.0)

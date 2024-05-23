@@ -20,7 +20,7 @@ extension UITableView {
         self.showsVerticalScrollIndicator   = false
     }
     
-    func registerCell<Cell : UITableViewCell>(cell : Cell.Type){
+    func registerCell<Cell : UITableViewCell>(cell : Cell.Type) {
         let nibName = String(describing: cell.self) // transform classCellName to String
         self.register(UINib(nibName: nibName, bundle: nil), forCellReuseIdentifier: nibName)
     }

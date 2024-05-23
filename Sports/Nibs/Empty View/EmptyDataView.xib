@@ -19,9 +19,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EmptyDataView" customModule="FootballApp" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="C7D-q5-1Qz"/>
-                <outlet property="emptyImg" destination="dA8-a3-ibe" id="7pB-r1-cr0"/>
-                <outlet property="messageLb" destination="73I-H1-JTy" id="OtQ-Vc-ag2"/>
-                <outlet property="titleLb" destination="PhD-zE-OKw" id="v2f-Sq-dvj"/>
+                <outlet property="emptyImage" destination="dA8-a3-ibe" id="7pB-r1-cr0"/>
+                <outlet property="messageLabel" destination="73I-H1-JTy" id="OtQ-Vc-ag2"/>
+                <outlet property="titleLabel" destination="PhD-zE-OKw" id="v2f-Sq-dvj"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

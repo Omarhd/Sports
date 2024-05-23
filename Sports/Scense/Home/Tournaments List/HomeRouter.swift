@@ -9,6 +9,7 @@
 import UIKit
 
 class HomeRouter {
+    
     weak var viewController: HomeViewController?
 
     // MARK: - Init
@@ -18,10 +19,13 @@ class HomeRouter {
 }
 // MARK: Conforming to HomeRouterProtocol
 extension HomeRouter: HomeRouterProtocol {
+    
     func popViewController() {
         self.viewController?.navigationController?.popViewController(animated: true)
     }
-    func navigateToDetails() {
-        
+    
+    func navigateToDetails(tournament: Tournament) {
+        let detailsViewController = TournamentDetailsConfigurator.viewController(input: .init(tournament: tournament))
+        viewController?.showHero(detailsViewController, navigationAnimationType: .zoom)
     }
 }

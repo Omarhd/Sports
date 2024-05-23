@@ -27,7 +27,7 @@ extension UIViewController {
         deleteEmptyView()
         var emptyData = EmptyDataView()
         emptyData = EmptyDataView.init(frame: .zero)
-        emptyData.setupViewConstraint(vu: containerView)
+        emptyData.setupViewConstraint(view: containerView)
         emptyData.setupView(imageName: imageName, title: title, message: message)
         tableViewData?.isHidden = true
         collectionViewData?.isHidden = true
