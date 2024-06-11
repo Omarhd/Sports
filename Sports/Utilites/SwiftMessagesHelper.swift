@@ -61,7 +61,9 @@ class SwiftMessagesHelper {
         }
         var config = SwiftMessages.defaultConfig
         config.presentationStyle = presentationStyle == .top ? .top : presentationStyle == .bottom ? .bottom : .center
+        config.presentationContext = .window(windowLevel: UIWindow.Level.statusBar + 1)  // Ensures it appears over the navigation bar
         config.duration = duration == .forever ? .forever : .seconds(seconds: durationInSeconds)
         SwiftMessages.show(config: config, view: messageView)
     }
+
 }

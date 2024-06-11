@@ -16,7 +16,7 @@ final class TournamentDetailsConfigurator {
     
     // MARK: Configuration
     class func viewController(input: TournamentDetailsInput) -> TournamentDetailsViewController {
-        let view = TournamentDetailsViewController()
+        let view = TournamentDetailsViewController(collectionViewLayout: StretchyHeaderLayout())
         let interactor = TournamentDetailsInteractor()
         let router = TournamentDetailsRouter(viewController: view)
         let presenter = TournamentDetailsPresenter(view: view,
@@ -32,10 +32,12 @@ final class TournamentDetailsConfigurator {
 // Controller --> Presenter
 protocol TournamentDetailsPresenterProtocol: AnyObject {
     func viewDidLoad()
+    func configureHeader() -> String
 }
 
 // Presenter --> Controller
 protocol TournamentDetailsControllerProtocol: AnyObject {
+    func setTournamentDetails(tournamentDetails: Tournament)
 }
 
 // Presenter --> Interactor

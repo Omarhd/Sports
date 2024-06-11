@@ -14,3 +14,4 @@ ACCENT_COLOR = DevAccentColor
 BASE_URL = https:/${SLASH}www.google.com
 
 TOURNAMENTS = http:${SLASH}/199.241.1.88:4049/api/
+NEWS = http:${SLASH}/www.77577.live/api/

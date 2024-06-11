@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Social Media View Controller-->
         <scene sceneID="gw6-0u-t5Y">
             <objects>
-                <viewController id="gHA-aw-fka" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SocialMediaViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gHA-aw-fka" customClass="SocialMediaViewController" customModule="Sports" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8N9-Z8-a66">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,12 +29,21 @@
                                 <imageReference key="image" image="shippingbox" catalog="system" symbolScale="default"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="ultraLight"/>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TbR-MV-vth">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <sections/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="003-Wr-gj0"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="OlF-rd-Udg" firstAttribute="centerX" secondItem="8N9-Z8-a66" secondAttribute="centerX" id="2Tt-j5-CaI"/>
+                            <constraint firstItem="TbR-MV-vth" firstAttribute="leading" secondItem="003-Wr-gj0" secondAttribute="leading" id="6Q9-Pn-5fD"/>
+                            <constraint firstItem="TbR-MV-vth" firstAttribute="trailing" secondItem="003-Wr-gj0" secondAttribute="trailing" id="9jW-di-8sd"/>
+                            <constraint firstItem="TbR-MV-vth" firstAttribute="bottom" secondItem="003-Wr-gj0" secondAttribute="bottom" id="WFA-KK-5xC"/>
                             <constraint firstItem="OlF-rd-Udg" firstAttribute="centerY" secondItem="8N9-Z8-a66" secondAttribute="centerY" id="pmz-kX-Pcy"/>
+                            <constraint firstItem="TbR-MV-vth" firstAttribute="top" secondItem="003-Wr-gj0" secondAttribute="top" id="sif-ap-hIt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Hdd-1u-aRn"/>
@@ -46,7 +55,7 @@
         <!--Connect-->
         <scene sceneID="swe-CE-b63">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wlw-qc-Zes" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CustomNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Wlw-qc-Zes" customClass="CustomNavigationController" customModule="Sports" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Connect" image="link.circle" catalog="system" id="X8D-15-f8A"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -68,7 +77,10 @@
         <image name="link.circle" catalog="system" width="128" height="123"/>
         <image name="shippingbox" catalog="system" width="128" height="123"/>
         <namedColor name="AccentColor">
-            <color red="0.0" green="0.53725490196078429" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.8784313725490196" blue="0.72941176470588232" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BackgroundColor">
+            <color red="0.9882352941176471" green="0.99607843137254903" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

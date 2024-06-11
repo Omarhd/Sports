@@ -13,6 +13,7 @@ class TournamentDetailsRouter {
 
     // MARK: - Init
     init(viewController: TournamentDetailsViewController) {
+        viewController.hidesBottomBarWhenPushed = true
         self.viewController = viewController
     }
 }

@@ -48,7 +48,7 @@ class HomeViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        disableHero()
+//        disableHero()
     }
 }
 
@@ -82,12 +82,12 @@ extension HomeViewController: HomeControllerProtocol {
     }
     
     func setEmptyState() {
-        setEmptyCase(imageName: "", title: "No Data", message: "Try again Later".localized, containerView: self.view)
+        setEmptyCase(imageName: "figure.soccer", title: "No Data", message: "Try again Later".localized, containerView: self.view)
     }
     
     func showFailureAlert(with error: String) {
-        messageHelper.showMessage(title: "\(error)", body: "Error While Fetching Data".localized, theme: .error, presentationStyle: .top, duration: .seconds(seconds: 3.0))
-        setEmptyCase(imageName: "", title: "No Data", message: "Try again Later".localized, containerView: self.view)
+        messageHelper.showMessage(title: "\(error)", body: "Error While Fetching Data".localized, theme: .error, presentationStyle: .top, duration: .forever)
+        setEmptyCase(imageName: "figure.soccer", title: "No Data", message: "Try again Later".localized, containerView: self.view)
     }
     
 }

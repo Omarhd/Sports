@@ -26,6 +26,7 @@ final class HomePresenter: NSObject {
         self.router = router
     }
 }
+
 // MARK: Conform to HomePresenterProtocol
 extension HomePresenter: HomePresenterProtocol {
     

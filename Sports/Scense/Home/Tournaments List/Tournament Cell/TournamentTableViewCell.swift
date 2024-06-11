@@ -10,6 +10,8 @@ import UIKit
 class TournamentTableViewCell: UITableViewCell, TournamentCellProtocol {
 
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var tournamentImage: UIImageView!
+    @IBOutlet weak var countryLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,6 +24,9 @@ class TournamentTableViewCell: UITableViewCell, TournamentCellProtocol {
     
     func configureCellUI(tournament: Tournament) {
         titleLabel.text = tournament.name
+        countryLabel.text = tournament.countryID
+        let url = URL(string: tournament.logo ?? "")
+        tournamentImage.kf.setImage(with: url)
     }
     
 }

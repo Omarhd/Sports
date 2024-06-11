@@ -9,7 +9,8 @@
 import UIKit
 
 final class TournamentDetailsPresenter: NSObject {
-    // MARK: - Properites
+  
+    // MARK: - Properties
     private var view: TournamentDetailsControllerProtocol?
     private var interactor: TournamentDetailsPresenterInteractorProtocol?
     private var router: TournamentDetailsRouterProtocol?
@@ -26,12 +27,20 @@ final class TournamentDetailsPresenter: NSObject {
         self.tournament = tournament
     }
 }
+
 // MARK: Conform to TournamentDetailsPresenterProtocol
 extension TournamentDetailsPresenter: TournamentDetailsPresenterProtocol {
+    
+    func configureHeader() -> String {
+        return tournament?.logo ?? ""
+    }
+    
     func viewDidLoad() {
-        
+        guard let tournament = self.tournament else { return }
+        view?.setTournamentDetails(tournamentDetails: tournament)
     }
 }
-// MARK: Conform to TournamentDetailsInteractorOutputa
+
+// MARK: Conform to TournamentDetailsInteractor Output
 extension TournamentDetailsPresenter: TournamentDetailsInteractorOutput {
 }

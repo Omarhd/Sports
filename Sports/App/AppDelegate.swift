@@ -15,9 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        let tabBarController = setupTabBarController()
-        window?.rootViewController = tabBarController
-        window?.makeKeyAndVisible()
+//        let tabBarController = setupTabBarController()
+//        window?.rootViewController = tabBarController
+//        window?.makeKeyAndVisible()
         
         setupKeyboard()
         checkAppLang()
@@ -66,7 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Create your view controllers
         let homeViewController = HomeConfigurator.viewController(input: .init())
         let socialMediaViewController = UIViewController()
-        let newsViewController = UIViewController()
+        let newsViewController = NewsConfigurator.viewController(input: .init())
         let settingsViewController = UIViewController()
 
         homeViewController.title = "Home".localized

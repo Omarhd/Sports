@@ -35,9 +35,19 @@ class EmptyDataView: UIView {
     
     // MARK: - func of add loader
     func setupView(imageName: String, title: String, message: String) {
-        imageName == "" ? (emptyImage.image = UIImage(systemName: "imageName")) : (emptyImage.image = UIImage(named: imageName))
-        title == "" ? (titleLabel.text = "Yekies, Error".localized) : (titleLabel.text = title)
+        imageName == "" ? (emptyImage.image = UIImage(systemName: "shippingbox")) : (emptyImage.image = UIImage(named: imageName))
+        title == "" ? (titleLabel.text = "Yekis, Error".localized) : (titleLabel.text = title)
         message == "" ? (messageLabel.text = "Unable to get Data from Server for Now, try again Later.".localized) : (messageLabel.text = message)
+        if #available(iOS 17.0, *) {
+            configureImage()
+        } else {
+            // Fallback on earlier versions
+        }
+    }
+    
+    @available(iOS 17.0, *)
+    private func configureImage() {
+        emptyImage.addSymbolEffect(.pulse)
     }
     
     func setupViewConstraint(view: UIView) {

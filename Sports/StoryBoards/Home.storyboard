@@ -4,11 +4,22 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Auth-->
+        <scene sceneID="f8K-nb-WXi">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Auth" id="qL7-2b-BEM" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="fT4-OB-aSM"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tr2-b1-vk7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="863" y="-440"/>
+        </scene>
         <!--Tournaments-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
@@ -26,10 +37,11 @@
                             </imageView>
                             <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PPS-dA-yaf">
                                 <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" name="BackgroundColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="PPS-dA-yaf" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="4R9-dt-d2e"/>
                             <constraint firstItem="PPS-dA-yaf" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="AKe-cO-CRT"/>
@@ -41,27 +53,62 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tournaments" id="9db-4Y-CmP">
-                        <barButtonItem key="rightBarButtonItem" title="Right" style="plain" id="681-EY-rr2">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="dQK-QW-gu6">
-                                <rect key="frame" x="290" y="3" width="87" height="38.333333333333336"/>
+                        <barButtonItem key="backBarButtonItem" title=" " id="rco-pr-lwV"/>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="qu2-Bc-x37">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="BJb-rA-giq">
+                                <rect key="frame" x="16" y="0.0" width="128" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" name="AccentColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Newxt"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="person.circle.fill" catalog="system" symbolScale="default" renderingMode="original"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
+                                </state>
+                                <connections>
+                                    <segue destination="qL7-2b-BEM" kind="presentation" id="mnR-BN-z2Z"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="PPS-dA-yaf" id="CaC-Dl-uwJ"/>
+                        <segue destination="Ey8-Y1-Xqt" kind="show" id="p6k-2h-vr7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1052.6717557251909" y="-27.464788732394368"/>
         </scene>
+        <!--Tournament Details-->
+        <scene sceneID="CAQ-MZ-Gy7">
+            <objects>
+                <collectionViewController storyboardIdentifier="TournamentDetailsViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ey8-Y1-Xqt" customClass="TournamentDetailsViewController" customModule="Sports" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" dataMode="prototypes" id="NvC-Cu-5ty">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="KiH-1S-JB7">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells/>
+                        <connections>
+                            <outlet property="dataSource" destination="Ey8-Y1-Xqt" id="PEp-78-UL0"/>
+                            <outlet property="delegate" destination="Ey8-Y1-Xqt" id="baT-wh-op8"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Tournament Details" id="t6a-MW-jgC"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Ni-LJ-FYq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1926" y="-27"/>
+        </scene>
         <!--Home-->
         <scene sceneID="OD5-kp-IKL">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Eda-UZ-Bfd" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Eda-UZ-Bfd" customClass="CustomNavigationController" customModule="Sports" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="uPp-HE-RaY"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -79,11 +126,16 @@
             <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
         </scene>
     </scenes>
+    <color key="tintColor" name="AccentColor"/>
     <resources>
         <image name="house" catalog="system" width="128" height="104"/>
+        <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <image name="shippingbox" catalog="system" width="128" height="123"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.53725490196078429" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BackgroundColor">
+            <color red="0.9882352941176471" green="0.99607843137254903" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

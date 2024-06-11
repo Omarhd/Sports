@@ -26,6 +26,6 @@ extension HomeRouter: HomeRouterProtocol {
     
     func navigateToDetails(tournament: Tournament) {
         let detailsViewController = TournamentDetailsConfigurator.viewController(input: .init(tournament: tournament))
-        viewController?.showHero(detailsViewController, navigationAnimationType: .zoom)
+        viewController?.showHero(detailsViewController, navigationAnimationType: .zoomOut)
     }
 }
