@@ -103,4 +103,12 @@ extension NewsPresenter: NewsInteractorOutput {
     func didFailedLoadingHotNews(error: Error) {
         view?.showFailureAlert(with: error.localizedDescription)
     }
+    
+    func showLoading() {
+        view?.showLoadingIndicator()
+    }
+    
+    func dismissLoading() {
+        view?.showFailureIndicator()
+    }
 }

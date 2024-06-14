@@ -31,6 +31,7 @@ final class NewsDetailsConfigurator {
 // Controller --> Presenter
 protocol NewsDetailsPresenterProtocol: AnyObject {
     func viewDidLoad()
+    func didSelectTappedImage(image: UIImage)
 }
 
 // Presenter --> Controller
@@ -52,4 +53,5 @@ protocol NewsDetailsInteractorOutput: AnyObject {
 // Presenter --> Router
 protocol NewsDetailsRouterProtocol: AnyObject {
     func popViewController()
+    func showFullImage(image: UIImage)
 }

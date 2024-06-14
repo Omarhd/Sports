@@ -43,6 +43,8 @@ protocol NewsControllerProtocol: AnyObject {
     func setEmptyState()
     func showFailureAlert(with error: String)
     func reloadSection(_ section: NewsSection)
+    func showLoadingIndicator()
+    func showFailureIndicator()
 }
 
 // Presenter --> Interactor
@@ -57,6 +59,8 @@ protocol NewsInteractorOutput: AnyObject {
     func succeedReceivedNews(newsData: NewsEntity)
     func didFailedLoadingHotNews(error: Error)
     func didFailedLoadingNews(error: Error)
+    func showLoading()
+    func dismissLoading()
 }
 // Presenter --> Router
 protocol NewsRouterProtocol: AnyObject {

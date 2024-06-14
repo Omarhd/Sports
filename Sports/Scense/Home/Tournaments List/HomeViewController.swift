@@ -87,7 +87,16 @@ extension HomeViewController: HomeControllerProtocol {
     
     func showFailureAlert(with error: String) {
         messageHelper.showMessage(title: "\(error)", body: "Error While Fetching Data".localized, theme: .error, presentationStyle: .top, duration: .forever)
-        setEmptyCase(imageName: "figure.soccer", title: "No Data", message: "Try again Later".localized, containerView: self.view)
+        setEmptyCase(imageName: "", title: "No Data".localized, message: "Try again Later".localized, containerView: self.view)
+        self.view.showFailureLottieLoader()
+    }
+    
+    func showLoadingIndicator() {
+        self.view.showLottieLoader(with: "LoadingSquare")
+    }
+    
+    func showFailureIndicator() {
+        self.view.hideLottieLoader()
     }
     
 }

@@ -41,6 +41,8 @@ protocol HomeControllerProtocol: AnyObject {
     func setEmptyState()
     func showFailureAlert(with error: String)
     func loadTableView()
+    func showLoadingIndicator()
+    func showFailureIndicator()
 }
 
 // Presenter --> Interactor
@@ -52,6 +54,8 @@ protocol HomePresenterInteractorProtocol: AnyObject {
 protocol HomeInteractorOutput: AnyObject {
     func succeedReceivedTournaments(tournamentData: HomeEntity)
     func didFailedLoadingTournaments(error: Error)
+    func showLoading()
+    func dismissLoading()
 }
 
 // Presenter --> Router

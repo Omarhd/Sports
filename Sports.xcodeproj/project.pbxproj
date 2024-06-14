@@ -50,9 +50,15 @@
 		6A4F16A12C00601E00926BC6 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4F16A02C00601E00926BC6 /* CustomNavigationController.swift */; };
 		6A4F16CF2C01C51E00926BC6 /* TournamentDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4F16CD2C01C51E00926BC6 /* TournamentDetailsCollectionViewCell.swift */; };
 		6A4F16D02C01C51E00926BC6 /* TournamentDetailsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A4F16CE2C01C51E00926BC6 /* TournamentDetailsCollectionViewCell.xib */; };
+		6A805EA52C1C738500B4B8A7 /* LoadingSquare.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A805EA42C1C738500B4B8A7 /* LoadingSquare.json */; };
+		6A805EA72C1C740800B4B8A7 /* Success.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A805EA62C1C740800B4B8A7 /* Success.json */; };
+		6A805EA92C1C742400B4B8A7 /* Failed.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A805EA82C1C742400B4B8A7 /* Failed.json */; };
+		6A805EAC2C1C758500B4B8A7 /* LottieIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A805EAB2C1C758500B4B8A7 /* LottieIndicator.swift */; };
 		6AA0AA372C18735B00DD1C07 /* HotNewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA0AA352C18735B00DD1C07 /* HotNewsCollectionViewCell.swift */; };
 		6AA0AA382C18735B00DD1C07 /* HotNewsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AA0AA362C18735B00DD1C07 /* HotNewsCollectionViewCell.xib */; };
 		6AA0AA3B2C188F4100DD1C07 /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA0AA3A2C188F4100DD1C07 /* NSAttributedString+Extension.swift */; };
+		6AA0AA3F2C196B2500DD1C07 /* ImageViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA0AA3D2C196B2500DD1C07 /* ImageViewerViewController.swift */; };
+		6AA0AA402C196B2500DD1C07 /* ImageViewerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AA0AA3E2C196B2500DD1C07 /* ImageViewerViewController.xib */; };
 		6AA6573B2C04AED200081A21 /* CustomLayout+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6573A2C04AED200081A21 /* CustomLayout+Extensions.swift */; };
 		6AA6576B2C109BE700081A21 /* TournamentHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA657692C109BE700081A21 /* TournamentHeaderCollectionReusableView.swift */; };
 		6AA6576F2C109EDA00081A21 /* StretchyHeaderLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6576E2C109EDA00081A21 /* StretchyHeaderLayout.swift */; };
@@ -162,9 +168,15 @@
 		6A4F16A02C00601E00926BC6 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		6A4F16CD2C01C51E00926BC6 /* TournamentDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
 		6A4F16CE2C01C51E00926BC6 /* TournamentDetailsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TournamentDetailsCollectionViewCell.xib; sourceTree = "<group>"; };
+		6A805EA42C1C738500B4B8A7 /* LoadingSquare.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LoadingSquare.json; sourceTree = "<group>"; };
+		6A805EA62C1C740800B4B8A7 /* Success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Success.json; sourceTree = "<group>"; };
+		6A805EA82C1C742400B4B8A7 /* Failed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Failed.json; sourceTree = "<group>"; };
+		6A805EAB2C1C758500B4B8A7 /* LottieIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieIndicator.swift; sourceTree = "<group>"; };
 		6AA0AA352C18735B00DD1C07 /* HotNewsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotNewsCollectionViewCell.swift; sourceTree = "<group>"; };
 		6AA0AA362C18735B00DD1C07 /* HotNewsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotNewsCollectionViewCell.xib; sourceTree = "<group>"; };
 		6AA0AA3A2C188F4100DD1C07 /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
+		6AA0AA3D2C196B2500DD1C07 /* ImageViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerViewController.swift; sourceTree = "<group>"; };
+		6AA0AA3E2C196B2500DD1C07 /* ImageViewerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageViewerViewController.xib; sourceTree = "<group>"; };
 		6AA6573A2C04AED200081A21 /* CustomLayout+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomLayout+Extensions.swift"; sourceTree = "<group>"; };
 		6AA657692C109BE700081A21 /* TournamentHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		6AA6576E2C109EDA00081A21 /* StretchyHeaderLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeaderLayout.swift; sourceTree = "<group>"; };
@@ -261,6 +273,8 @@
 		6A40A0762BEE0DF800F44877 /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
+				6A805EAA2C1C743500B4B8A7 /* Loading Indicator */,
+				6AA0AA3C2C196B0400DD1C07 /* Image Viewer */,
 				6A40A07B2BEE0E2000F44877 /* Empty View */,
 			);
 			path = Nibs;
@@ -384,6 +398,32 @@
 			path = "Tournament Collection Header";
 			sourceTree = "<group>";
 		};
+		6A805EA22C1C736800B4B8A7 /* Lottie Files */ = {
+			isa = PBXGroup;
+			children = (
+				6A805EA32C1C737000B4B8A7 /* Loading Animations */,
+			);
+			path = "Lottie Files";
+			sourceTree = "<group>";
+		};
+		6A805EA32C1C737000B4B8A7 /* Loading Animations */ = {
+			isa = PBXGroup;
+			children = (
+				6A805EA82C1C742400B4B8A7 /* Failed.json */,
+				6A805EA62C1C740800B4B8A7 /* Success.json */,
+				6A805EA42C1C738500B4B8A7 /* LoadingSquare.json */,
+			);
+			path = "Loading Animations";
+			sourceTree = "<group>";
+		};
+		6A805EAA2C1C743500B4B8A7 /* Loading Indicator */ = {
+			isa = PBXGroup;
+			children = (
+				6A805EAB2C1C758500B4B8A7 /* LottieIndicator.swift */,
+			);
+			path = "Loading Indicator";
+			sourceTree = "<group>";
+		};
 		6AA0AA342C18734000DD1C07 /* Hot News Collection View Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -399,6 +439,15 @@
 				6AA0AA3A2C188F4100DD1C07 /* NSAttributedString+Extension.swift */,
 			);
 			path = NSAttributedString;
+			sourceTree = "<group>";
+		};
+		6AA0AA3C2C196B0400DD1C07 /* Image Viewer */ = {
+			isa = PBXGroup;
+			children = (
+				6AA0AA3D2C196B2500DD1C07 /* ImageViewerViewController.swift */,
+				6AA0AA3E2C196B2500DD1C07 /* ImageViewerViewController.xib */,
+			);
+			path = "Image Viewer";
 			sourceTree = "<group>";
 		};
 		6AA6576D2C109E9200081A21 /* Collection View Layout */ = {
@@ -493,12 +542,13 @@
 		6AC388672BECF1EA0034A0B6 /* Sports */ = {
 			isa = PBXGroup;
 			children = (
+				6A805EA22C1C736800B4B8A7 /* Lottie Files */,
+				6AC388942BECF7740034A0B6 /* Configurations */,
 				6A40A0802BEF9D2500F44877 /* Constants */,
 				6A40A0762BEE0DF800F44877 /* Nibs */,
 				6AC388972BECF79A0034A0B6 /* UserDefaults */,
 				6AC388962BECF7870034A0B6 /* Extensions */,
 				6AC388952BECF77D0034A0B6 /* Utilites */,
-				6AC388942BECF7740034A0B6 /* Configurations */,
 				6AC388932BECF7680034A0B6 /* Network */,
 				6AC388922BECF7210034A0B6 /* Scense */,
 				6AC388902BECF7040034A0B6 /* App */,
@@ -821,9 +871,13 @@
 				6AC388E62BEDEC4A0034A0B6 /* SocialMedia.storyboard in Resources */,
 				6AC388A22BECF7F50034A0B6 /* Release.xcconfig in Resources */,
 				6AA0AA382C18735B00DD1C07 /* HotNewsCollectionViewCell.xib in Resources */,
+				6A805EA52C1C738500B4B8A7 /* LoadingSquare.json in Resources */,
 				6AC388E42BEDE8910034A0B6 /* TournamentTableViewCell.xib in Resources */,
+				6AA0AA402C196B2500DD1C07 /* ImageViewerViewController.xib in Resources */,
+				6A805EA92C1C742400B4B8A7 /* Failed.json in Resources */,
 				6AC388722BECF1EC0034A0B6 /* Assets.xcassets in Resources */,
 				6AC388E82BEDEC560034A0B6 /* News.storyboard in Resources */,
+				6A805EA72C1C740800B4B8A7 /* Success.json in Resources */,
 				6AF6F5D42BFF26320088617E /* Auth.storyboard in Resources */,
 				6AC388702BECF1EA0034A0B6 /* Main.storyboard in Resources */,
 				6AC388A02BECF7F10034A0B6 /* Development.xcconfig in Resources */,
@@ -901,6 +955,7 @@
 				6A40A08A2BF1DC8C00F44877 /* TournamentDetailsRouter.swift in Sources */,
 				6AC388BF2BECF87B0034A0B6 /* NetworkRequestable.swift in Sources */,
 				6A4F16A12C00601E00926BC6 /* CustomNavigationController.swift in Sources */,
+				6A805EAC2C1C758500B4B8A7 /* LottieIndicator.swift in Sources */,
 				6A4F167D2BFF49B600926BC6 /* HotNewsTableViewCell.swift in Sources */,
 				6AA657832C118BD200081A21 /* ListNewsTableViewCell.swift in Sources */,
 				6A40A0792BEE0E1D00F44877 /* EmptyDataView.swift in Sources */,
@@ -917,6 +972,7 @@
 				6A40A0682BEE016F00F44877 /* ConnectRouter.swift in Sources */,
 				6A40A06A2BEE016F00F44877 /* ConnectInteractor.swift in Sources */,
 				6AC388DC2BECFA620034A0B6 /* HomeEntity.swift in Sources */,
+				6AA0AA3F2C196B2500DD1C07 /* ImageViewerViewController.swift in Sources */,
 				6AC3886B2BECF1EA0034A0B6 /* SceneDelegate.swift in Sources */,
 				6AC388D82BECFA620034A0B6 /* HomeRouter.swift in Sources */,
 			);

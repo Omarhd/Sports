@@ -32,6 +32,10 @@ extension NewsDetailsPresenter: NewsDetailsPresenterProtocol {
         view?.configureNewsUI(with: news)
         interactor?.fetchNewsDetails(newsID: news.id ?? 1)
     }
+    
+    func didSelectTappedImage(image: UIImage) {
+        router?.showFullImage(image: image)
+    }
 }
 // MARK: Conform to NewsDetailsInteractorOutput
 extension NewsDetailsPresenter: NewsDetailsInteractorOutput {

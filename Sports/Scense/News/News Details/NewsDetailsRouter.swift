@@ -18,7 +18,14 @@ class NewsDetailsRouter {
 }
 // MARK: Conforming to NewsDetailsRouterProtocol
 extension NewsDetailsRouter: NewsDetailsRouterProtocol {
+
     func popViewController() {
         self.viewController?.navigationController?.popViewController(animated: true)
+    }
+    
+    func showFullImage(image: UIImage) {
+        let detailsViewController = ImageViewerViewController(image: image)
+        detailsViewController.navigationController?.navigationBar.isHidden = true
+        viewController?.showHero(detailsViewController, navigationAnimationType: .auto)
     }
 }

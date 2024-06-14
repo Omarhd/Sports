@@ -117,5 +117,13 @@ extension NewsViewController: NewsControllerProtocol {
         setEmptyCase(imageName: "", title: "No Data".localized, message: "Try again Later".localized, containerView: self.view)
     }
     
+    func showLoadingIndicator() {
+        self.view.showLottieLoader(with: "LoadingSquare")
+    }
+    
+    func showFailureIndicator() {
+        self.view.hideLottieLoader()
+    }
+    
 }
 

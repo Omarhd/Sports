@@ -24,6 +24,7 @@ class NewsInteractor {
 extension NewsInteractor: NewsPresenterInteractorProtocol {
    
     func fetchHotNews() {
+        self.presenter?.showLoading()
         guard let url = URL(string: base + "post-list/en/1") else { fatalError("Invalid URL") }
         let newsList: AnyPublisher<NewsEntity, Error> = session.request(from: url)
         
@@ -32,16 +33,19 @@ extension NewsInteractor: NewsPresenterInteractorProtocol {
                 switch Result {
                 case .failure(let error):
                     self?.presenter?.didFailedLoadingHotNews(error: error)
+                    self?.presenter?.dismissLoading()
                 case .finished:
                     break
                 }
             } receiveValue: { [weak self] news in
                 self?.presenter?.succeedReceivedHotNews(newsData: news)
+                self?.presenter?.dismissLoading()
             }
             .store(in: &anyCancellable)
     }
     
     func fetchNews(parameters: NewsRequest) {
+        self.presenter?.showLoading()
         guard let url = URL(string: base + "post-list/en/\(parameters.pageNumber)") else { fatalError("Invalid URL") }
         let newsList: AnyPublisher<NewsEntity, Error> = session.request(from: url)
         
@@ -50,11 +54,13 @@ extension NewsInteractor: NewsPresenterInteractorProtocol {
                 switch Result {
                 case .failure(let error):
                     self?.presenter?.didFailedLoadingNews(error: error)
+                    self?.presenter?.dismissLoading()
                 case .finished:
                     break
                 }
             } receiveValue: { [weak self] news in
                 self?.presenter?.succeedReceivedNews(newsData: news)
+                self?.presenter?.dismissLoading()
             }
             .store(in: &anyCancellable)
     }

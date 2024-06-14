@@ -33,7 +33,18 @@ class NewsDetailsViewController: UIViewController {
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         presenter?.viewDidLoad()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        tapGesture.numberOfTapsRequired = 1
+        newsImage.isUserInteractionEnabled = true
+        newsImage.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+        guard let image = newsImage.image else { return }
+        presenter?.didSelectTappedImage(image: image)
     }
 }
 

@@ -50,6 +50,14 @@ extension HomePresenter: HomePresenterProtocol {
 // MARK: Conform to HomeInteractorOutput
 extension HomePresenter: HomeInteractorOutput {
     
+    func showLoading() {
+        view?.showLoadingIndicator()
+    }
+    
+    func dismissLoading() {
+        view?.showFailureIndicator()
+    }
+    
     func succeedReceivedTournaments(tournamentData: HomeEntity) {
         tournaments = tournamentData.results ?? []
         tournaments.isEmpty ? (view?.setEmptyState()) : (view?.loadTableView())

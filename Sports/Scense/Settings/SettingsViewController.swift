@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UITableViewController {
     // MARK: Outlets
     //    @IBOutlet private weak var testLabel: UILabel!
     // MARK: Propertiesss
