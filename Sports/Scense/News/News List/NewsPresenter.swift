@@ -76,10 +76,11 @@ extension NewsPresenter: NewsPresenterProtocol {
     }
     
     func viewDidLoad() {
+        interactor?.fetchHotNews()
+
         let newsParameters = NewsRequest(pageNumber: 2)
         let parameters: NewsRequest = newsParameters
         interactor?.fetchNews(parameters: parameters)
-        interactor?.fetchHotNews()
     }
 }
 

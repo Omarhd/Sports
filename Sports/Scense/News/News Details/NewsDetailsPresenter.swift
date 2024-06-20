@@ -18,7 +18,8 @@ final class NewsDetailsPresenter: NSObject {
     // MARK: - Init
     init(view: NewsDetailsControllerProtocol?,
          interactor: NewsDetailsPresenterInteractorProtocol?,
-         router: NewsDetailsRouterProtocol?, news: News) {
+         router: NewsDetailsRouterProtocol?,
+         news: News) {
         self.view = view
         self.interactor = interactor
         self.router = router

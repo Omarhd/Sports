@@ -7,6 +7,23 @@
 
 import UIKit
 
+extension UICollectionView {
+    
+    func setupCollectionView(viewController: UIViewController) {
+        self.delegate = viewController as? UICollectionViewDelegate
+        self.dataSource = viewController as? UICollectionViewDataSource
+        self.contentInset = .zero
+        self.showsHorizontalScrollIndicator = false
+        self.showsVerticalScrollIndicator = false
+    }
+    
+    func registerCell<Cell: UICollectionViewCell>(cell: Cell.Type) {
+        let nibName = String(describing: cell.self)
+        self.register(UINib(nibName: nibName, bundle: nil), forCellWithReuseIdentifier: nibName)
+    }
+}
+
+
 extension UITableView {
     
     func setupTableView(viewController: UIViewController) {

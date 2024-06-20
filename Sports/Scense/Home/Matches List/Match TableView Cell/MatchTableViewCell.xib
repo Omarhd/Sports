@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="102" id="KGk-i7-Jjw" customClass="MatchTableViewCell" customModule="Sports" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="433" height="102"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM" customClass="RoundedCornerView" customModule="Sports" customModuleProvider="target">
+                <rect key="frame" x="0.0" y="0.0" width="433" height="102"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="lxD-G2-Eu3">
+                        <rect key="frame" x="16" y="16" width="401" height="70"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="lgs-ci-f43">
+                                <rect key="frame" x="0.0" y="0.0" width="123.33333333333333" height="70"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="r7q-uA-wLN">
+                                        <rect key="frame" x="0.0" y="0.0" width="53.666666666666664" height="70"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNU-F6-NsY">
+                                                <rect key="frame" x="0.0" y="0.0" width="53.666666666666664" height="70"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6in-Pw-GJW">
+                                        <rect key="frame" x="69.666666666666671" y="0.0" width="53.666666666666671" height="70"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="brh-e7-ntT">
+                                                <rect key="frame" x="11" y="19" width="32" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="jFg-6A-lKg"/>
+                                                    <constraint firstAttribute="width" constant="32" id="voa-cU-OGO"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="headerID"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="brh-e7-ntT" firstAttribute="centerX" secondItem="6in-Pw-GJW" secondAttribute="centerX" id="Fy4-wP-kMZ"/>
+                                            <constraint firstItem="brh-e7-ntT" firstAttribute="centerY" secondItem="6in-Pw-GJW" secondAttribute="centerY" id="mVY-Vc-urC"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNO-fq-slZ">
+                                <rect key="frame" x="183" y="0.0" width="35.333333333333343" height="70"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="zRL-FY-M7W">
+                                <rect key="frame" x="277.66666666666669" y="0.0" width="123.33333333333331" height="70"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u4b-me-3kI">
+                                        <rect key="frame" x="0.0" y="0.0" width="53.666666666666664" height="70"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VDY-5f-lcn">
+                                                <rect key="frame" x="11" y="19" width="32" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="32" id="Vub-fa-8tC"/>
+                                                    <constraint firstAttribute="height" constant="32" id="h84-1j-pxl"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="headerID"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="VDY-5f-lcn" firstAttribute="centerX" secondItem="u4b-me-3kI" secondAttribute="centerX" id="kDK-Tu-ufU"/>
+                                            <constraint firstItem="VDY-5f-lcn" firstAttribute="centerY" secondItem="u4b-me-3kI" secondAttribute="centerY" id="ru1-Pz-cFF"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="J9T-CI-Dlb">
+                                        <rect key="frame" x="69.666666666666629" y="0.0" width="53.666666666666657" height="70"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGq-HX-oA5">
+                                                <rect key="frame" x="0.0" y="0.0" width="53.666666666666664" height="70"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="zRL-FY-M7W" firstAttribute="width" secondItem="lgs-ci-f43" secondAttribute="width" id="FBF-a5-XU5"/>
+                            <constraint firstAttribute="height" constant="70" id="W6b-Az-7rA"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <color key="backgroundColor" name="Cell"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="lxD-G2-Eu3" secondAttribute="trailing" constant="16" id="Y6b-GJ-Rci"/>
+                    <constraint firstItem="lxD-G2-Eu3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="a5j-wd-fgK"/>
+                    <constraint firstAttribute="bottom" secondItem="lxD-G2-Eu3" secondAttribute="bottom" constant="16" id="c0d-G1-Z6N"/>
+                    <constraint firstItem="lxD-G2-Eu3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="mpo-3j-tKg"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="awayTeamImage" destination="VDY-5f-lcn" id="Gzr-lN-oZ4"/>
+                <outlet property="awayTeamNameLabel" destination="DGq-HX-oA5" id="AOE-gY-lCi"/>
+                <outlet property="homeTeamImage" destination="brh-e7-ntT" id="31k-hz-ufr"/>
+                <outlet property="homeTeamNameLabel" destination="YNU-F6-NsY" id="W4r-ZM-3fm"/>
+                <outlet property="matchTimeLabel" destination="tNO-fq-slZ" id="XBl-cX-QBT"/>
+            </connections>
+            <point key="canvasLocation" x="216.03053435114504" y="-9.8591549295774659"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Cell">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

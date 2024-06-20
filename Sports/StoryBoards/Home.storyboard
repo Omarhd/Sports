@@ -35,21 +35,42 @@
                                     <constraint firstAttribute="width" constant="240" id="bwt-29-iDE"/>
                                 </constraints>
                             </imageView>
-                            <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PPS-dA-yaf">
-                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                            <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PPS-dA-yaf">
+                                <rect key="frame" x="0.0" y="163" width="393" height="606"/>
                                 <color key="backgroundColor" name="BackgroundColor"/>
                             </tableView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kL8-6g-Ict">
+                                <rect key="frame" x="0.0" y="103" width="393" height="60"/>
+                                <color key="backgroundColor" name="BackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="bVY-Gs-GcN"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Z9c-n2-Jyf" customClass="DateFilterCollectionViewLayout" customModule="Sports" customModuleProvider="target">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="86f-pt-fMQ"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="YrX-ZN-KtS"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="PPS-dA-yaf" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="4R9-dt-d2e"/>
-                            <constraint firstItem="PPS-dA-yaf" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="AKe-cO-CRT"/>
+                            <constraint firstItem="kL8-6g-Ict" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="8iE-33-EUy"/>
                             <constraint firstItem="PPS-dA-yaf" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="EOq-LT-UXV"/>
+                            <constraint firstItem="kL8-6g-Ict" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Evb-eb-aVV"/>
                             <constraint firstItem="T0C-FO-RtA" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="HBO-IC-XgD"/>
                             <constraint firstItem="PPS-dA-yaf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="KgM-HT-mf3"/>
                             <constraint firstItem="T0C-FO-RtA" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="SJW-c2-aoj"/>
                             <constraint firstItem="PPS-dA-yaf" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="eLD-9O-Bi7"/>
+                            <constraint firstItem="kL8-6g-Ict" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="tbY-mp-BLY"/>
+                            <constraint firstItem="PPS-dA-yaf" firstAttribute="top" secondItem="kL8-6g-Ict" secondAttribute="bottom" id="xPA-Fo-b67"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tournaments" id="9db-4Y-CmP">
@@ -71,6 +92,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="collectionView" destination="kL8-6g-Ict" id="xxo-V7-l4s"/>
                         <outlet property="tableView" destination="PPS-dA-yaf" id="CaC-Dl-uwJ"/>
                         <segue destination="Ey8-Y1-Xqt" kind="show" id="p6k-2h-vr7"/>
                     </connections>
@@ -132,7 +154,7 @@
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <image name="shippingbox" catalog="system" width="128" height="123"/>
         <namedColor name="AccentColor">
-            <color red="0.0" green="0.53725490196078429" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.8784313725490196" blue="0.72941176470588232" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="BackgroundColor">
             <color red="0.9882352941176471" green="0.99607843137254903" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
