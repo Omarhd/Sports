@@ -9,13 +9,16 @@
 import UIKit
 import Hero
 import SkeletonView
-import Combine
 
 class HomeViewController: UIViewController {
     
     // MARK: Outlets
+    @IBOutlet weak var todayButton: UIButton!
+    @IBOutlet weak var todayButtonConstraint: NSLayoutConstraint!
+    @IBOutlet weak var liveSwitcher: UISwitch!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var contentView: UIView!
     
     // MARK: Properties
     var presenter: HomePresenterProtocol?
@@ -49,11 +52,21 @@ class HomeViewController: UIViewController {
         enableHero()
     }
     
+    @IBAction func liveSwitcherAction(_ sender: Any) {
+        liveSwitcher.isOn ? (collectionView.isHidden = true) : (collectionView.isHidden = false)
+        liveSwitcher.isOn ? (isToday()) : (itsNotToday())
+        liveSwitcher.isOn ? (presenter?.fetchMatches(with: .live)) : (presenter?.fetchMatches(with: .dated))
+    }
+    
+    @IBAction func todayAction(_ sender: Any) {
+        presenter?.setToday(for: 6)
+    }
 }
 
 extension HomeViewController: HomeControllerProtocol {
     
-    func setInitialDateFilter(for indexPath: IndexPath) {
+    func highlightSelectedDate(for indexPath: IndexPath) {
+        collectionView.reloadData()
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
     }
     
@@ -64,12 +77,12 @@ extension HomeViewController: HomeControllerProtocol {
     }
     
     func setEmptyState() {
-        setEmptyCase(imageName: "figure.soccer", title: "No Data", message: "Try again Later".localized, containerView: self.tableView.backgroundView ?? self.view)
+        setEmptyCase(imageName: "figure.soccer", title: "No Data", message: "Try again Later".localized, containerView: contentView)
     }
     
     func showFailureAlert(with error: String) {
         messageHelper.showMessage(title: "\(error)", body: "Error While Fetching Data".localized, theme: .error, presentationStyle: .top, duration: .forever)
-        setEmptyCase(imageName: "", title: "No Data".localized, message: "Try again Later".localized, containerView: self.tableView.backgroundView ?? self.view)
+        setEmptyCase(imageName: "", title: "No Data".localized, message: "Try again Later".localized, containerView: contentView)
         self.view.showFailureLottieLoader()
     }
     
@@ -81,4 +94,17 @@ extension HomeViewController: HomeControllerProtocol {
         self.view.hideLottieLoader()
     }
     
+    func isToday() {
+        UIView.animate(withDuration: 0.5) {
+            self.todayButtonConstraint.constant = -90.0
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    func itsNotToday() {
+        UIView.animate(withDuration: 0.5) {
+            self.todayButtonConstraint.constant = 90.0
+            self.view.layoutIfNeeded()
+        }
+    }
 }

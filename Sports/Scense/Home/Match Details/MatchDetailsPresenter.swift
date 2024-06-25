@@ -15,6 +15,9 @@ final class MatchDetailsPresenter: NSObject {
     private var interactor: MatchDetailsPresenterInteractorProtocol?
     private var router: MatchDetailsRouterProtocol?
     private var match: Match
+    private var tabs: [Tabs] = []
+    var allTabs: [Tabs] { return self.tabs }
+    var selectedTabIndex: Int = 0
 
     // MARK: - Init
     init(view: MatchDetailsControllerProtocol?,
@@ -32,10 +35,37 @@ final class MatchDetailsPresenter: NSObject {
 extension MatchDetailsPresenter: MatchDetailsPresenterProtocol {
 
     func viewDidLoad() {
-        print(match)
+        interactor?.fetchTabs()
+        view?.configureTeamsUI(with: self.match)
+        view?.configurePageController(with: self.match)
+        view?.highlightSelectedTab(for: selectedTabIndex)
+        view?.configurePageController(with: self.match)
+    }
+    
+    func configureTabsCell(with cell: TabCollectionViewCell, for index: Int) {
+        cell.isSelected = index == selectedTabIndex
+        let cellData = self.tabs[index].rawValue
+        cell.configureTab(tab: cellData)
+    }
+    
+    func didSelectTab(for index: Int) {
+        selectedTabIndex = index
+        view?.highlightSelectedTab(for: index)
+        NotificationCenter.default.post(name: .selectedTabIndexChanged, object: nil, userInfo: ["selectedTabIndex": selectedTabIndex])
+    }
+    
+    func updateCollection(with index: Int) {
+        selectedTabIndex = index
+        view?.highlightSelectedTab(for: index)
     }
 }
 
 // MARK: Conform to MatchDetailsInteractorOutput
 extension MatchDetailsPresenter: MatchDetailsInteractorOutput {
+   
+    func didFetchTabs(_ tabs: [Tabs]) {
+        self.tabs = tabs
+    }
 }
+
+

@@ -16,6 +16,12 @@ class MatchDetailsInteractor {
     }
 }
 extension MatchDetailsInteractor: MatchDetailsPresenterInteractorProtocol {
+    
+    func fetchTabs() {
+        let tabs: [Tabs] = [.overview, .stats, .odds, .h2h, .standing]
+        presenter?.didFetchTabs(tabs)
+    }
+    
 
 }
 

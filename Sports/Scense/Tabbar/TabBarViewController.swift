@@ -22,25 +22,25 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     
     private func setupViewControllers() {
         let homeViewController = HomeConfigurator.viewController(input: .init())
-        let socialMediaViewController = SocialMediaConfigurator.viewController(input: .init())
+        let LiveViewController = LiveConfigurator.viewController(input: .init())
         let newsViewController = NewsConfigurator.viewController(input: .init())
         let settingsViewController = SettingsConfigurator.viewController(input: .init())
         
         let homeNavController = CustomNavigationController(rootViewController: homeViewController)
-        let socialMediaNavController = CustomNavigationController(rootViewController: socialMediaViewController)
+        let LiveNavController = CustomNavigationController(rootViewController: LiveViewController)
         let newsNavController = CustomNavigationController(rootViewController: newsViewController)
         let settingsNavController = CustomNavigationController(rootViewController: settingsViewController)
         
         // Create tab bar items
         homeNavController.tabBarItem = UITabBarItem(title: "Home".localized, image: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house.fill"))
-        socialMediaNavController.tabBarItem = UITabBarItem(title: "Social".localized, image: UIImage(systemName: "link.circle"), selectedImage: UIImage(systemName: "link.circle.fill"))
+        LiveNavController.tabBarItem = UITabBarItem(title: "Live".localized, image: UIImage(systemName: "livephoto"), selectedImage: UIImage(systemName: "livephoto.play"))
         newsNavController.tabBarItem = UITabBarItem(title: "News".localized, image: UIImage(systemName: "newspaper.circle"), selectedImage: UIImage(systemName: "newspaper.circle.fill"))
         settingsNavController.tabBarItem = UITabBarItem(title: "Settings".localized, image: UIImage(systemName: "gear"), selectedImage: UIImage(systemName: "gear.circle.fill"))
         
         // Assign view controllers to the tab bar controller
         self.viewControllers = [
             homeNavController,
-            socialMediaNavController,
+            LiveNavController,
             newsNavController,
             settingsNavController
         ]

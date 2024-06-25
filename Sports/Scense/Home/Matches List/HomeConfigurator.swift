@@ -32,6 +32,7 @@ final class HomeConfigurator {
 // Controller --> Presenter
 protocol HomePresenterProtocol: AnyObject {
     func viewDidLoad()
+    func setToday(for indexPath: Int)
     func configureFilterCell(with cell: DateFilterCollectionViewCell, for index: Int)
     func didSelectDate(for index: Int)
     func configureTournamentHeaderCell(with cell: TournamentHeaderTableViewCell, for section: Int)
@@ -39,7 +40,9 @@ protocol HomePresenterProtocol: AnyObject {
     func didSelectMatch(for indexPath: IndexPath)
     func numberOfRowsInSection(for section: Int) -> Int
     func setSectionCollapse(isCollapsed: Bool, for section: Int)
+    func fetchMatches(with matchType: MatchType)
     
+    var selectedDateIndex: Int { get }
     var numberOfDateFilter: Int { get }
     var numberOfSections: Int { get }
     var heightForSectionHeader: CGFloat { get }
@@ -54,13 +57,16 @@ protocol HomeControllerProtocol: AnyObject {
     func loadTableView()
     func showLoadingIndicator()
     func showFailureIndicator()
-    func setInitialDateFilter(for indexPath: IndexPath)
+    func highlightSelectedDate(for indexPath: IndexPath)
+    func isToday()
+    func itsNotToday()
 }
 
 // Presenter --> Interactor
 protocol HomePresenterInteractorProtocol: AnyObject {
     func fetchDates()
-    func fetchHotMatches(parameters: MatchesRequest)
+    func fetchMatches(parameters: MatchesRequest)
+    func fetchLiveMatches(parameters: LiveMatchesRequest)
 }
 
 // Interactor --> Presenter
@@ -85,10 +91,11 @@ protocol DateFilterCellProtocol: AnyObject {
 
 // MatchCell --> Protocol
 protocol MatchCellProtocol: AnyObject {
-    func configureCellUI(match: Match?)
+    func configureMatchCellUI(match: Match?)
+    func configureLiveMatchCellUI(matchStatus: MatchStatus?, match: Match?)
 }
 
 // TournamentHeaderCell --> Protocol
 protocol TournamentHeaderCellProtocol: AnyObject {
-    func configureTournamentCellUI(title: String?, sectionIndex: Int)
+    func configureTournamentCellUI(title: String?, sectionIndex: Int, matchesCount: String, isCollapsed: Bool)
 }

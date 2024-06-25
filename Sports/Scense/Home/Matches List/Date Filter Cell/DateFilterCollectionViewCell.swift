@@ -11,17 +11,19 @@ class DateFilterCollectionViewCell: UICollectionViewCell, DateFilterCellProtocol
     
     // MARK: - Outlets
     @IBOutlet weak var currentDateTitleLabel: UILabel!
-    @IBOutlet weak var selectionView: UIView!
+    @IBOutlet weak var underLineView: UIView!
+    
+    // MARK: - Properties
     
     // MARK: - LifeCycle
     override func awakeFromNib() {
         super.awakeFromNib()
-        selectionView.isHidden = true // Initially hidden
     }
     
     // MARK: - Methods
     func configureFilter(date: DateModel) {
         self.currentDateTitleLabel.text = date.formattedString
-        self.selectionView.isHidden = !isSelected
+        isSelected ? (currentDateTitleLabel.textColor = .label) : (currentDateTitleLabel.textColor = .lightGray)
+        isSelected ? (underLineView.backgroundColor = .accent) : (underLineView.backgroundColor = .clear)
     }
 }

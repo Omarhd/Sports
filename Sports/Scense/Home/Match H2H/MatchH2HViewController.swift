@@ -1,18 +1,18 @@
 //
-//  SocialMediaViewController.swift
+//  MatchH2HViewController.swift
 //  Sports
 //
-//  Created by ios Dev on 24/05/2024.
+//  Created by ios Dev on 24/06/2024.
 //  Copyright (c) 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 
 import UIKit
 
-class SocialMediaViewController: UIViewController {
+class MatchH2HViewController: UIViewController {
     // MARK: Outlets
     //    @IBOutlet private weak var testLabel: UILabel!
     // MARK: Propertiesss
-    var presenter: SocialMediaPresenterProtocol?
+    var presenter: MatchH2HPresenterProtocol?
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +20,6 @@ class SocialMediaViewController: UIViewController {
     }
 }
 
-extension SocialMediaViewController: SocialMediaControllerProtocol {
+extension MatchH2HViewController: MatchH2HControllerProtocol {
 }
 

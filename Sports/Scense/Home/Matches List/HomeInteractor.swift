@@ -39,9 +39,31 @@ extension HomeInteractor: HomePresenterInteractorProtocol {
         self.presenter?.didFetchDates(dates)
     }
     
-    func fetchHotMatches(parameters: MatchesRequest) {
+    func fetchMatches(parameters: MatchesRequest) {
         self.presenter?.showLoading()
-        guard let url = URL(string: base + "football/matchlist") else { fatalError("Invalid URL") }
+        guard let url = URL(string: base + "basketball/matchlist") else { fatalError("Invalid URL") }
+        let tournament: AnyPublisher<HomeEntity, Error> = session.requestQuery(from: url, withQueryParams: parameters)
+        
+        tournament.receive(on: RunLoop.main)
+            .sink { [weak self] Result in
+                switch Result {
+                case .failure(let error):
+                    self?.presenter?.didFailedLoadingMatches(error: error)
+                    self?.presenter?.dismissLoading()
+                case .finished:
+                    self?.presenter?.dismissLoading()
+                    break
+                }
+            } receiveValue: { [weak self] matches in
+                self?.presenter?.succeedReceivedMatches(matchesData: matches)
+                self?.presenter?.dismissLoading()
+            }
+            .store(in: &anyCancellable)
+    }
+    
+    func fetchLiveMatches(parameters: LiveMatchesRequest) {
+        self.presenter?.showLoading()
+        guard let url = URL(string: base + "basketball/matchlist/live") else { fatalError("Invalid URL") }
         let tournament: AnyPublisher<HomeEntity, Error> = session.requestQuery(from: url, withQueryParams: parameters)
         
         tournament.receive(on: RunLoop.main)

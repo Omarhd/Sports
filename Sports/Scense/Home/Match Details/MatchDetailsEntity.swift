@@ -8,6 +8,15 @@
 
 import Foundation
 
+// MARK: - Tabs Model
+enum Tabs: String {
+    case overview = "Overview"
+    case stats = "Stats"
+    case h2h = "H2H"
+    case standing = "Standing"
+    case odds = "Odds"
+}
+
 final class MatchDetailsEntity {
     
 }

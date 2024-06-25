@@ -16,19 +16,25 @@ class CustomNavigationController: UINavigationController {
     
     private func setupNavigationBarAppearance() {
         // Standard appearance with a blur effect
-        let standardAppearance = UINavigationBarAppearance()
-        standardAppearance.configureWithOpaqueBackground()
-        standardAppearance.backgroundEffect = UIBlurEffect(style: .regular)
+        let appearance = UINavigationBarAppearance()
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.background]
+        appearance.backgroundColor = UIColor.background
+
+        navigationController?.navigationBar.tintColor = .accent
+        appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.background]
+        appearance.shadowColor = .clear
         
+        navigationItem.standardAppearance = appearance
+
         // Scroll edge appearance (blur effect when scrolling)
         let scrollEdgeAppearance = UINavigationBarAppearance()
         scrollEdgeAppearance.configureWithTransparentBackground()
         scrollEdgeAppearance.backgroundEffect = UIBlurEffect(style: .regular)
         
         // Apply the appearance to the navigation bar
-        navigationBar.standardAppearance = standardAppearance
+        navigationBar.standardAppearance = appearance
         navigationBar.scrollEdgeAppearance = scrollEdgeAppearance
-        navigationBar.compactAppearance = standardAppearance
+        navigationBar.compactAppearance = appearance
         navigationBar.tintColor = .label // Color of bar button items
     }
 }

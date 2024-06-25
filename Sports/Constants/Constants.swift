@@ -9,6 +9,6 @@ import Foundation
 
 let MainStoryboard: String = "Main"
 let HomeStoryboard: String = "Home"
-let SocialStoryboard: String = "SocialMedia"
+let LiveStoryboard: String = "Live"
 let NewsStoryboard: String = "News"
 let SettingsStoryboard: String = "Settings"

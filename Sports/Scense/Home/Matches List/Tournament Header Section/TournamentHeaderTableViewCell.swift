@@ -33,9 +33,11 @@ class TournamentHeaderTableViewCell: UITableViewCell, TournamentHeaderCellProtoc
         // Configure the view for the selected state
     }
     
-    func configureTournamentCellUI(title: String?, sectionIndex: Int) {
+    func configureTournamentCellUI(title: String?, sectionIndex: Int, matchesCount: String, isCollapsed: Bool) {
+        self.isCollapsed = isCollapsed
         titleHeaderLabel.text = title
         section = sectionIndex
+        isCollapsed ? (matchesCountLabel.text = matchesCount) : (matchesCountLabel.isHidden = true)
         shrinkButton.setImage(isCollapsed ? (UIImage(systemName: "chevron.up.circle.fill")) : (UIImage(systemName: "chevron.forward.circle.fill")), for: .normal)
     }
     

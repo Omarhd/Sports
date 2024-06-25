@@ -14,8 +14,10 @@ final class HomePresenter: NSObject {
     private var interactor: HomePresenterInteractorProtocol?
     private var router: HomeRouterProtocol?
     
-    private var selectedDateIndex: Int?
+    private var matchType: MatchType = .dated
+    
     private var collapsedSections: [Bool] = []
+    var selectedDateIndex: Int = 6
 
     var dates: [DateModel] = []
     var tournaments: [MatchList] = []
@@ -44,29 +46,37 @@ extension HomePresenter: HomePresenterProtocol {
     
     func viewDidLoad() {
         interactor?.fetchDates()
-        view?.setInitialDateFilter(for: IndexPath(item: dates.count / 2, section: 0))
-        let matchesParameters = MatchesRequest(pageNumber: 1, dated: Date().toFormattedString(),
-                                               matchStatus: "scheduled",
-                                               groupBy: "tournament")
-        interactor?.fetchHotMatches(parameters: matchesParameters)
-        collapsedSections = Array(repeating: false, count: numberOfSections)
+        view?.highlightSelectedDate(for: IndexPath(item: selectedDateIndex, section: 0))
+        fetchMatches(with: .dated)
+    }
+    
+    func setToday(for indexPath: Int) {
+        view?.isToday()
+        view?.highlightSelectedDate(for: IndexPath(row: indexPath, section: 0))
+        selectedDateIndex = indexPath
+        fetchMatches(with: .dated)
     }
     
     func configureFilterCell(with cell: DateFilterCollectionViewCell, for index: Int) {
+        cell.isSelected = index == selectedDateIndex
         let filterCellData = dates[index]
         cell.configureFilter(date: filterCellData)
     }
     
     func didSelectDate(for index: Int) {
+        view?.highlightSelectedDate(for: IndexPath(item: index, section: 0))
         selectedDateIndex = index
         let date = dates[index].date
         let isTodayOrFuture = Calendar.current.isDate(date, inSameDayAs: Date()) || date > Date()
-        let matchStatus = isTodayOrFuture ? "scheduled" : "finished"
+        let matchStatus: FetchMatchStatus = isTodayOrFuture ? .scheduled : .finished
         let matchesParameters = MatchesRequest(pageNumber: 1,
                                                    dated: date.toFormattedString(),
                                                    matchStatus: matchStatus)
         
-        interactor?.fetchHotMatches(parameters: matchesParameters)
+        interactor?.fetchMatches(parameters: matchesParameters)
+        
+        let isToday = Calendar.current.isDate(date, inSameDayAs: Date())
+        isToday ? (view?.isToday()) : (view?.itsNotToday())
     }
 
     func setSectionCollapse(isCollapsed: Bool, for section: Int) {
@@ -81,17 +91,33 @@ extension HomePresenter: HomePresenterProtocol {
     
     func configureTournamentHeaderCell(with cell: TournamentHeaderTableViewCell, for section: Int) {
         let headerTitle = tournaments[section].tournamentName
-        cell.configureTournamentCellUI(title: headerTitle, sectionIndex: section)
+        let isCollapsed = isSectionCollapsed[section]
+        let matchesCount = isCollapsed ? (tournaments[section].match?.count.description ?? "0") : ("0")
+        cell.configureTournamentCellUI(title: headerTitle, sectionIndex: section, matchesCount: matchesCount, isCollapsed: isCollapsed)
     }
     
     func configureCell(with cell: MatchTableViewCell, for indexPath: IndexPath) {
         let cellData = tournaments[indexPath.section].match?[indexPath.row]
-        cell.configureCellUI(match: cellData)
+        cell.configureMatchCellUI(match: cellData)
+        cell.configureLiveMatchCellUI(matchStatus: cellData?.details?.matchDetails?.statusID ?? .abnormal, match: cellData)
     }
     
     func didSelectMatch(for indexPath: IndexPath) {
         guard let match = tournaments[indexPath.section].match?[indexPath.row] else { return }
         router?.navigateToDetails(match: match)
+    }
+    
+    func fetchMatches(with matchType: MatchType) {
+        let liveMatchParameters = LiveMatchesRequest(pageNumber: 1)
+        let matchesParameters = MatchesRequest(pageNumber: 1, dated: Date().toFormattedString(),
+                                               matchStatus: .scheduled)
+        switch matchType {
+        case .dated:
+            interactor?.fetchMatches(parameters: matchesParameters)
+        case .live:
+            interactor?.fetchLiveMatches(parameters: liveMatchParameters)
+        }
+        collapsedSections = Array(repeating: false, count: numberOfSections)
     }
     
 }

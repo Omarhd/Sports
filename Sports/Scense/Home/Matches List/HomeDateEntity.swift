@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum MatchType {
+    case live
+    case dated
+}
+
 enum SpecialDate {
     case today
     case yesterday
