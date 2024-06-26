@@ -49,7 +49,6 @@ extension HomeInteractor: HomePresenterInteractorProtocol {
                 switch Result {
                 case .failure(let error):
                     self?.presenter?.didFailedLoadingMatches(error: error)
-                    self?.presenter?.dismissLoading()
                 case .finished:
                     self?.presenter?.dismissLoading()
                     break
@@ -71,7 +70,6 @@ extension HomeInteractor: HomePresenterInteractorProtocol {
                 switch Result {
                 case .failure(let error):
                     self?.presenter?.didFailedLoadingMatches(error: error)
-                    self?.presenter?.dismissLoading()
                 case .finished:
                     self?.presenter?.dismissLoading()
                     break

@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MatchStatsViewController" customModule="Sports" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="aE3-RW-Jg5" id="LKy-uy-s4I"/>
                 <outlet property="view" destination="iN0-l3-epB" id="6M1-dW-W9k"/>
             </connections>
         </placeholder>
@@ -18,14 +19,26 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aE3-RW-Jg5">
+                    <rect key="frame" x="0.0" y="47" width="390" height="763"/>
+                    <color key="backgroundColor" name="BackgroundColor"/>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" name="TouchBarBezel"/>
-            <point key="canvasLocation" x="-355" y="-10"/>
+            <color key="backgroundColor" name="BackgroundColor"/>
+            <constraints>
+                <constraint firstItem="aE3-RW-Jg5" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="PJT-06-cnh"/>
+                <constraint firstItem="aE3-RW-Jg5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="nVZ-y5-7WR"/>
+                <constraint firstItem="aE3-RW-Jg5" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="ny1-rt-WxQ"/>
+                <constraint firstItem="aE3-RW-Jg5" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="sOt-LC-uda"/>
+            </constraints>
+            <point key="canvasLocation" x="-355.38461538461536" y="-10.663507109004739"/>
         </view>
     </objects>
     <resources>
-        <namedColor name="TouchBarBezel">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="BackgroundColor">
+            <color red="0.9882352941176471" green="0.99607843137254903" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

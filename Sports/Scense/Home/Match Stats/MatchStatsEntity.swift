@@ -11,3 +11,13 @@ import Foundation
 final class MatchStatsEntity {
     
 }
+
+enum StatBasketballTitle: Int {
+    case pointGoals = 1
+    case twoPointGoals = 2
+    case FreeThrowGoals = 3
+    case NumberOfPausesRemaining = 4
+    case fouls = 5
+    case freeThrowPercentage = 6
+    case totalPauses = 7
+}

@@ -4,13 +4,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MatchStandingViewController" customModule="Sports" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="n5L-vD-svd" id="z4y-hs-IHy"/>
                 <outlet property="view" destination="iN0-l3-epB" id="0Di-1j-0eC"/>
             </connections>
         </placeholder>
@@ -18,14 +19,26 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="n5L-vD-svd">
+                    <rect key="frame" x="0.0" y="47" width="390" height="763"/>
+                    <color key="backgroundColor" name="BackgroundColor"/>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemBlueColor"/>
-            <point key="canvasLocation" x="-355" y="-10"/>
+            <color key="backgroundColor" name="BackgroundColor"/>
+            <constraints>
+                <constraint firstItem="n5L-vD-svd" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="JdG-1e-OOG"/>
+                <constraint firstItem="n5L-vD-svd" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="KaR-DJ-uXZ"/>
+                <constraint firstItem="n5L-vD-svd" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="Z4t-U0-Rd4"/>
+                <constraint firstItem="n5L-vD-svd" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="eZV-bO-KcH"/>
+            </constraints>
+            <point key="canvasLocation" x="-355.38461538461536" y="-10.663507109004739"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <namedColor name="BackgroundColor">
+            <color red="0.9882352941176471" green="0.99607843137254903" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

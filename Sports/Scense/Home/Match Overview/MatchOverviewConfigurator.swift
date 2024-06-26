@@ -32,10 +32,18 @@ final class MatchOverviewConfigurator {
 // Controller --> Presenter
 protocol MatchOverviewPresenterProtocol: AnyObject {
     func viewDidLoad()
+    func heightForRowInSection(in section: MatchOverviewSection) -> CGFloat
+    func numberOfCells(in section: MatchOverviewSection) -> Int
+    func configureVenueCell(with cell: VenueTableViewCell, for indexPath: IndexPath)
+    func configureWeatherCell(with cell: WeatherTableViewCell, for indexPath: IndexPath)
+    func configureTournamentCell(with cell: TournamentTableViewCell, for indexPath: IndexPath)
+    
+    var numberOfSections: Int { get }
 }
 
 // Presenter --> Controller
 protocol MatchOverviewControllerProtocol: AnyObject {
+    func reloadSection()
 }
 
 // Presenter --> Interactor
@@ -48,4 +56,25 @@ protocol MatchOverviewInteractorOutput: AnyObject {
 // Presenter --> Router
 protocol MatchOverviewRouterProtocol: AnyObject {
     func popViewController()
+}
+
+// VenueCell --> Protocol
+protocol VenueCellCellProtocol: AnyObject {
+    func configureCellUI(venue: VenueDetails?)
+}
+
+// WeatherCell --> Protocol
+protocol WeatherCellCellProtocol: AnyObject {
+    func configureCellUI(weather: Weather?)
+}
+
+// WeatherCell --> Protocol
+protocol TournamentCellCellProtocol: AnyObject {
+    func configureCellUI(tournament: TournamentDetails?)
+}
+
+enum MatchOverviewSection: Int, CaseIterable {
+    case venue
+    case weather
+    case tournament
 }

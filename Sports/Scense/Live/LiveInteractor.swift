@@ -32,10 +32,8 @@ extension LiveInteractor: LivePresenterInteractorProtocol {
                 switch Result {
                 case .failure(let error):
                     self?.presenter?.didFailedLoadingMatches(error: error)
-                    self?.presenter?.dismissLoading()
                 case .finished:
                     self?.presenter?.dismissLoading()
-                    break
                 }
             } receiveValue: { [weak self] matches in
                 self?.presenter?.succeedReceivedMatches(matchesData: matches)

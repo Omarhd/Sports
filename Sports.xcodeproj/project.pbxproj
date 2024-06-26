@@ -137,6 +137,26 @@
 		6AC388E42BEDE8910034A0B6 /* MatchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AC388E22BEDE8910034A0B6 /* MatchTableViewCell.xib */; };
 		6AC388E82BEDEC560034A0B6 /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AC388E72BEDEC550034A0B6 /* News.storyboard */; };
 		6AC388EB2BEDEC660034A0B6 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AC388EA2BEDEC660034A0B6 /* Settings.storyboard */; };
+		6AD9E49C2C2AAD4400D36E24 /* StatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD9E49A2C2AAD4400D36E24 /* StatTableViewCell.swift */; };
+		6AD9E49D2C2AAD4400D36E24 /* StatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AD9E49B2C2AAD4400D36E24 /* StatTableViewCell.xib */; };
+		6AD9E4A42C2ACFBE00D36E24 /* LoadingBasket.json in Resources */ = {isa = PBXBuildFile; fileRef = 6AD9E4A32C2ACFBE00D36E24 /* LoadingBasket.json */; };
+		6AD9E4A82C2AD86000D36E24 /* MatchH2HTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD9E4A62C2AD86000D36E24 /* MatchH2HTableViewCell.swift */; };
+		6AD9E4A92C2AD86000D36E24 /* MatchH2HTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AD9E4A72C2AD86000D36E24 /* MatchH2HTableViewCell.xib */; };
+		6AD9E4AD2C2AE0ED00D36E24 /* MatchH2HSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD9E4AB2C2AE0ED00D36E24 /* MatchH2HSelectionTableViewCell.swift */; };
+		6AD9E4AE2C2AE0ED00D36E24 /* MatchH2HSelectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AD9E4AC2C2AE0ED00D36E24 /* MatchH2HSelectionTableViewCell.xib */; };
+		6AD9E4B22C2AE61300D36E24 /* TeamSelectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD9E4B02C2AE61300D36E24 /* TeamSelectionCollectionViewCell.swift */; };
+		6AD9E4B32C2AE61300D36E24 /* TeamSelectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AD9E4B12C2AE61300D36E24 /* TeamSelectionCollectionViewCell.xib */; };
+		6AD9E4B72C2BF6CC00D36E24 /* MatchOddsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD9E4B52C2BF6CC00D36E24 /* MatchOddsTableViewCell.swift */; };
+		6AD9E4B82C2BF6CC00D36E24 /* MatchOddsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AD9E4B62C2BF6CC00D36E24 /* MatchOddsTableViewCell.xib */; };
+		6AD9E4BC2C2BF75D00D36E24 /* MatchOddsSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD9E4BA2C2BF75D00D36E24 /* MatchOddsSelectionTableViewCell.swift */; };
+		6AD9E4BD2C2BF75D00D36E24 /* MatchOddsSelectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AD9E4BB2C2BF75D00D36E24 /* MatchOddsSelectionTableViewCell.xib */; };
+		6AD9E4C02C2C07C400D36E24 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD9E4BF2C2C07C400D36E24 /* Double+Extension.swift */; };
+		6AD9E4C52C2C1E9000D36E24 /* SeasonTeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD9E4C32C2C1E9000D36E24 /* SeasonTeamTableViewCell.swift */; };
+		6AD9E4C62C2C1E9000D36E24 /* SeasonTeamTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AD9E4C42C2C1E9000D36E24 /* SeasonTeamTableViewCell.xib */; };
+		6AD9E4C92C2C1EA500D36E24 /* SeasonSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD9E4C72C2C1EA500D36E24 /* SeasonSelectionTableViewCell.swift */; };
+		6AD9E4CA2C2C1EA500D36E24 /* SeasonSelectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AD9E4C82C2C1EA500D36E24 /* SeasonSelectionTableViewCell.xib */; };
+		6AD9E4D32C2C42E900D36E24 /* SeasonStandingHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD9E4D12C2C42E900D36E24 /* SeasonStandingHeaderTableViewCell.swift */; };
+		6AD9E4D42C2C42E900D36E24 /* SeasonStandingHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AD9E4D22C2C42E900D36E24 /* SeasonStandingHeaderTableViewCell.xib */; };
 		6AE2BB1A2C29790A00941D17 /* DetailsPagesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE2BB132C29790A00941D17 /* DetailsPagesPresenter.swift */; };
 		6AE2BB1B2C29790A00941D17 /* DetailsPagesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE2BB142C29790A00941D17 /* DetailsPagesRouter.swift */; };
 		6AE2BB1C2C29790A00941D17 /* DetailsPagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE2BB152C29790A00941D17 /* DetailsPagesViewController.swift */; };
@@ -178,6 +198,12 @@
 		6AE2BB692C297FC900941D17 /* MatchStandingConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE2BB622C297FC900941D17 /* MatchStandingConfigurator.swift */; };
 		6AE2BB6A2C297FC900941D17 /* MatchStandingEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE2BB632C297FC900941D17 /* MatchStandingEntity.swift */; };
 		6AE2BB6B2C297FC900941D17 /* MatchStandingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AE2BB642C297FC900941D17 /* MatchStandingViewController.xib */; };
+		6AE2BB732C2A976900941D17 /* VenueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE2BB712C2A976800941D17 /* VenueTableViewCell.swift */; };
+		6AE2BB742C2A976900941D17 /* VenueTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AE2BB722C2A976900941D17 /* VenueTableViewCell.xib */; };
+		6AE2BB772C2A977700941D17 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE2BB752C2A977700941D17 /* WeatherTableViewCell.swift */; };
+		6AE2BB782C2A977700941D17 /* WeatherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AE2BB762C2A977700941D17 /* WeatherTableViewCell.xib */; };
+		6AE2BB7C2C2A988D00941D17 /* TournamentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE2BB7A2C2A988D00941D17 /* TournamentTableViewCell.swift */; };
+		6AE2BB7D2C2A988D00941D17 /* TournamentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AE2BB7B2C2A988D00941D17 /* TournamentTableViewCell.xib */; };
 		6AF6F5C12BFE06C40088617E /* UIViewCornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF6F5C02BFE06C40088617E /* UIViewCornerRadius.swift */; };
 		6AF6F5D42BFF26320088617E /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AF6F5D32BFF26320088617E /* Auth.storyboard */; };
 /* End PBXBuildFile section */
@@ -310,6 +336,26 @@
 		6AC388E22BEDE8910034A0B6 /* MatchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchTableViewCell.xib; sourceTree = "<group>"; };
 		6AC388E72BEDEC550034A0B6 /* News.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
 		6AC388EA2BEDEC660034A0B6 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		6AD9E49A2C2AAD4400D36E24 /* StatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatTableViewCell.swift; sourceTree = "<group>"; };
+		6AD9E49B2C2AAD4400D36E24 /* StatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatTableViewCell.xib; sourceTree = "<group>"; };
+		6AD9E4A32C2ACFBE00D36E24 /* LoadingBasket.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LoadingBasket.json; sourceTree = "<group>"; };
+		6AD9E4A62C2AD86000D36E24 /* MatchH2HTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchH2HTableViewCell.swift; sourceTree = "<group>"; };
+		6AD9E4A72C2AD86000D36E24 /* MatchH2HTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchH2HTableViewCell.xib; sourceTree = "<group>"; };
+		6AD9E4AB2C2AE0ED00D36E24 /* MatchH2HSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchH2HSelectionTableViewCell.swift; sourceTree = "<group>"; };
+		6AD9E4AC2C2AE0ED00D36E24 /* MatchH2HSelectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchH2HSelectionTableViewCell.xib; sourceTree = "<group>"; };
+		6AD9E4B02C2AE61300D36E24 /* TeamSelectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSelectionCollectionViewCell.swift; sourceTree = "<group>"; };
+		6AD9E4B12C2AE61300D36E24 /* TeamSelectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamSelectionCollectionViewCell.xib; sourceTree = "<group>"; };
+		6AD9E4B52C2BF6CC00D36E24 /* MatchOddsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchOddsTableViewCell.swift; sourceTree = "<group>"; };
+		6AD9E4B62C2BF6CC00D36E24 /* MatchOddsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchOddsTableViewCell.xib; sourceTree = "<group>"; };
+		6AD9E4BA2C2BF75D00D36E24 /* MatchOddsSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchOddsSelectionTableViewCell.swift; sourceTree = "<group>"; };
+		6AD9E4BB2C2BF75D00D36E24 /* MatchOddsSelectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchOddsSelectionTableViewCell.xib; sourceTree = "<group>"; };
+		6AD9E4BF2C2C07C400D36E24 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		6AD9E4C32C2C1E9000D36E24 /* SeasonTeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonTeamTableViewCell.swift; sourceTree = "<group>"; };
+		6AD9E4C42C2C1E9000D36E24 /* SeasonTeamTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeasonTeamTableViewCell.xib; sourceTree = "<group>"; };
+		6AD9E4C72C2C1EA500D36E24 /* SeasonSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonSelectionTableViewCell.swift; sourceTree = "<group>"; };
+		6AD9E4C82C2C1EA500D36E24 /* SeasonSelectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeasonSelectionTableViewCell.xib; sourceTree = "<group>"; };
+		6AD9E4D12C2C42E900D36E24 /* SeasonStandingHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonStandingHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		6AD9E4D22C2C42E900D36E24 /* SeasonStandingHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeasonStandingHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		6AE2BB132C29790A00941D17 /* DetailsPagesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPagesPresenter.swift; sourceTree = "<group>"; };
 		6AE2BB142C29790A00941D17 /* DetailsPagesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPagesRouter.swift; sourceTree = "<group>"; };
 		6AE2BB152C29790A00941D17 /* DetailsPagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPagesViewController.swift; sourceTree = "<group>"; };
@@ -351,6 +397,12 @@
 		6AE2BB622C297FC900941D17 /* MatchStandingConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStandingConfigurator.swift; sourceTree = "<group>"; };
 		6AE2BB632C297FC900941D17 /* MatchStandingEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStandingEntity.swift; sourceTree = "<group>"; };
 		6AE2BB642C297FC900941D17 /* MatchStandingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchStandingViewController.xib; sourceTree = "<group>"; };
+		6AE2BB712C2A976800941D17 /* VenueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueTableViewCell.swift; sourceTree = "<group>"; };
+		6AE2BB722C2A976900941D17 /* VenueTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VenueTableViewCell.xib; sourceTree = "<group>"; };
+		6AE2BB752C2A977700941D17 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
+		6AE2BB762C2A977700941D17 /* WeatherTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherTableViewCell.xib; sourceTree = "<group>"; };
+		6AE2BB7A2C2A988D00941D17 /* TournamentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentTableViewCell.swift; sourceTree = "<group>"; };
+		6AE2BB7B2C2A988D00941D17 /* TournamentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TournamentTableViewCell.xib; sourceTree = "<group>"; };
 		6AF6F5C02BFE06C40088617E /* UIViewCornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewCornerRadius.swift; sourceTree = "<group>"; };
 		6AF6F5D32BFF26320088617E /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -476,6 +528,7 @@
 		6A805EA32C1C737000B4B8A7 /* Loading Animations */ = {
 			isa = PBXGroup;
 			children = (
+				6AD9E4A32C2ACFBE00D36E24 /* LoadingBasket.json */,
 				6A805EA82C1C742400B4B8A7 /* Failed.json */,
 				6A805EA62C1C740800B4B8A7 /* Success.json */,
 				6A805EA42C1C738500B4B8A7 /* LoadingSquare.json */,
@@ -791,6 +844,7 @@
 		6AC388962BECF7870034A0B6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				6AD9E4BE2C2C07A600D36E24 /* Double */,
 				6A9A90992C26BE2600AA3A09 /* UIImage */,
 				6A9A907A2C24416A00AA3A09 /* Int */,
 				6A9A906C2C22CD1000AA3A09 /* Date */,
@@ -902,6 +956,96 @@
 			path = "Match TableView Cell";
 			sourceTree = "<group>";
 		};
+		6AD9E4952C2AAD1B00D36E24 /* Stat Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6AD9E49A2C2AAD4400D36E24 /* StatTableViewCell.swift */,
+				6AD9E49B2C2AAD4400D36E24 /* StatTableViewCell.xib */,
+			);
+			path = "Stat Cell";
+			sourceTree = "<group>";
+		};
+		6AD9E4A52C2AD83D00D36E24 /* Match H2H Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6AD9E4A62C2AD86000D36E24 /* MatchH2HTableViewCell.swift */,
+				6AD9E4A72C2AD86000D36E24 /* MatchH2HTableViewCell.xib */,
+			);
+			path = "Match H2H Cell";
+			sourceTree = "<group>";
+		};
+		6AD9E4AA2C2AE0C800D36E24 /* Match H2H Selection Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6AD9E4AF2C2AE0F600D36E24 /* Team Selection Collection Cell */,
+				6AD9E4AB2C2AE0ED00D36E24 /* MatchH2HSelectionTableViewCell.swift */,
+				6AD9E4AC2C2AE0ED00D36E24 /* MatchH2HSelectionTableViewCell.xib */,
+			);
+			path = "Match H2H Selection Cell";
+			sourceTree = "<group>";
+		};
+		6AD9E4AF2C2AE0F600D36E24 /* Team Selection Collection Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6AD9E4B02C2AE61300D36E24 /* TeamSelectionCollectionViewCell.swift */,
+				6AD9E4B12C2AE61300D36E24 /* TeamSelectionCollectionViewCell.xib */,
+			);
+			path = "Team Selection Collection Cell";
+			sourceTree = "<group>";
+		};
+		6AD9E4B42C2BF6AD00D36E24 /* Match Odds Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6AD9E4B52C2BF6CC00D36E24 /* MatchOddsTableViewCell.swift */,
+				6AD9E4B62C2BF6CC00D36E24 /* MatchOddsTableViewCell.xib */,
+			);
+			path = "Match Odds Cell";
+			sourceTree = "<group>";
+		};
+		6AD9E4B92C2BF72F00D36E24 /* Match Odds Selection Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6AD9E4BA2C2BF75D00D36E24 /* MatchOddsSelectionTableViewCell.swift */,
+				6AD9E4BB2C2BF75D00D36E24 /* MatchOddsSelectionTableViewCell.xib */,
+			);
+			path = "Match Odds Selection Cell";
+			sourceTree = "<group>";
+		};
+		6AD9E4BE2C2C07A600D36E24 /* Double */ = {
+			isa = PBXGroup;
+			children = (
+				6AD9E4BF2C2C07C400D36E24 /* Double+Extension.swift */,
+			);
+			path = Double;
+			sourceTree = "<group>";
+		};
+		6AD9E4C12C2C1E6600D36E24 /* Seaon Team Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6AD9E4C32C2C1E9000D36E24 /* SeasonTeamTableViewCell.swift */,
+				6AD9E4C42C2C1E9000D36E24 /* SeasonTeamTableViewCell.xib */,
+			);
+			path = "Seaon Team Cell";
+			sourceTree = "<group>";
+		};
+		6AD9E4C22C2C1E7700D36E24 /* Season Selection Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6AD9E4C72C2C1EA500D36E24 /* SeasonSelectionTableViewCell.swift */,
+				6AD9E4C82C2C1EA500D36E24 /* SeasonSelectionTableViewCell.xib */,
+			);
+			path = "Season Selection Cell";
+			sourceTree = "<group>";
+		};
+		6AD9E4D02C2C42C600D36E24 /* Season Header Section */ = {
+			isa = PBXGroup;
+			children = (
+				6AD9E4D12C2C42E900D36E24 /* SeasonStandingHeaderTableViewCell.swift */,
+				6AD9E4D22C2C42E900D36E24 /* SeasonStandingHeaderTableViewCell.xib */,
+			);
+			path = "Season Header Section";
+			sourceTree = "<group>";
+		};
 		6AE2BB042C29786000941D17 /* Match Detail Pages Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -918,9 +1062,12 @@
 		6AE2BB212C297F3B00941D17 /* Match Overview */ = {
 			isa = PBXGroup;
 			children = (
+				6AE2BB792C2A987700941D17 /* Tournament Cell */,
+				6AE2BB702C2A975100941D17 /* Weather Cell */,
+				6AE2BB6F2C2A974700941D17 /* Venue Cell */,
+				6AE2BB282C297F8900941D17 /* MatchOverviewViewController.swift */,
 				6AE2BB262C297F8900941D17 /* MatchOverviewPresenter.swift */,
 				6AE2BB272C297F8900941D17 /* MatchOverviewRouter.swift */,
-				6AE2BB282C297F8900941D17 /* MatchOverviewViewController.swift */,
 				6AE2BB292C297F8900941D17 /* MatchOverviewInteractor.swift */,
 				6AE2BB2A2C297F8900941D17 /* MatchOverviewConfigurator.swift */,
 				6AE2BB2B2C297F8900941D17 /* MatchOverviewEntity.swift */,
@@ -932,11 +1079,12 @@
 		6AE2BB222C297F4D00941D17 /* Match Stats */ = {
 			isa = PBXGroup;
 			children = (
-				6AE2BB342C297F9A00941D17 /* MatchStatsPresenter.swift */,
-				6AE2BB352C297F9A00941D17 /* MatchStatsRouter.swift */,
+				6AD9E4952C2AAD1B00D36E24 /* Stat Cell */,
 				6AE2BB362C297F9A00941D17 /* MatchStatsViewController.swift */,
+				6AE2BB342C297F9A00941D17 /* MatchStatsPresenter.swift */,
 				6AE2BB372C297F9A00941D17 /* MatchStatsInteractor.swift */,
 				6AE2BB382C297F9A00941D17 /* MatchStatsConfigurator.swift */,
+				6AE2BB352C297F9A00941D17 /* MatchStatsRouter.swift */,
 				6AE2BB392C297F9A00941D17 /* MatchStatsEntity.swift */,
 				6AE2BB3A2C297F9A00941D17 /* MatchStatsViewController.xib */,
 			);
@@ -946,11 +1094,13 @@
 		6AE2BB232C297F5800941D17 /* Match Odds */ = {
 			isa = PBXGroup;
 			children = (
-				6AE2BB422C297FAB00941D17 /* MatchOddsPresenter.swift */,
-				6AE2BB432C297FAB00941D17 /* MatchOddsRouter.swift */,
+				6AD9E4B92C2BF72F00D36E24 /* Match Odds Selection Cell */,
+				6AD9E4B42C2BF6AD00D36E24 /* Match Odds Cell */,
 				6AE2BB442C297FAB00941D17 /* MatchOddsViewController.swift */,
+				6AE2BB422C297FAB00941D17 /* MatchOddsPresenter.swift */,
 				6AE2BB452C297FAB00941D17 /* MatchOddsInteractor.swift */,
 				6AE2BB462C297FAB00941D17 /* MatchOddsConfigurator.swift */,
+				6AE2BB432C297FAB00941D17 /* MatchOddsRouter.swift */,
 				6AE2BB472C297FAB00941D17 /* MatchOddsEntity.swift */,
 				6AE2BB482C297FAB00941D17 /* MatchOddsViewController.xib */,
 			);
@@ -960,11 +1110,13 @@
 		6AE2BB242C297F6200941D17 /* Match H2H */ = {
 			isa = PBXGroup;
 			children = (
-				6AE2BB502C297FBA00941D17 /* MatchH2HPresenter.swift */,
-				6AE2BB512C297FBA00941D17 /* MatchH2HRouter.swift */,
+				6AD9E4AA2C2AE0C800D36E24 /* Match H2H Selection Cell */,
+				6AD9E4A52C2AD83D00D36E24 /* Match H2H Cell */,
 				6AE2BB522C297FBA00941D17 /* MatchH2HViewController.swift */,
+				6AE2BB502C297FBA00941D17 /* MatchH2HPresenter.swift */,
 				6AE2BB532C297FBA00941D17 /* MatchH2HInteractor.swift */,
 				6AE2BB542C297FBA00941D17 /* MatchH2HConfigurator.swift */,
+				6AE2BB512C297FBA00941D17 /* MatchH2HRouter.swift */,
 				6AE2BB552C297FBA00941D17 /* MatchH2HEntity.swift */,
 				6AE2BB562C297FBA00941D17 /* MatchH2HViewController.xib */,
 			);
@@ -974,15 +1126,45 @@
 		6AE2BB252C297F7100941D17 /* Match Standing */ = {
 			isa = PBXGroup;
 			children = (
-				6AE2BB5E2C297FC900941D17 /* MatchStandingPresenter.swift */,
-				6AE2BB5F2C297FC900941D17 /* MatchStandingRouter.swift */,
+				6AD9E4D02C2C42C600D36E24 /* Season Header Section */,
+				6AD9E4C22C2C1E7700D36E24 /* Season Selection Cell */,
+				6AD9E4C12C2C1E6600D36E24 /* Seaon Team Cell */,
 				6AE2BB602C297FC900941D17 /* MatchStandingViewController.swift */,
+				6AE2BB5E2C297FC900941D17 /* MatchStandingPresenter.swift */,
 				6AE2BB612C297FC900941D17 /* MatchStandingInteractor.swift */,
 				6AE2BB622C297FC900941D17 /* MatchStandingConfigurator.swift */,
+				6AE2BB5F2C297FC900941D17 /* MatchStandingRouter.swift */,
 				6AE2BB632C297FC900941D17 /* MatchStandingEntity.swift */,
 				6AE2BB642C297FC900941D17 /* MatchStandingViewController.xib */,
 			);
 			path = "Match Standing";
+			sourceTree = "<group>";
+		};
+		6AE2BB6F2C2A974700941D17 /* Venue Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6AE2BB712C2A976800941D17 /* VenueTableViewCell.swift */,
+				6AE2BB722C2A976900941D17 /* VenueTableViewCell.xib */,
+			);
+			path = "Venue Cell";
+			sourceTree = "<group>";
+		};
+		6AE2BB702C2A975100941D17 /* Weather Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6AE2BB752C2A977700941D17 /* WeatherTableViewCell.swift */,
+				6AE2BB762C2A977700941D17 /* WeatherTableViewCell.xib */,
+			);
+			path = "Weather Cell";
+			sourceTree = "<group>";
+		};
+		6AE2BB792C2A987700941D17 /* Tournament Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6AE2BB7A2C2A988D00941D17 /* TournamentTableViewCell.swift */,
+				6AE2BB7B2C2A988D00941D17 /* TournamentTableViewCell.xib */,
+			);
+			path = "Tournament Cell";
 			sourceTree = "<group>";
 		};
 		6AF6F5BF2BFDF77D0088617E /* HomeViewController Animation */ = {
@@ -1112,19 +1294,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AC388DF2BECFA780034A0B6 /* Home.storyboard in Resources */,
+				6AD9E4A92C2AD86000D36E24 /* MatchH2HTableViewCell.xib in Resources */,
 				6AC3889E2BECF7ED0034A0B6 /* Debug.xcconfig in Resources */,
 				6AE2BB412C297F9A00941D17 /* MatchStatsViewController.xib in Resources */,
 				6A9A908F2C246A5200AA3A09 /* Live.storyboard in Resources */,
 				6AC388EB2BEDEC660034A0B6 /* Settings.storyboard in Resources */,
 				6A4F167E2BFF49B600926BC6 /* HotNewsTableViewCell.xib in Resources */,
+				6AD9E4AE2C2AE0ED00D36E24 /* MatchH2HSelectionTableViewCell.xib in Resources */,
 				6AE2BB4F2C297FAB00941D17 /* MatchOddsViewController.xib in Resources */,
 				6AC388752BECF1EC0034A0B6 /* LaunchScreen.storyboard in Resources */,
+				6AE2BB7D2C2A988D00941D17 /* TournamentTableViewCell.xib in Resources */,
+				6AD9E4D42C2C42E900D36E24 /* SeasonStandingHeaderTableViewCell.xib in Resources */,
 				6AA6579E2C11C0F400081A21 /* NewsDetailsViewController.xib in Resources */,
 				6AA6578E2C118C4C00081A21 /* ListNewsSectionHeaderTableViewCell.xib in Resources */,
 				6A8C57E62C2959AE008CEE9F /* TabCollectionViewCell.xib in Resources */,
 				6A40A07A2BEE0E1D00F44877 /* EmptyDataView.xib in Resources */,
+				6AD9E4C62C2C1E9000D36E24 /* SeasonTeamTableViewCell.xib in Resources */,
 				6AA6578A2C118C3600081A21 /* HotNewsSectionHeaderTableViewCell.xib in Resources */,
 				6A805EC22C22B31200B4B8A7 /* DateFilterCollectionViewCell.xib in Resources */,
+				6AD9E4A42C2ACFBE00D36E24 /* LoadingBasket.json in Resources */,
 				6AA657842C118BD200081A21 /* ListNewsTableViewCell.xib in Resources */,
 				6AC388A22BECF7F50034A0B6 /* Release.xcconfig in Resources */,
 				6AA0AA382C18735B00DD1C07 /* HotNewsCollectionViewCell.xib in Resources */,
@@ -1132,16 +1320,23 @@
 				6A805EA52C1C738500B4B8A7 /* LoadingSquare.json in Resources */,
 				6AC388E42BEDE8910034A0B6 /* MatchTableViewCell.xib in Resources */,
 				6AA0AA402C196B2500DD1C07 /* ImageViewerViewController.xib in Resources */,
+				6AD9E4B82C2BF6CC00D36E24 /* MatchOddsTableViewCell.xib in Resources */,
 				6A9A90912C246CE500AA3A09 /* LiveViewController.xib in Resources */,
+				6AD9E4B32C2AE61300D36E24 /* TeamSelectionCollectionViewCell.xib in Resources */,
 				6AE2BB6B2C297FC900941D17 /* MatchStandingViewController.xib in Resources */,
 				6A805EA92C1C742400B4B8A7 /* Failed.json in Resources */,
 				6AC388722BECF1EC0034A0B6 /* Assets.xcassets in Resources */,
+				6AD9E4CA2C2C1EA500D36E24 /* SeasonSelectionTableViewCell.xib in Resources */,
+				6AD9E49D2C2AAD4400D36E24 /* StatTableViewCell.xib in Resources */,
+				6AE2BB742C2A976900941D17 /* VenueTableViewCell.xib in Resources */,
 				6AC388E82BEDEC560034A0B6 /* News.storyboard in Resources */,
+				6AE2BB782C2A977700941D17 /* WeatherTableViewCell.xib in Resources */,
 				6AE2BB5D2C297FBA00941D17 /* MatchH2HViewController.xib in Resources */,
 				6AE2BB332C297F8900941D17 /* MatchOverviewViewController.xib in Resources */,
 				6A805EA72C1C740800B4B8A7 /* Success.json in Resources */,
 				6AF6F5D42BFF26320088617E /* Auth.storyboard in Resources */,
 				6AC388702BECF1EA0034A0B6 /* Main.storyboard in Resources */,
+				6AD9E4BD2C2BF75D00D36E24 /* MatchOddsSelectionTableViewCell.xib in Resources */,
 				6AC388A02BECF7F10034A0B6 /* Development.xcconfig in Resources */,
 				6A9A90A02C26D5FC00AA3A09 /* MatchDetailsHeader.xib in Resources */,
 			);
@@ -1154,6 +1349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AD9E4B22C2AE61300D36E24 /* TeamSelectionCollectionViewCell.swift in Sources */,
 				6A9A907E2C244F6C00AA3A09 /* MatchStatusEnum.swift in Sources */,
 				6A4F16782BFF491A00926BC6 /* NewsEntity.swift in Sources */,
 				6AE2BB322C297F8900941D17 /* MatchOverviewEntity.swift in Sources */,
@@ -1161,7 +1357,9 @@
 				6AE2BB3D2C297F9A00941D17 /* MatchStatsViewController.swift in Sources */,
 				6AE2BB2D2C297F8900941D17 /* MatchOverviewPresenter.swift in Sources */,
 				6AC388C22BECF88C0034A0B6 /* NetworkError.swift in Sources */,
+				6AD9E49C2C2AAD4400D36E24 /* StatTableViewCell.swift in Sources */,
 				6AE2BB1E2C29790A00941D17 /* DetailsPagesConfigurator.swift in Sources */,
+				6AE2BB7C2C2A988D00941D17 /* TournamentTableViewCell.swift in Sources */,
 				6A9A90872C245AAF00AA3A09 /* LivePresenter.swift in Sources */,
 				6AC3889C2BECF7E80034A0B6 /* Configuration.swift in Sources */,
 				6A40A06C2BEE016F00F44877 /* ConnectEntity.swift in Sources */,
@@ -1188,7 +1386,9 @@
 				6A4F16732BFF491A00926BC6 /* NewsPresenter.swift in Sources */,
 				6AE2BB2E2C297F8900941D17 /* MatchOverviewRouter.swift in Sources */,
 				6AA6576F2C109EDA00081A21 /* StretchyHeaderLayout.swift in Sources */,
+				6AD9E4D32C2C42E900D36E24 /* SeasonStandingHeaderTableViewCell.swift in Sources */,
 				6AA657992C11C0F400081A21 /* NewsDetailsRouter.swift in Sources */,
+				6AE2BB732C2A976900941D17 /* VenueTableViewCell.swift in Sources */,
 				6AC388D92BECFA620034A0B6 /* HomeViewController.swift in Sources */,
 				6AC388B02BECF82F0034A0B6 /* StringExtensions.swift in Sources */,
 				6AC388DB2BECFA620034A0B6 /* HomeConfigurator.swift in Sources */,
@@ -1232,10 +1432,12 @@
 				6AA6579D2C11C0F400081A21 /* NewsDetailsEntity.swift in Sources */,
 				6A805EC12C22B31200B4B8A7 /* DateFilterCollectionViewCell.swift in Sources */,
 				6A9A90752C22F5A300AA3A09 /* HomeDateEntity.swift in Sources */,
+				6AD9E4C02C2C07C400D36E24 /* Double+Extension.swift in Sources */,
 				6A4F16762BFF491A00926BC6 /* NewsInteractor.swift in Sources */,
 				6A4F16982C005CB700926BC6 /* SettingsPresenter.swift in Sources */,
 				6A4F169A2C005CB700926BC6 /* SettingsViewController.swift in Sources */,
 				6AA6573B2C04AED200081A21 /* CustomLayout+Extensions.swift in Sources */,
+				6AD9E4C92C2C1EA500D36E24 /* SeasonSelectionTableViewCell.swift in Sources */,
 				6AE2BB4B2C297FAB00941D17 /* MatchOddsViewController.swift in Sources */,
 				6A4F169C2C005CB700926BC6 /* SettingsConfigurator.swift in Sources */,
 				6A805EB82C22AB3800B4B8A7 /* MatchDetailsInteractor.swift in Sources */,
@@ -1244,6 +1446,7 @@
 				6AE2BB652C297FC900941D17 /* MatchStandingPresenter.swift in Sources */,
 				6AE2BB5B2C297FBA00941D17 /* MatchH2HConfigurator.swift in Sources */,
 				6A9A909B2C26BE3500AA3A09 /* SkeletonImages.swift in Sources */,
+				6AD9E4B72C2BF6CC00D36E24 /* MatchOddsTableViewCell.swift in Sources */,
 				6A40A07D2BEE117F00F44877 /* UITableViewExtension.swift in Sources */,
 				6AE2BB592C297FBA00941D17 /* MatchH2HViewController.swift in Sources */,
 				6A9A90722C22DF0B00AA3A09 /* TournamentHeaderTableViewCell.swift in Sources */,
@@ -1253,15 +1456,19 @@
 				6A805EAC2C1C758500B4B8A7 /* LottieIndicator.swift in Sources */,
 				6A9A90A22C26E19800AA3A09 /* MatchDetailsExtension.swift in Sources */,
 				6A4F167D2BFF49B600926BC6 /* HotNewsTableViewCell.swift in Sources */,
+				6AD9E4A82C2AD86000D36E24 /* MatchH2HTableViewCell.swift in Sources */,
 				6AE2BB692C297FC900941D17 /* MatchStandingConfigurator.swift in Sources */,
+				6AD9E4C52C2C1E9000D36E24 /* SeasonTeamTableViewCell.swift in Sources */,
 				6AA657832C118BD200081A21 /* ListNewsTableViewCell.swift in Sources */,
 				6AE2BB1F2C29790A00941D17 /* DetailsPagesEntity.swift in Sources */,
 				6A40A0792BEE0E1D00F44877 /* EmptyDataView.swift in Sources */,
 				6AC388A62BECF8080034A0B6 /* SwiftMessagesHelper.swift in Sources */,
+				6AE2BB772C2A977700941D17 /* WeatherTableViewCell.swift in Sources */,
 				6AC388C32BECF88C0034A0B6 /* NetworkErrorExtension.swift in Sources */,
 				6AC388BB2BECF87B0034A0B6 /* Session.swift in Sources */,
 				6A805EBA2C22AB3800B4B8A7 /* MatchDetailsEntity.swift in Sources */,
 				6AA6578D2C118C4C00081A21 /* ListNewsSectionHeaderTableViewCell.swift in Sources */,
+				6AD9E4AD2C2AE0ED00D36E24 /* MatchH2HSelectionTableViewCell.swift in Sources */,
 				6AE2BB1D2C29790A00941D17 /* DetailsPagesInteractor.swift in Sources */,
 				6A9A907C2C24417B00AA3A09 /* Int+Extension.swift in Sources */,
 				6AE2BB3C2C297F9A00941D17 /* MatchStatsRouter.swift in Sources */,
@@ -1272,6 +1479,7 @@
 				6AC388E32BEDE8910034A0B6 /* MatchTableViewCell.swift in Sources */,
 				6AE2BB5A2C297FBA00941D17 /* MatchH2HInteractor.swift in Sources */,
 				6A9A908B2C245AAF00AA3A09 /* LiveConfigurator.swift in Sources */,
+				6AD9E4BC2C2BF75D00D36E24 /* MatchOddsSelectionTableViewCell.swift in Sources */,
 				6AA657892C118C3600081A21 /* HotNewsSectionHeaderTableViewCell.swift in Sources */,
 				6AC388AE2BECF8270034A0B6 /* UIViewExtensions.swift in Sources */,
 				6AE2BB3B2C297F9A00941D17 /* MatchStatsPresenter.swift in Sources */,

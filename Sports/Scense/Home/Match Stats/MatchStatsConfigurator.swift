@@ -32,10 +32,16 @@ final class MatchStatsConfigurator {
 // Controller --> Presenter
 protocol MatchStatsPresenterProtocol: AnyObject {
     func viewDidLoad()
+    func configureStatCell(for cell: StatTableViewCell, for index: Int)
+    
+    var numberOfRowsInSection: Int { get }
+    var numberOfSections: Int { get }
 }
 
 // Presenter --> Controller
 protocol MatchStatsControllerProtocol: AnyObject {
+    func reloadTableView()
+    func setEmptyView()
 }
 
 // Presenter --> Interactor
@@ -48,4 +54,8 @@ protocol MatchStatsInteractorOutput: AnyObject {
 // Presenter --> Router
 protocol MatchStatsRouterProtocol: AnyObject {
     func popViewController()
+}
+
+protocol StatCellProtocol: AnyObject {
+    func configureCell(with stats: [Double])
 }

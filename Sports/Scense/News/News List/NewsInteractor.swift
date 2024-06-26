@@ -33,9 +33,8 @@ extension NewsInteractor: NewsPresenterInteractorProtocol {
                 switch Result {
                 case .failure(let error):
                     self?.presenter?.didFailedLoadingHotNews(error: error)
-                    self?.presenter?.dismissLoading()
                 case .finished:
-                    break
+                    self?.presenter?.dismissLoading()
                 }
             } receiveValue: { [weak self] news in
                 self?.presenter?.succeedReceivedHotNews(newsData: news)
@@ -54,9 +53,8 @@ extension NewsInteractor: NewsPresenterInteractorProtocol {
                 switch Result {
                 case .failure(let error):
                     self?.presenter?.didFailedLoadingNews(error: error)
-                    self?.presenter?.dismissLoading()
                 case .finished:
-                    break
+                    self?.presenter?.dismissLoading()
                 }
             } receiveValue: { [weak self] news in
                 self?.presenter?.succeedReceivedNews(newsData: news)

@@ -32,20 +32,51 @@ final class MatchOddsConfigurator {
 // Controller --> Presenter
 protocol MatchOddsPresenterProtocol: AnyObject {
     func viewDidLoad()
+    func configureOddsSelectionCell(for cell: MatchOddsSelectionTableViewCell, for index: IndexPath, delegate: MatchOddsSelectionTableViewCellProtocol)
+    func configureOddsMatchCell(for cell: MatchOddsTableViewCell, for index: IndexPath)
+    func numberOfRowsInSection(in section: OddsSection) -> Int
+    func heightForRowInSection(in section: OddsSection) -> CGFloat
+    
+    var selectedOption: OddsSelection { get set }
+    var numberOfSections: Int { get }
 }
 
 // Presenter --> Controller
 protocol MatchOddsControllerProtocol: AnyObject {
+    func setEmptyState()
+    func showFailureAlert(with error: String)
+    func loadTableView()
+    func showLoadingIndicator()
+    func showFailureIndicator()
 }
 
 // Presenter --> Interactor
 protocol MatchOddsPresenterInteractorProtocol: AnyObject {
+    func fetchOddsData(with parameters: OddsRequest)
+    func fetchOddsSelectionOptions()
 }
 
 // Interactor --> Presenter
 protocol MatchOddsInteractorOutput: AnyObject {
+    func didFetchedOddsSelectionOptions(options: [OddsSelection])
+    func succeedReceivedOddsData(odds: MatchOddsEntity)
+    func didFailedLoadingOddsData(error: Error)
+    func showLoading()
+    func dismissLoading()
 }
 // Presenter --> Router
 protocol MatchOddsRouterProtocol: AnyObject {
     func popViewController()
+}
+
+protocol MatchOddsSelectionProtocol: AnyObject {
+    func configureCell(with options: [OddsSelection])
+}
+
+protocol MatchOddsCellProtocol: AnyObject {
+    func configureCell(with odds: [DatumUnion]?)
+}
+
+protocol MatchOddsSelectionTableViewCellProtocol: AnyObject {
+    func didSelectOption(with index: OddsSelection)
 }

@@ -29,13 +29,13 @@ final class NewsConfigurator {
 // MARK: - Protocols
 // Controller --> Presenter
 protocol NewsPresenterProtocol: AnyObject {
+    func viewDidLoad()
     var numberOfSections: Int { get }
     func heightForRowInSection(in section: NewsSection) -> CGFloat
     func numberOfNews(in section: NewsSection) -> Int
     func configureHotNewsCell(with cell: HotNewsTableViewCell, for indexPath: IndexPath)
     func configureListNewsCell(with cell: ListNewsTableViewCell, for indexPath: IndexPath)
     func didSelectNews(at indexPath: IndexPath)
-    func viewDidLoad()
 }
 
 // Presenter --> Controller

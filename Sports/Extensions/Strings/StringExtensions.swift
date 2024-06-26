@@ -25,4 +25,9 @@ extension String {
     func htmlToAttributedString(font: UIFont, textColor: UIColor, linkColor: UIColor) -> NSAttributedString? {
         return NSAttributedString(html: self, font: font, textColor: textColor, linkColor: linkColor)
     }
+    
+    func formatToTwoDecimal() -> String? {
+        guard let value = Double(self) else { return nil }
+        return String(format: "%.2f", value)
+    }
 }

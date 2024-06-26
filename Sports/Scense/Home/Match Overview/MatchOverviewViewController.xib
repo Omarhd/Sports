@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MatchOverviewViewController" customModule="Sports" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="KrO-JT-4yr" id="TMS-Gc-aKu"/>
                 <outlet property="view" destination="iN0-l3-epB" id="SlL-xX-7Vd"/>
             </connections>
         </placeholder>
@@ -18,14 +19,26 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="KrO-JT-4yr">
+                    <rect key="frame" x="0.0" y="47" width="390" height="763"/>
+                    <color key="backgroundColor" name="BackgroundColor"/>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" name="AccentColor"/>
-            <point key="canvasLocation" x="-355" y="-10"/>
+            <color key="backgroundColor" name="BackgroundColor"/>
+            <constraints>
+                <constraint firstItem="KrO-JT-4yr" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="H9Y-Oz-32P"/>
+                <constraint firstItem="KrO-JT-4yr" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="VMW-UK-Wa8"/>
+                <constraint firstItem="KrO-JT-4yr" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Z7M-df-BPO"/>
+                <constraint firstItem="KrO-JT-4yr" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="zYf-Vg-D0V"/>
+            </constraints>
+            <point key="canvasLocation" x="-355.38461538461536" y="-10.663507109004739"/>
         </view>
     </objects>
     <resources>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.53725490196078429" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="BackgroundColor">
+            <color red="0.9882352941176471" green="0.99607843137254903" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

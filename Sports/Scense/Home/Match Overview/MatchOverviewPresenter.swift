@@ -14,6 +14,7 @@ final class MatchOverviewPresenter: NSObject {
     private var interactor: MatchOverviewPresenterInteractorProtocol?
     private var router: MatchOverviewRouterProtocol?
     private var match: Match
+    var numberOfSections: Int { return MatchOverviewSection.allCases.count }
 
     // MARK: - Init
     init(view: MatchOverviewControllerProtocol?,
@@ -28,10 +29,43 @@ final class MatchOverviewPresenter: NSObject {
 }
 // MARK: Conform to MatchOverviewPresenterProtocol
 extension MatchOverviewPresenter: MatchOverviewPresenterProtocol {
+
     func viewDidLoad() {
-        print(match)
+        view?.reloadSection()
+    }
+    
+    func numberOfCells(in section: MatchOverviewSection) -> Int {
+        switch section {
+        case .venue: return 1
+        case .weather: return 1
+        case .tournament: return 1
+        }
+    }
+    
+    func heightForRowInSection(in section: MatchOverviewSection) -> CGFloat {
+        switch section {
+        case .venue: return 200
+        case .weather: return 200
+        case .tournament: return 200
+        }
+    }
+    
+    func configureVenueCell(with cell: VenueTableViewCell, for indexPath: IndexPath) {
+        guard let venue = match.details?.venueDetails else { return }
+        cell.configureCellUI(venue: venue)
+    }
+    
+    func configureWeatherCell(with cell: WeatherTableViewCell, for indexPath: IndexPath) {
+        guard let weather = match.details?.matchDetails?.weather else { return }
+        cell.configureCellUI(weather: weather)
+    }
+    
+    func configureTournamentCell(with cell: TournamentTableViewCell, for indexPath: IndexPath) {
+        guard let tournament = match.details?.tournamentDetails else { return }
+        cell.configureCellUI(tournament: tournament)
     }
 }
-// MARK: Conform to MatchOverviewInteractorOutputa
+
+// MARK: Conform to MatchOverviewInteractorOutput
 extension MatchOverviewPresenter: MatchOverviewInteractorOutput {
 }

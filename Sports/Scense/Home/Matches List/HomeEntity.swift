@@ -139,7 +139,7 @@ struct MatchDetails: Codable {
     let updatedAt: Int?
     let live: Bool?
     let stats: [[Double]]?
-//    let timeline: [JSONAny]?
+    let weather: Weather?
     let coverage: Coverage?
     let seasonID: String?
 
@@ -157,7 +157,7 @@ struct MatchDetails: Codable {
         case periodCount = "period_count"
         case position
         case updatedAt = "updated_at"
-        case live, stats, coverage/*, timeline*/
+        case live, stats, coverage, weather
         case seasonID = "season_id"
     }
 }
@@ -196,7 +196,7 @@ struct TournamentDetails: Codable {
     let categoryID: String?
     let countryID, name, shortName: String?
     let logo: String?
-    let type, updatedAt: Int?
+    let type: TournamentType?
     let nameZht: String?
 
     enum CodingKeys: String, CodingKey {
@@ -206,13 +206,31 @@ struct TournamentDetails: Codable {
         case name
         case shortName = "short_name"
         case logo, type
-        case updatedAt = "updated_at"
         case nameZht = "name_zht"
     }
 }
 
+enum TournamentType: Int, Codable {
+    case unknown = 0
+    case league = 1
+    case cup = 2
+}
+
 // MARK: - VenueDetails
 struct VenueDetails: Codable {
+    let id, name: String?
+    let capacity: Int?
+    let city: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case id, name, capacity, city
+    }
+}
+
+// MARK: - Weather
+struct Weather: Codable {
+    let desc: String?
+    let temp, wind, humidity, pressure: Int?
 }
 
 enum Score: Codable {

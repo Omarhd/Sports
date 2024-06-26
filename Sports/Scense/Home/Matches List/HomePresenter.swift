@@ -108,8 +108,8 @@ extension HomePresenter: HomePresenterProtocol {
     }
     
     func fetchMatches(with matchType: MatchType) {
-        let liveMatchParameters = LiveMatchesRequest(pageNumber: 1)
-        let matchesParameters = MatchesRequest(pageNumber: 1, dated: Date().toFormattedString(),
+        let liveMatchParameters: LiveMatchesRequest = .init(pageNumber: 1)
+        let matchesParameters: MatchesRequest = .init(pageNumber: 1, dated: Date().toFormattedString(),
                                                matchStatus: .scheduled)
         switch matchType {
         case .dated:
@@ -144,7 +144,6 @@ extension HomePresenter: HomeInteractorOutput {
     }
     
     func didFailedLoadingMatches(error: Error) {
-        print(error.localizedDescription)
         view?.showFailureAlert(with: error.localizedDescription)
     }
 }

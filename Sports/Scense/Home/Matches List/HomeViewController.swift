@@ -87,7 +87,7 @@ extension HomeViewController: HomeControllerProtocol {
     }
     
     func showLoadingIndicator() {
-        self.view.showLottieLoader(with: "LoadingSquare")
+        self.view.showLottieLoader(with: "LoadingBasket")
     }
     
     func showFailureIndicator() {

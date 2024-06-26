@@ -14,6 +14,8 @@ final class MatchStatsPresenter: NSObject {
     private var interactor: MatchStatsPresenterInteractorProtocol?
     private var router: MatchStatsRouterProtocol?
     private var match: Match
+    var numberOfSections: Int { return 1 }
+    var numberOfRowsInSection: Int { return match.stats?.count ?? 0 }
     
     // MARK: - Init
     init(view: MatchStatsControllerProtocol?,
@@ -28,10 +30,20 @@ final class MatchStatsPresenter: NSObject {
 }
 // MARK: Conform to MatchStatsPresenterProtocol
 extension MatchStatsPresenter: MatchStatsPresenterProtocol {
+
     func viewDidLoad() {
-        
+        guard let stats = match.stats else { view?.setEmptyView()
+            return }
+        stats.isEmpty ? (view?.setEmptyView()) : (view?.reloadTableView())
     }
+    
+    func configureStatCell(for cell: StatTableViewCell, for index: Int) {
+        guard let cellData = match.stats, !cellData.isEmpty else { return }
+        cell.configureCell(with: cellData[index])
+    }
+    
 }
-// MARK: Conform to MatchStatsInteractorOutputa
+
+// MARK: Conform to MatchStatsInteractorOutput
 extension MatchStatsPresenter: MatchStatsInteractorOutput {
 }
