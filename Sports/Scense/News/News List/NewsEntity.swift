@@ -13,6 +13,12 @@ struct NewsRequest: Encodable {
     let pageNumber: Int
 }
 
+struct HotNewsRequest: Encodable {
+    let pageNumber: Int
+    let language: String
+    let sport: String
+}
+
 // MARK: - NewsEntity
 struct NewsEntity: Codable {
     let list: [News]?

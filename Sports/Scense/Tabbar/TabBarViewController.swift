@@ -11,13 +11,28 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTabBarAppearance()
         setupViewControllers()
+        replaceTabBar()
+        selectedIndex = 0
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+                
+        let centerButton = UIButton(type: .custom)
+        centerButton.backgroundColor = .accent
+        centerButton.setImage(UIImage(systemName: "plus.circle.fill"), for: .normal)
+        centerButton.frame.size = CGSize(width: 45, height: 45)
+        centerButton.center = tabBar.center
+        centerButton.center.y = tabBar.bounds.minY + 26
+        centerButton.layer.cornerRadius = centerButton.frame.height / 2
+        centerButton.clipsToBounds = true
+        centerButton.addTarget(self, action: #selector(centerButtonTapped), for: .touchUpInside)
+        tabBar.addSubview(centerButton)
+    }
+    
+    @objc func centerButtonTapped() {
+        print("Center button tapped")
     }
     
     private func setupViewControllers() {
@@ -45,30 +60,81 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
             settingsNavController
         ]
     }
+
+    private func replaceTabBar() {
+        let customTabBar = CustomTabBar()
+        setValue(customTabBar, forKey: "tabBar")
+    }
+}
+
+class CustomTabBar: UITabBar {
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        setupTabBarAppearance()
+
+        guard let items = items else { return }
+        _ = frame.width / CGFloat(items.count)
+        let leftOffset: CGFloat = -25
+        let rightOffset: CGFloat = 25
+
+        for (index, item) in items.enumerated() {
+            guard let itemView = item.value(forKey: "view") as? UIView else { continue }
+
+            var frame = itemView.frame
+            switch index {
+            case 1: // Move the second item to the left
+                frame.origin.x += leftOffset
+            case 2: // Move the third item to the right
+                frame.origin.x += rightOffset
+            default:
+                break
+            }
+            itemView.frame = frame
+        }
+    }
     
     private func setupTabBarAppearance() {
-        // Create a blur effect for the tab bar background
         let appearance = UITabBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundEffect = UIBlurEffect(style: .regular)
-        appearance.backgroundColor = .clear // Set the background color to clear to apply the blur effect
+        appearance.backgroundColor = .clear
         
-        // Customize the item appearance
         let itemAppearance = UITabBarItemAppearance()
-        itemAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.darkGray]
+        itemAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.lightGray]
+        itemAppearance.normal.iconColor = .lightGray
         itemAppearance.selected.titleTextAttributes = [.foregroundColor: UIColor.accent]
         
         appearance.stackedLayoutAppearance = itemAppearance
         appearance.inlineLayoutAppearance = itemAppearance
         appearance.compactInlineLayoutAppearance = itemAppearance
         
-        // Apply the appearance to the tab bar
-        tabBar.standardAppearance = appearance
+        standardAppearance = appearance
         if #available(iOS 15.0, *) {
-            tabBar.scrollEdgeAppearance = appearance
+            scrollEdgeAppearance = appearance
         }
-        tabBar.tintColor = .accent // Color of selected tab bar items
-        tabBar.unselectedItemTintColor = .darkGray // Color of unselected tab bar items
+        tintColor = .accent
+        unselectedItemTintColor = .label
+        
+        addCornerRadius(to: self, topLeft: 25, topRight: 25)
     }
     
+    func addCornerRadius(to tabBar: UITabBar, topLeft: CGFloat, topRight: CGFloat) {
+        let maskPath = UIBezierPath(roundedRect: tabBar.bounds,
+                                    byRoundingCorners: [.topLeft, .topRight],
+                                    cornerRadii: CGSize(width: topLeft, height: topRight))
+        
+        let maskLayer = CAShapeLayer()
+        maskLayer.path = maskPath.cgPath
+        
+        tabBar.layer.mask = maskLayer
+        tabBar.layer.masksToBounds = true
+        
+        tabBar.layer.shadowColor = UIColor.label.cgColor
+        tabBar.layer.shadowOpacity = 0.3
+        tabBar.layer.shadowOffset = CGSize(width: 0, height: 2)
+        tabBar.layer.shadowRadius = 2
+        
+    }
 }

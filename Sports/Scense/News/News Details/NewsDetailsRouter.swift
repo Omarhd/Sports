@@ -25,7 +25,6 @@ extension NewsDetailsRouter: NewsDetailsRouterProtocol {
     
     func showFullImage(image: UIImage) {
         let detailsViewController = ImageViewerViewController(image: image)
-        detailsViewController.navigationController?.navigationBar.isHidden = true
         viewController?.showHero(detailsViewController, navigationAnimationType: .auto)
     }
 }
