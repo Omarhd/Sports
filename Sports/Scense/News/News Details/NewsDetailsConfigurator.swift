@@ -16,7 +16,8 @@ final class NewsDetailsConfigurator {
     
     // MARK: Configuration
     class func viewController(input: NewsDetailsInput) -> NewsDetailsViewController {
-        let view = NewsDetailsViewController()
+        let storyBoard = UIStoryboard.init(name: NewsStoryboard, bundle: nil)
+        guard let view = storyBoard.instantiateViewController(withIdentifier: "NewsDetailsViewController") as? NewsDetailsViewController else { return NewsDetailsViewController() }
         let interactor = NewsDetailsInteractor()
         let router = NewsDetailsRouter(viewController: view)
         let presenter = NewsDetailsPresenter(view: view,

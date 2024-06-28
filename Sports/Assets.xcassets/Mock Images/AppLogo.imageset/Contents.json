@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "농구_Logo_벡터_도__농구__표지__벡터_패스_PNG__일러스트_및_벡터_에_대한_무료_다운로드_-_Pngtree-removebg-preview 1.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "농구_Logo_벡터_도__농구__표지__벡터_패스_PNG__일러스트_및_벡터_에_대한_무료_다운로드_-_Pngtree-removebg-preview 1@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "농구_Logo_벡터_도__농구__표지__벡터_패스_PNG__일러스트_및_벡터_에_대한_무료_다운로드_-_Pngtree-removebg-preview 1@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

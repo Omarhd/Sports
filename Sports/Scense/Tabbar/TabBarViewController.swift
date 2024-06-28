@@ -27,35 +27,47 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
         centerButton.center.y = tabBar.bounds.minY + 26
         centerButton.layer.cornerRadius = centerButton.frame.height / 2
         centerButton.clipsToBounds = true
+        centerButton.tintColor = .background
         centerButton.addTarget(self, action: #selector(centerButtonTapped), for: .touchUpInside)
         tabBar.addSubview(centerButton)
     }
     
     @objc func centerButtonTapped() {
-        print("Center button tapped")
+        let bottomSheetVC = BottomSheetConfigurator.viewController(input: .init())
+        if let sheet = bottomSheetVC.sheetPresentationController {
+            sheet.detents = [.medium()]
+            sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+            sheet.prefersEdgeAttachedInCompactHeight = true
+            sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
+        }
+        bottomSheetVC.modalPresentationStyle = .pageSheet
+        present(bottomSheetVC, animated: true, completion: nil)
     }
     
     private func setupViewControllers() {
         let homeViewController = HomeConfigurator.viewController(input: .init())
-        let LiveViewController = LiveConfigurator.viewController(input: .init())
+        let matchesViewController = MatchesConfigurator.viewController(input: .init())
         let newsViewController = NewsConfigurator.viewController(input: .init())
         let settingsViewController = SettingsConfigurator.viewController(input: .init())
         
         let homeNavController = CustomNavigationController(rootViewController: homeViewController)
-        let LiveNavController = CustomNavigationController(rootViewController: LiveViewController)
+        let matchesNavController = CustomNavigationController(rootViewController: matchesViewController)
         let newsNavController = CustomNavigationController(rootViewController: newsViewController)
         let settingsNavController = CustomNavigationController(rootViewController: settingsViewController)
         
         // Create tab bar items
         homeNavController.tabBarItem = UITabBarItem(title: "Home".localized, image: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house.fill"))
-        LiveNavController.tabBarItem = UITabBarItem(title: "Live".localized, image: UIImage(systemName: "livephoto"), selectedImage: UIImage(systemName: "livephoto.play"))
+
+        matchesNavController.tabBarItem = UITabBarItem(title: "Matches".localized, image: UIImage(systemName: "basketball"), selectedImage: UIImage(systemName: "basketball.fill"))
+        
         newsNavController.tabBarItem = UITabBarItem(title: "News".localized, image: UIImage(systemName: "newspaper.circle"), selectedImage: UIImage(systemName: "newspaper.circle.fill"))
+        
         settingsNavController.tabBarItem = UITabBarItem(title: "Settings".localized, image: UIImage(systemName: "gear"), selectedImage: UIImage(systemName: "gear.circle.fill"))
         
         // Assign view controllers to the tab bar controller
         self.viewControllers = [
             homeNavController,
-            LiveNavController,
+            matchesNavController,
             newsNavController,
             settingsNavController
         ]
@@ -99,11 +111,11 @@ class CustomTabBar: UITabBar {
         let appearance = UITabBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundEffect = UIBlurEffect(style: .regular)
-        appearance.backgroundColor = .clear
+        appearance.backgroundColor = .background
         
         let itemAppearance = UITabBarItemAppearance()
-        itemAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.lightGray]
-        itemAppearance.normal.iconColor = .lightGray
+        itemAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.darkGray]
+        itemAppearance.normal.iconColor = .darkGray
         itemAppearance.selected.titleTextAttributes = [.foregroundColor: UIColor.accent]
         
         appearance.stackedLayoutAppearance = itemAppearance

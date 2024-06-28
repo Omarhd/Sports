@@ -64,16 +64,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func setupTabBarController() -> UITabBarController {
         // Create your view controllers
-        let homeViewController = HomeConfigurator.viewController(input: .init())
-        let liveViewController = LiveConfigurator.viewController(input: .init())
+        let matchesViewController = MatchesConfigurator.viewController(input: .init())
+//        let liveViewController = LiveConfigurator.viewController(input: .init())
         let newsViewController = NewsConfigurator.viewController(input: .init())
         let settingsViewController = UIViewController()
 
-        homeViewController.title = "Home".localized
-        homeViewController.tabBarItem = UITabBarItem(title: "Home".localized, image: UIImage(named: "house"), selectedImage: UIImage(named: "house.fill"))
+        matchesViewController.title = "Home".localized
+        matchesViewController.tabBarItem = UITabBarItem(title: "Matches".localized, image: UIImage(systemName: "basketball"), selectedImage: UIImage(systemName: "basketball.fill"))
 
-        liveViewController.title = "Live".localized
-        liveViewController.tabBarItem = UITabBarItem(title: "Live".localized, image: UIImage(named: "livephoto"), selectedImage: UIImage(named: "livephoto.play"))
+//        liveViewController.title = "Live".localized
+//        liveViewController.tabBarItem = UITabBarItem(title: "Live".localized, image: UIImage(named: "livephoto"), selectedImage: UIImage(named: "livephoto.play"))
 
         newsViewController.title = "News".localized
         newsViewController.tabBarItem = UITabBarItem(title: "News".localized, image: UIImage(named: "newspaper"), selectedImage: UIImage(named: "newspaper.fill"))
@@ -82,7 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         settingsViewController.tabBarItem = UITabBarItem(title: "Settings".localized, image: UIImage(named: "gear"), selectedImage: UIImage(named: "gear.fill"))
 
         let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [homeViewController, liveViewController, newsViewController, settingsViewController]
+        tabBarController.viewControllers = [matchesViewController/*, liveViewController*/, newsViewController, settingsViewController]
 
         return tabBarController
     }

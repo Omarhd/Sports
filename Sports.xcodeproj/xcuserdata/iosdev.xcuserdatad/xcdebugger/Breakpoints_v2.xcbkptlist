@@ -14,90 +14,10 @@
             filePath = "Sports/Scense/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "showFailureIndicator()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A5075904-00E0-4D03-A38F-138B2896A2FC - 9242499b32e5fe12"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Sports.HomeViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "Sports"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/iosdev/Documents/Sports/Sports/Scense/Home/HomeViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68"
-                  offsetFromSymbolStart = "652">
-               </Location>
-               <Location
-                  uuid = "A5075904-00E0-4D03-A38F-138B2896A2FC - 9242499b32e5fe12"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Sports.HomeViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "Sports"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/iosdev/Documents/Sports/Sports/Scense/Home/HomeViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68"
-                  offsetFromSymbolStart = "1224">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1A77F816-663F-4EC8-B2EE-B98DCA7EB350"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Sports/Scense/Home/HomeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "setEmptyState()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "1A77F816-663F-4EC8-B2EE-B98DCA7EB350 - 42f5209addfe5613"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Sports.HomeViewController.loadTableView() -&gt; ()"
-                  moduleName = "Sports"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/iosdev/Documents/Sports/Sports/Scense/Home/HomeViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "90"
-                  endingLineNumber = "90"
-                  offsetFromSymbolStart = "220">
-               </Location>
-               <Location
-                  uuid = "1A77F816-663F-4EC8-B2EE-B98DCA7EB350 - 31f5ee15092a181c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Sports.HomeViewController.setEmptyState() -&gt; ()"
-                  moduleName = "Sports"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/iosdev/Documents/Sports/Sports/Scense/Home/HomeViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "88"
-                  endingLineNumber = "88"
-                  offsetFromSymbolStart = "84">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -110,40 +30,40 @@
             filePath = "Sports/Scense/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "HomeViewController"
+            landmarkType = "21">
             <Locations>
                <Location
-                  uuid = "65FF3339-D738-4793-B1F8-6576B7AB7A7E - e8db814c46a2cb5"
+                  uuid = "65FF3339-D738-4793-B1F8-6576B7AB7A7E - 976746a5cb60d1c0"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Sports.HomeViewController.tableView(_: __C.UITableView, numberOfRowsInSection: Swift.Int) -&gt; Swift.Int"
+                  symbolName = "Sports.HomeViewController.showFailureIndicator() -&gt; ()"
                   moduleName = "Sports"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iosdev/Documents/Sports/Sports/Scense/Home/HomeViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "63"
-                  endingLineNumber = "63"
-                  offsetFromSymbolStart = "44">
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "240">
                </Location>
                <Location
-                  uuid = "65FF3339-D738-4793-B1F8-6576B7AB7A7E - 9242499b32e5fdb5"
+                  uuid = "65FF3339-D738-4793-B1F8-6576B7AB7A7E - 624a495d63a84414"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Sports.HomeViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  symbolName = "Sports.HomeViewController.showLoadingIndicator() -&gt; ()"
                   moduleName = "Sports"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iosdev/Documents/Sports/Sports/Scense/Home/HomeViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "63"
-                  endingLineNumber = "63"
-                  offsetFromSymbolStart = "208">
+                  startingLineNumber = "121"
+                  endingLineNumber = "121"
+                  offsetFromSymbolStart = "72">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -158,42 +78,10 @@
             filePath = "Sports/Scense/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "tableView(_:heightForRowAt:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E88B687D-8001-4113-AFA9-3066224BBE63 - 9242499b32e5fe9e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Sports.HomeViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "Sports"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/iosdev/Documents/Sports/Sports/Scense/Home/HomeViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "72"
-                  endingLineNumber = "72"
-                  offsetFromSymbolStart = "1224">
-               </Location>
-               <Location
-                  uuid = "E88B687D-8001-4113-AFA9-3066224BBE63 - ef0d58f90a441528"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Sports.HomeViewController.tableView(_: __C.UITableView, heightForRowAt: Foundation.IndexPath) -&gt; CoreGraphics.CGFloat"
-                  moduleName = "Sports"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/iosdev/Documents/Sports/Sports/Scense/Home/HomeViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "72"
-                  endingLineNumber = "72"
-                  offsetFromSymbolStart = "36">
-               </Location>
-            </Locations>
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "HomeViewController"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -206,26 +94,42 @@
             filePath = "Sports/Scense/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "showFailureAlert(with:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6A0DED64-3C9B-4F40-BFD8-01277774FC74"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Sports/Scense/Home/HomeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "loadTableView()"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3F18DFA1-EDB0-4E50-B610-1B9D321B90BB - 624a495d63a8455a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Sports.HomeViewController.showLoadingIndicator() -&gt; ()"
+                  moduleName = "Sports"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iosdev/Documents/Sports/Sports/Scense/Home/HomeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "272">
+               </Location>
+               <Location
+                  uuid = "3F18DFA1-EDB0-4E50-B610-1B9D321B90BB - 9f96fd853ca2c2e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Sports.HomeViewController.showFailureAlert(with: Swift.String) -&gt; ()"
+                  moduleName = "Sports"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iosdev/Documents/Sports/Sports/Scense/Home/HomeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116"
+                  offsetFromSymbolStart = "96">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -289,6 +193,38 @@
             startingLineNumber = "69"
             endingLineNumber = "69"
             landmarkName = "tableView(_:estimatedHeightForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "74F01048-DB39-4962-82F6-D260F5A2F96E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sports/Nibs/Bottom Sheet/BottomSheetViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3F46D72C-636C-4542-881D-D13CB5AA1874"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sports/Nibs/Bottom Sheet/BottomSheetPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "configureOptionCell(in:for:for:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

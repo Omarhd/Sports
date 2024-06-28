@@ -18,7 +18,7 @@ class CustomNavigationController: UINavigationController {
         // Standard appearance with a blur effect
         let appearance = UINavigationBarAppearance()
         appearance.titleTextAttributes = [.foregroundColor: UIColor.label]
-        appearance.backgroundColor = UIColor.clear
+        appearance.backgroundColor = UIColor.background
 
         navigationController?.navigationBar.tintColor = .accent
         appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.label]

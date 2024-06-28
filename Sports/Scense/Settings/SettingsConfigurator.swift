@@ -14,7 +14,8 @@ final class SettingsConfigurator {
     
     // MARK: Configuration
     class func viewController(input: SettingsInput) -> SettingsViewController {
-        let view = SettingsViewController()
+        let storyBoard = UIStoryboard.init(name: SettingsStoryboard, bundle: nil)
+        guard let view = storyBoard.instantiateViewController(withIdentifier: "SettingsViewController") as? SettingsViewController else { return SettingsViewController() }
         let interactor = SettingsInteractor()
         let router = SettingsRouter(viewController: view)
         let presenter = SettingsPresenter(view: view,
