@@ -56,6 +56,8 @@ class PostsTableViewCell: UITableViewCell, PostCellProtocol {
         postLikesCountLabel.text = "22"
         postCommentsCountLabel.text = "12"
         
+        postImage.heroID = post?.imageURL
+        
         post?.imageURL?.isValidURL ?? false ? (loadCellImages(loadImage: postImage, from: post?.imageURL)) : (postImage.isHidden = true)
     }
 }

@@ -34,7 +34,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Moments" id="Aef-rD-MWk">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="I1f-ja-C3M">
+                        <barButtonItem key="leftBarButtonItem" id="I1f-ja-C3M">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hjM-Iy-egJ">
                                 <rect key="frame" x="16" y="0.0" width="128" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -45,7 +45,7 @@
                                 </state>
                             </button>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="8iM-GW-NFy">
+                        <barButtonItem key="rightBarButtonItem" id="8iM-GW-NFy">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2np-Pv-2AV">
                                 <rect key="frame" x="249" y="0.0" width="128" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

@@ -44,6 +44,7 @@ protocol MatchDetailsPresenterProtocol: AnyObject {
 
 // Presenter --> Controller
 protocol MatchDetailsControllerProtocol: AnyObject {
+    func configureMatchStatusUI(matchStatus: MatchStatus?, match: Match?)
     func configureTeamsUI(with match: Match)
     func configurePageController(with match: Match)
     func highlightSelectedTab(for indexPath: Int)

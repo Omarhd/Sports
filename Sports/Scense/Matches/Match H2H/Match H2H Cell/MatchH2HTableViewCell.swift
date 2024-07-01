@@ -104,7 +104,7 @@ class MatchH2HTableViewCell: UITableViewCell, MatchH2HCellProtocol {
     
     func setWhenHomeTeamStatBigger() {
         homeTeamScoreView.backgroundColor = .accent
-        homeTotalPointsLabel.textColor = .black
+        homeTotalPointsLabel.textColor = .white
         
         awayTeamScoreView.backgroundColor = .clear
         awayTotalPointsLabel.textColor = .label
@@ -112,7 +112,7 @@ class MatchH2HTableViewCell: UITableViewCell, MatchH2HCellProtocol {
     
     func setWhenAwayTeamStatBigger() {
         awayTeamScoreView.backgroundColor = .accent
-        awayTotalPointsLabel.textColor = .black
+        awayTotalPointsLabel.textColor = .white
         
         homeTeamScoreView.backgroundColor = .clear
         homeTotalPointsLabel.textColor = .label

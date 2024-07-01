@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SafariServices
+
 
 class HomeRouter {
     weak var viewController: HomeViewController?
@@ -45,7 +47,26 @@ extension HomeRouter: HomeRouterProtocol {
         let backButton = UIBarButtonItem()
         backButton.title = ""
         viewController?.navigationItem.backBarButtonItem = backButton
-        
-        viewController?.showHero(postDetailsViewController, navigationAnimationType: .fade)
+        viewController?.showHero(postDetailsViewController, navigationAnimationType: .zoom)
+    }
+    
+    func navigateToHighlightsDetails(highlight: HighlightsNews) {
+        let highlightsDetailsViewController = HighlightsDetailsConfigurator.viewController(input: .init(highlight: highlight))
+        highlightsDetailsViewController.hidesBottomBarWhenPushed = true
+        // Set the back button title for the current view controller
+        let backButton = UIBarButtonItem()
+        backButton.title = ""
+        viewController?.navigationItem.backBarButtonItem = backButton
+        viewController?.showHero(highlightsDetailsViewController, navigationAnimationType: .zoom)
+    }
+    
+    func openHighlightLink(highlightLink: String) {
+        if let url = URL(string: highlightLink), ["http", "https"].contains(url.scheme?.lowercased() ?? "") {
+            let vc = SFSafariViewController(url: url)
+            viewController?.present(vc, animated: true, completion: nil)
+        } else {
+            // Handle invalid URL case
+            print("Invalid URL")
+        }
     }
 }

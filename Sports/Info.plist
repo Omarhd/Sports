@@ -29,6 +29,8 @@
 	<string>$(BASE_URL)</string>
 	<key>SLASH</key>
 	<string>$(SLASH)</string>
+	<key>HIGHLIGHTS</key>
+	<string>$(HIGHLIGHTS)</string>
 	<key>ACCENT_COLOR</key>
 	<string>$(ACCENT_COLOR)</string>
 	<key>NSAppTransportSecurity</key>

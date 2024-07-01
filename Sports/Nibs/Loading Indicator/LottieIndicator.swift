@@ -10,16 +10,14 @@ import Lottie
 
 extension UIView {
 
-    private struct LottieLoaderKeys {
-        static var loaderView = "loaderView"
-    }
+    private static var loaderViewKey: UInt8 = 0
 
     private var loaderView: UIView? {
         get {
-            return objc_getAssociatedObject(self, &LottieLoaderKeys.loaderView) as? UIView
+            return objc_getAssociatedObject(self, &UIView.loaderViewKey) as? UIView
         }
         set {
-            objc_setAssociatedObject(self, &LottieLoaderKeys.loaderView, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &UIView.loaderViewKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
 

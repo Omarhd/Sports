@@ -28,21 +28,42 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEW-3q-a5G">
-                                <rect key="frame" x="16" y="125.66666666666667" width="282" height="19.333333333333329"/>
-                                <string key="text"> Here is a simplified version of a CardView class that doesn't use @IBDesignable or @IBInspectable, and directly sets up the card view properties within the class:</string>
-                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6qQ-IZ-gMU">
+                                <rect key="frame" x="0.0" y="0.0" width="314" height="161"/>
+                                <subviews>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L2R-Sd-q1u">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="80.666666666666671"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VI8-Jt-Zp2" customClass="GradientView" customModule="Sports" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="80.666666666666686" width="314" height="80.333333333333314"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEW-3q-a5G">
+                                                <rect key="frame" x="16" y="26.000000000000004" width="282" height="38.333333333333343"/>
+                                                <string key="text"> Here is a simplified version of a CardView class that doesn't use @IBDesignable or @IBInspectable, and directly sets up the card view properties within the class:</string>
+                                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="DEW-3q-a5G" firstAttribute="leading" secondItem="VI8-Jt-Zp2" secondAttribute="leading" constant="16" id="2Sv-mh-ymv"/>
+                                            <constraint firstAttribute="bottom" secondItem="DEW-3q-a5G" secondAttribute="bottom" constant="16" id="NyB-zK-xvL"/>
+                                            <constraint firstAttribute="trailing" secondItem="DEW-3q-a5G" secondAttribute="trailing" constant="16" id="Zvq-TL-vIV"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="DEW-3q-a5G" firstAttribute="leading" secondItem="mMp-ci-eXM" secondAttribute="leading" constant="16" id="CMW-jl-JdR"/>
-                            <constraint firstAttribute="trailing" secondItem="DEW-3q-a5G" secondAttribute="trailing" constant="16" id="L9u-6S-Egj"/>
-                            <constraint firstAttribute="bottom" secondItem="DEW-3q-a5G" secondAttribute="bottom" constant="16" id="VSG-YT-faJ"/>
+                            <constraint firstItem="6qQ-IZ-gMU" firstAttribute="top" secondItem="mMp-ci-eXM" secondAttribute="top" id="Ive-Sn-aaH"/>
+                            <constraint firstItem="6qQ-IZ-gMU" firstAttribute="leading" secondItem="mMp-ci-eXM" secondAttribute="leading" id="QIO-9Q-VHc"/>
                             <constraint firstItem="dfV-RS-xB5" firstAttribute="leading" secondItem="mMp-ci-eXM" secondAttribute="leading" id="fR4-KP-voP"/>
+                            <constraint firstAttribute="trailing" secondItem="6qQ-IZ-gMU" secondAttribute="trailing" id="g8B-eB-N2j"/>
                             <constraint firstAttribute="trailing" secondItem="dfV-RS-xB5" secondAttribute="trailing" id="ghz-1T-vHY"/>
+                            <constraint firstAttribute="bottom" secondItem="6qQ-IZ-gMU" secondAttribute="bottom" id="jbO-Eg-QNm"/>
                             <constraint firstItem="dfV-RS-xB5" firstAttribute="top" secondItem="mMp-ci-eXM" secondAttribute="top" id="tNx-O9-S67"/>
                             <constraint firstAttribute="bottom" secondItem="dfV-RS-xB5" secondAttribute="bottom" id="xfZ-sg-APY"/>
                         </constraints>

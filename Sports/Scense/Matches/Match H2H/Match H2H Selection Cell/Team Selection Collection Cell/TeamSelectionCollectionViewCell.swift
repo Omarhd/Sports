@@ -23,7 +23,7 @@ class TeamSelectionCollectionViewCell: UICollectionViewCell {
     }
     
     fileprivate func setSelectedUI() {
-        selectionTitleLabel.textColor = .label
+        selectionTitleLabel.textColor = .white
         selectionView.backgroundColor = .accent
         selectionView.layer.cornerRadius = 12
     }

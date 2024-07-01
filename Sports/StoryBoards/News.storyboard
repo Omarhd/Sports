@@ -34,7 +34,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="News" id="h10-Wr-nrL">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="obf-A4-xBw">
+                        <barButtonItem key="leftBarButtonItem" id="obf-A4-xBw">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Jme-Ud-r9v">
                                 <rect key="frame" x="16" y="0.0" width="128" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -45,7 +45,7 @@
                                 </state>
                             </button>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="Ix4-sG-map">
+                        <barButtonItem key="rightBarButtonItem" id="Ix4-sG-map">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GxK-Z6-cGo">
                                 <rect key="frame" x="249" y="0.0" width="128" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -59,7 +59,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Rpd-SB-OxW" id="Plb-6H-L93"/>
-                        <segue destination="r5j-e1-LAh" kind="show" id="eOx-zY-qLT"/>
+                        <segue destination="r5j-e1-LAh" kind="show" identifier="toNewsDetails" id="eOx-zY-qLT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SwK-5s-RUP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -123,7 +123,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="News Details" id="Tob-sD-Sim">
-                        <barButtonItem key="backBarButtonItem" title="  " id="iU0-qY-MWZ"/>
+                        <barButtonItem key="backBarButtonItem" title="   " id="iU0-qY-MWZ"/>
                     </navigationItem>
                     <connections>
                         <outlet property="newsContentTextView" destination="4jV-n8-GvD" id="iTc-Q1-CmL"/>
@@ -154,16 +154,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YVy-qT-k4t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="646.56488549618314" y="-277.46478873239437"/>
-        </scene>
-        <!--Auth-->
-        <scene sceneID="QWx-uG-ony">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Auth" id="kys-Ge-aHj" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="Wyb-q0-3Jc"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lLU-c6-2aI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1573" y="-735"/>
         </scene>
     </scenes>
     <resources>

@@ -76,7 +76,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             
         case .highlightNews:
             guard let highlightNewsCell = tableView.dequeueReusableCell(withIdentifier: HighlightsTableViewCell.viewIdentifier(), for: indexPath) as? HighlightsTableViewCell else { return UITableViewCell() }
-            presenter?.configureHighlightsCell(for: highlightNewsCell, for: indexPath)
+            presenter?.configureHighlightsCell(for: highlightNewsCell, for: indexPath, delegate: self)
             
             return highlightNewsCell
             
@@ -97,6 +97,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 //        return presenter?.heightForRowInSection(in: section) ?? 0
 //    }
     
+}
+
+extension HomeViewController: HighlightsCellViewControllerProtocol {
+    
+    func didSelectHighlight(for index: Int) {
+        presenter?.didSelectHighlight(for: index)
+    }
 }
 
 extension HomeViewController: PostCellViewControllerProtocol {

@@ -37,7 +37,7 @@ class StatTableViewCell: UITableViewCell, StatCellProtocol {
     
     func setWhenHomeTeamStatBigger() {
         homeTeamScoreView.backgroundColor = .accent
-        homeTeamStatLabel.textColor = .black
+        homeTeamStatLabel.textColor = .white
         
         awayTeamScoreView.backgroundColor = .clear
         awayTeamStatLabel.textColor = .label
@@ -45,7 +45,7 @@ class StatTableViewCell: UITableViewCell, StatCellProtocol {
     
     func setWhenAwayTeamStatBigger() {
         awayTeamScoreView.backgroundColor = .accent
-        awayTeamStatLabel.textColor = .black
+        awayTeamStatLabel.textColor = .white
         
         homeTeamScoreView.backgroundColor = .clear
         homeTeamStatLabel.textColor = .label

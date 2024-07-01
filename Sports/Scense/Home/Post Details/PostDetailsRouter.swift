@@ -26,6 +26,6 @@ extension PostDetailsRouter: PostDetailsRouterProtocol {
     }
     
     func popViewController() {
-        self.viewController?.navigationController?.popViewController(animated: true)
+        self.viewController?.dismissHero(viewController, navigationAnimationType: .zoomOut)
     }
 }

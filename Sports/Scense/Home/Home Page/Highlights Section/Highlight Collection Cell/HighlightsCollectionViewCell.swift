@@ -21,9 +21,15 @@ class HighlightsCollectionViewCell: UICollectionViewCell, highlightCollectionCel
         containerView.layer.cornerRadius = 16
     }
     
-    func configureCell(with highlight: HomeHighlightsEntity) {
-        highlightTitleLabel.text = highlight.title
-        loadCellImages(loadImage: highlightImage, from: highlight.imageURL)
-    }
+    func configureCell(with highlight: HighlightsNews) {
+        
+        var appendURL = ""
+        let details = highlight.detail ?? ""
 
+        details == "#" ? (appendURL = "https://sportsapi3.com/hotnews/") : ()
+        loadCellImages(loadImage: highlightImage, from: appendURL + (highlight.thumbnail ?? ""))
+        
+        highlightTitleLabel.text = highlight.headline ?? ""
+        highlightTitleLabel.isHidden = (details == "#")
+    }
 }

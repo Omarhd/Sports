@@ -9,7 +9,7 @@
 import UIKit
 
 final class SettingsPresenter: NSObject {
-    // MARK: - Properites
+    // MARK: - Properties
     private var view: SettingsControllerProtocol?
     private var interactor: SettingsPresenterInteractorProtocol?
     private var router: SettingsRouterProtocol?

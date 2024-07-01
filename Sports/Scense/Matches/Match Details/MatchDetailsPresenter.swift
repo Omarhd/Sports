@@ -36,6 +36,7 @@ extension MatchDetailsPresenter: MatchDetailsPresenterProtocol {
 
     func viewDidLoad() {
         interactor?.fetchTabs()
+        view?.configureMatchStatusUI(matchStatus: self.match.details?.matchDetails?.statusID ?? .abnormal, match: self.match)
         view?.configureTeamsUI(with: self.match)
         view?.configurePageController(with: self.match)
         view?.highlightSelectedTab(for: selectedTabIndex)

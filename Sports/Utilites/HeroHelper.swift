@@ -31,6 +31,14 @@ extension UIViewController {
         navigationController?.hero.navigationAnimationType = navigationAnimationType
         navigationController?.pushViewController(viewController, animated: true)
     }
+    
+    
+    func dismissHero(_ viewController: UIViewController?, navigationAnimationType: HeroDefaultAnimationType = .autoReverse(presenting: .slide(direction: .leading))) {
+        viewController?.hero.isEnabled = true
+        navigationController?.hero.isEnabled = true
+        navigationController?.hero.navigationAnimationType = navigationAnimationType
+        navigationController?.popViewController(animated: true)
+    }
 }
 
 extension UINavigationController {
@@ -41,4 +49,5 @@ extension UINavigationController {
         hero.navigationAnimationType = navigationAnimationType
         pushViewController(viewController, animated: true)
     }
+
 }

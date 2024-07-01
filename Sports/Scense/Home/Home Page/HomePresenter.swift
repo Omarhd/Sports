@@ -17,7 +17,7 @@ final class HomePresenter: NSObject {
     internal var numberOfSections: Int { return HomeSections.allCases.count }
     
     var stories: [HomeStoryEntity] = []
-    var highlights: [HomeHighlightsEntity] = []
+    var highlights: [HighlightsNews] = []
     var posts: [Post] = []
     
     // MARK: - Init
@@ -62,7 +62,7 @@ extension HomePresenter: HomePresenterProtocol {
         switch section {
         case .stories: return stories.isEmpty ? 0 : 80.0
         case .highlightNews: return highlights.isEmpty ? 0 : 80.0
-        case .posts: return posts.isEmpty ? 0 : heightForPostsSection()
+        case .posts: return posts.isEmpty ? 0 : 800.0
         }
     }
     
@@ -88,8 +88,9 @@ extension HomePresenter: HomePresenterProtocol {
         cell.configureCell(with: cellData)
     }
     
-    func configureHighlightsCell(for cell: HighlightsTableViewCell, for index: IndexPath) {
+    func configureHighlightsCell(for cell: HighlightsTableViewCell, for index: IndexPath, delegate: HighlightsCellViewControllerProtocol?) {
         let cellData = highlights
+        cell.delegate = delegate
         cell.configureCell(with: cellData)
     }
     
@@ -99,17 +100,9 @@ extension HomePresenter: HomePresenterProtocol {
         cell.configureCell(with: cellData)
     }
     
-    private func heightForPostsSection() -> CGFloat {
-        let totalHeight = posts.reduce(0) { (result, post) -> CGFloat in
-            return result + heightForPost(post)
-        }
-        return totalHeight
-    }
-
-    private func heightForPost(_ post: Post) -> CGFloat {
-        let baseHeight: CGFloat = 100.0
-        let additionalHeight: CGFloat = CGFloat(post.content.count) * 0.5
-        return baseHeight + additionalHeight
+    func didSelectHighlight(for index: Int) {
+        let highlight = self.highlights[index]
+        highlight.detail == "#" ? (router?.openHighlightLink(highlightLink: highlight.headline ?? "")) : (router?.navigateToHighlightsDetails(highlight: highlight))
     }
 }
 
@@ -121,9 +114,9 @@ extension HomePresenter: HomeInteractorOutput {
         stories.isEmpty ? view?.setEmptyState() : view?.loadTableView()
     }
     
-    func succeedReceivedHighlights(highlights: [HomeHighlightsEntity]) {
-        self.highlights = highlights
-        highlights.isEmpty ? view?.setEmptyState() : view?.loadTableView()
+    func succeedReceivedHighlights(highlights: HomeHighlightsEntity) {
+        self.highlights = highlights.response?.news ?? []
+        self.highlights.isEmpty ? view?.setEmptyState() : view?.loadTableView()
     }
     
     func succeedReceivedPosts(posts: HomeEntity) {

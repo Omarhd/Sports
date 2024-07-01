@@ -32,13 +32,14 @@ protocol HomePresenterProtocol: AnyObject {
     func viewDidLoad()
     func didSelectTappedImage(image: UIImage)
     func didTappedStory(story: HomeStoryEntity, allStories: [HomeStoryEntity])
+    func didSelectHighlight(for index: Int)
     func didSelectPost(for index: IndexPath)
     
     func numberOfRowsInSection(in section: HomeSections) -> Int
     func heightForRowInSection(in section: HomeSections) -> CGFloat?
 
     func configureStoriesCell(for cell: StoriesTableViewCell, for index: IndexPath, delegate: StoriesCollectionCellViewControllerProtocol?)
-    func configureHighlightsCell(for cell: HighlightsTableViewCell, for index: IndexPath)
+    func configureHighlightsCell(for cell: HighlightsTableViewCell, for index: IndexPath, delegate: HighlightsCellViewControllerProtocol?)
     func configurePostCell(for cell: PostsTableViewCell, for index: IndexPath, delegate: PostCellViewControllerProtocol?)
 
     func viewForHeaderInSection(in section: HomeSections, for sectionView: HighlightHeaderTableViewCell)
@@ -66,7 +67,7 @@ protocol HomePresenterInteractorProtocol: AnyObject {
 // Interactor --> Presenter
 protocol HomeInteractorOutput: AnyObject {
     func succeedReceivedStories(stories: [HomeStoryEntity])
-    func succeedReceivedHighlights(highlights: [HomeHighlightsEntity])
+    func succeedReceivedHighlights(highlights: HomeHighlightsEntity)
     func succeedReceivedPosts(posts: HomeEntity)
     func didFailedLoading(error: Error)
     func showLoading()
@@ -78,6 +79,8 @@ protocol HomeRouterProtocol: AnyObject {
     func showFullImage(image: UIImage)
     func showFullStory(story: HomeStoryEntity, allStories: [HomeStoryEntity])
     func showPostDetails(with post: Post)
+    func navigateToHighlightsDetails(highlight: HighlightsNews)
+    func openHighlightLink(highlightLink: String)
 }
 
 protocol StoriesCellProtocol: AnyObject {
@@ -85,7 +88,7 @@ protocol StoriesCellProtocol: AnyObject {
 }
 
 protocol HighlightsCellProtocol: AnyObject {
-    func configureCell(with highlight: [HomeHighlightsEntity])
+    func configureCell(with highlight: [HighlightsNews])
 }
 
 protocol PostCellProtocol: AnyObject {
@@ -97,7 +100,7 @@ protocol PostCellViewControllerProtocol: AnyObject {
 }
 
 protocol highlightCollectionCellProtocol: AnyObject {
-    func configureCell(with highlight: HomeHighlightsEntity)
+    func configureCell(with highlight: HighlightsNews)
 }
 
 protocol StoriesCollectionCellProtocol: AnyObject {
@@ -106,6 +109,10 @@ protocol StoriesCollectionCellProtocol: AnyObject {
 
 protocol StoriesCollectionCellViewControllerProtocol: AnyObject {
     func didTappedStory(with story: HomeStoryEntity, allStories: [HomeStoryEntity])
+}
+
+protocol HighlightsCellViewControllerProtocol: AnyObject {
+    func didSelectHighlight(for index: Int)
 }
 
 protocol HighlightsHeaderViewCellProtocols: AnyObject {

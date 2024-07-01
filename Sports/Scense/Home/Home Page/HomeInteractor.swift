@@ -14,7 +14,7 @@ class HomeInteractor {
     var presenter: HomeInteractorOutput?
 
     private let session: Session
-    private let base = BuildSettingsKey.TOURNAMENTS.value
+    private let base = BuildSettingsKey.HIGHLIGHTS.value
     private var anyCancellable = Set<AnyCancellable>()
     
     init(session: Session = .shared) {
@@ -29,7 +29,24 @@ extension HomeInteractor: HomePresenterInteractorProtocol {
     }
     
     func fetchHighlight() {
-        presenter?.succeedReceivedHighlights(highlights: highlights)
+        self.presenter?.showLoading()
+        guard let url = URL(string: base + "forum/hotnews/elite") else { fatalError("Invalid URL") }
+        let tournament: AnyPublisher<HomeHighlightsEntity, Error> = session.request(from: url)
+        
+        tournament.receive(on: RunLoop.main)
+            .sink { [weak self] Result in
+                switch Result {
+                case .failure(let error):
+                    self?.presenter?.didFailedLoading(error: error)
+                case .finished:
+                    self?.presenter?.dismissLoading()
+                    break
+                }
+            } receiveValue: { [weak self] highlights in
+                self?.presenter?.succeedReceivedHighlights(highlights: highlights)
+                self?.presenter?.dismissLoading()
+            }
+            .store(in: &anyCancellable)
     }
     
     func fetchPosts() {

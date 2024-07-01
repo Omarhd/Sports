@@ -12,6 +12,7 @@ enum BuildSettingsKey: String {
     case AUTH_BASE_URL
     case TOURNAMENTS
     case NEWS
+    case HIGHLIGHTS
     
     var value: String {
         get {

@@ -13,7 +13,8 @@ class HighlightsTableViewCell: UITableViewCell, HighlightsCellProtocol {
     @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: - Properties
-    private var highlights: [HomeHighlightsEntity] = []
+    private var highlights: [HighlightsNews] = []
+    weak var delegate: HighlightsCellViewControllerProtocol?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,7 +27,7 @@ class HighlightsTableViewCell: UITableViewCell, HighlightsCellProtocol {
         // Configure the view for the selected state
     }
     
-    func configureCell(with highlight: [HomeHighlightsEntity]) {
+    func configureCell(with highlight: [HighlightsNews]) {
         self.highlights = highlight
         collectionView.registerCell(cell: HighlightsCollectionViewCell.self)
         collectionView.delegate = self
@@ -56,7 +57,7 @@ extension HighlightsTableViewCell: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        delegate?.didSelectOption(with: SeasonSelection(rawValue: indexPath.item) ?? .short)
+        delegate?.didSelectHighlight(for: indexPath.row)
     }
     
 }
