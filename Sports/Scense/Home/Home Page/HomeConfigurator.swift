@@ -32,7 +32,8 @@ protocol HomePresenterProtocol: AnyObject {
     func viewDidLoad()
     func didSelectTappedImage(image: UIImage)
     func didTappedStory(story: HomeStoryEntity, allStories: [HomeStoryEntity])
-
+    func didSelectPost(for index: IndexPath)
+    
     func numberOfRowsInSection(in section: HomeSections) -> Int
     func heightForRowInSection(in section: HomeSections) -> CGFloat?
 
@@ -76,6 +77,7 @@ protocol HomeRouterProtocol: AnyObject {
     func popViewController()
     func showFullImage(image: UIImage)
     func showFullStory(story: HomeStoryEntity, allStories: [HomeStoryEntity])
+    func showPostDetails(with post: Post)
 }
 
 protocol StoriesCellProtocol: AnyObject {
@@ -87,7 +89,7 @@ protocol HighlightsCellProtocol: AnyObject {
 }
 
 protocol PostCellProtocol: AnyObject {
-    func configureCell(with pos: Post?)
+    func configureCell(with post: Post?)
 }
 
 protocol PostCellViewControllerProtocol: AnyObject {

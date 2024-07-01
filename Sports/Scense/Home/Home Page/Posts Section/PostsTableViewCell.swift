@@ -48,16 +48,14 @@ class PostsTableViewCell: UITableViewCell, PostCellProtocol {
         // Configure the view for the selected state
     }
     
-    func configureCell(with pos: Post?) {
-        userNameLabel.text = pos?.user.name
-        userUserNameLabel.text = pos?.user.username
+    func configureCell(with post: Post?) {
+        userNameLabel.text = post?.user.name
+        userUserNameLabel.text = post?.user.username
         
-        postContentLabel.text = pos?.content
+        postContentLabel.text = post?.content
         postLikesCountLabel.text = "22"
-        postLikesCountLabel.text = "12"
+        postCommentsCountLabel.text = "12"
         
-        guard let imageURL: URL = URL(string: pos?.imageURL ?? "") else { return }
-//        postImage.kf.setImage(with: imageURL, placeholder: UIImage(systemName: "basketball"))
+        post?.imageURL?.isValidURL ?? false ? (loadCellImages(loadImage: postImage, from: post?.imageURL)) : (postImage.isHidden = true)
     }
-    
 }

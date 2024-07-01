@@ -15,7 +15,7 @@ struct HomeEntity: Decodable {
 struct Post: Decodable {
     let id: Int
     let content: String
-    let imageURL: String
+    let imageURL: String?
     let user: User
 }
 

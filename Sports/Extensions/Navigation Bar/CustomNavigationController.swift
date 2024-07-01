@@ -17,7 +17,7 @@ class CustomNavigationController: UINavigationController {
     
     private func setupNavigationBarAppearance() {
         let appearance = UINavigationBarAppearance()
-        appearance.titleTextAttributes = [.foregroundColor: UIColor.label]
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.accent]
         appearance.backgroundColor = UIColor.background
 
         navigationController?.navigationBar.tintColor = .accent

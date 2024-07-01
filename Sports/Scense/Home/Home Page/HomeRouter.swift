@@ -26,7 +26,7 @@ extension HomeRouter: HomeRouterProtocol {
     func showFullImage(image: UIImage) {
         let detailsViewController = ImageViewerViewController(image: image)
         detailsViewController.hidesBottomBarWhenPushed = true
-        viewController?.showHero(detailsViewController, navigationAnimationType: .pageIn(direction: .up))
+        viewController?.showHero(detailsViewController, navigationAnimationType: .pull(direction: .down))
     }
     
     func showFullStory(story: HomeStoryEntity, allStories: [HomeStoryEntity]) {
@@ -36,5 +36,16 @@ extension HomeRouter: HomeRouterProtocol {
         detailsViewController.hidesBottomBarWhenPushed = true
         detailsViewController.navigationController?.isNavigationBarHidden = true
         viewController?.showHero(detailsViewController, navigationAnimationType: .pageIn(direction: .up))
+    }
+    
+    func showPostDetails(with post: Post) {
+        let postDetailsViewController = PostDetailsConfigurator.viewController(input: .init(post: post))
+        postDetailsViewController.hidesBottomBarWhenPushed = true
+        // Set the back button title for the current view controller
+        let backButton = UIBarButtonItem()
+        backButton.title = ""
+        viewController?.navigationItem.backBarButtonItem = backButton
+        
+        viewController?.showHero(postDetailsViewController, navigationAnimationType: .fade)
     }
 }

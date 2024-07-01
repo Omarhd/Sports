@@ -9,26 +9,35 @@
 import UIKit
 
 final class PostDetailsPresenter: NSObject {
-    // MARK: - Properites
+    // MARK: - Properties
     private var view: PostDetailsControllerProtocol?
     private var interactor: PostDetailsPresenterInteractorProtocol?
     private var router: PostDetailsRouterProtocol?
+    private var post: Post
 
     // MARK: - Init
     init(view: PostDetailsControllerProtocol?,
          interactor: PostDetailsPresenterInteractorProtocol?,
-         router: PostDetailsRouterProtocol?) {
+         router: PostDetailsRouterProtocol?,
+         post: Post) {
         self.view = view
         self.interactor = interactor
         self.router = router
+        self.post = post
     }
 }
 // MARK: Conform to PostDetailsPresenterProtocol
 extension PostDetailsPresenter: PostDetailsPresenterProtocol {
+    
     func viewDidLoad() {
-        
+        view?.configurePostUI(with: post)
+    }
+    
+    func didSelectTappedImage(image: UIImage) {
+        router?.showFullImage(image: image)
     }
 }
-// MARK: Conform to PostDetailsInteractorOutputa
+
+// MARK: Conform to PostDetailsInteractorOutput
 extension PostDetailsPresenter: PostDetailsInteractorOutput {
 }

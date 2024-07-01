@@ -1388,11 +1388,11 @@
 		6AE999CD2C2D9BD5004888B6 /* Post Details */ = {
 			isa = PBXGroup;
 			children = (
-				6AE999DC2C2DA0CF004888B6 /* PostDetailsPresenter.swift */,
-				6AE999DD2C2DA0CF004888B6 /* PostDetailsRouter.swift */,
 				6AE999DE2C2DA0CF004888B6 /* PostDetailsViewController.swift */,
+				6AE999DC2C2DA0CF004888B6 /* PostDetailsPresenter.swift */,
 				6AE999DF2C2DA0CF004888B6 /* PostDetailsInteractor.swift */,
 				6AE999E02C2DA0CF004888B6 /* PostDetailsConfigurator.swift */,
+				6AE999DD2C2DA0CF004888B6 /* PostDetailsRouter.swift */,
 				6AE999E12C2DA0CF004888B6 /* PostDetailsEntity.swift */,
 				6AE999E22C2DA0CF004888B6 /* PostDetailsViewController.xib */,
 			);

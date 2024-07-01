@@ -18,6 +18,13 @@ class PostDetailsRouter {
 }
 // MARK: Conforming to PostDetailsRouterProtocol
 extension PostDetailsRouter: PostDetailsRouterProtocol {
+    
+    func showFullImage(image: UIImage) {
+        let detailsViewController = ImageViewerViewController(image: image)
+        detailsViewController.hidesBottomBarWhenPushed = true
+        viewController?.showHero(detailsViewController, navigationAnimationType: .pageIn(direction: .up))
+    }
+    
     func popViewController() {
         self.viewController?.navigationController?.popViewController(animated: true)
     }

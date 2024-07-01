@@ -37,4 +37,12 @@ extension String {
         }        
         return URL(string: encodedString)
     }
+    
+    var isValidURL: Bool {
+        guard !self.isEmpty else { return false }
+        if let url = URL(string: self) {
+            return UIApplication.shared.canOpenURL(url)
+        }
+        return false
+    }
 }

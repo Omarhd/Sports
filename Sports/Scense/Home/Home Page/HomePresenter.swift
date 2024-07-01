@@ -46,6 +46,10 @@ extension HomePresenter: HomePresenterProtocol {
         router?.showFullStory(story: story, allStories: allStories)
     }
     
+    func didSelectPost(for index: IndexPath) {
+        router?.showPostDetails(with: posts[index.row])
+    }
+    
     func numberOfRowsInSection(in section: HomeSections) -> Int {
         switch section {
         case .stories: return stories.isEmpty ? 0 : 1

@@ -8,7 +8,9 @@
 
 import UIKit
 
-struct PostDetailsInput { }
+struct PostDetailsInput { 
+    let post: Post
+}
 
 final class PostDetailsConfigurator {
     
@@ -18,8 +20,9 @@ final class PostDetailsConfigurator {
         let interactor = PostDetailsInteractor()
         let router = PostDetailsRouter(viewController: view)
         let presenter = PostDetailsPresenter(view: view,
-                                                          interactor: interactor,
-                                                          router: router)
+                                             interactor: interactor,
+                                             router: router,
+                                             post: input.post)
         view.presenter = presenter
         interactor.presenter = presenter
         return view
@@ -29,10 +32,12 @@ final class PostDetailsConfigurator {
 // Controller --> Presenter
 protocol PostDetailsPresenterProtocol: AnyObject {
     func viewDidLoad()
+    func didSelectTappedImage(image: UIImage)
 }
 
 // Presenter --> Controller
 protocol PostDetailsControllerProtocol: AnyObject {
+    func configurePostUI(with post: Post?)
 }
 
 // Presenter --> Interactor
@@ -45,4 +50,5 @@ protocol PostDetailsInteractorOutput: AnyObject {
 // Presenter --> Router
 protocol PostDetailsRouterProtocol: AnyObject {
     func popViewController()
+    func showFullImage(image: UIImage)
 }

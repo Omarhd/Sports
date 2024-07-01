@@ -88,6 +88,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.didSelectPost(for: indexPath)
+    }
+    
 //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //        guard let section = HomeSections(rawValue: indexPath.section) else { return 0 }
 //        return presenter?.heightForRowInSection(in: section) ?? 0

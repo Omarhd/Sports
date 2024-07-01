@@ -22,6 +22,11 @@ extension NewsRouter: NewsRouterProtocol {
     func navigateToDetails(news: News) {
         let detailsViewController = NewsDetailsConfigurator.viewController(input: .init(news: news))
         detailsViewController.hidesBottomBarWhenPushed = true
+        // Set the back button title for the current view controller
+        let backButton = UIBarButtonItem()
+        backButton.title = ""
+        viewController?.navigationItem.backBarButtonItem = backButton
+        
         viewController?.showHero(detailsViewController, navigationAnimationType: .zoom)
     }
     

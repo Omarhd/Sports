@@ -21,8 +21,9 @@ final class NewsDetailsConfigurator {
         let interactor = NewsDetailsInteractor()
         let router = NewsDetailsRouter(viewController: view)
         let presenter = NewsDetailsPresenter(view: view,
-                                                          interactor: interactor,
-                                             router: router, news: input.news)
+                                             interactor: interactor,
+                                             router: router,
+                                             news: input.news)
         view.presenter = presenter
         interactor.presenter = presenter
         return view
