@@ -66,4 +66,5 @@ protocol VideoPlayerCellProtocol: AnyObject {
 
 protocol VideoPlayerCellDelegate: AnyObject {
     func videoDidFinishPlaying(in cell: VideoTableViewCell)
+    func failedToPLayOrLoadVideo()
 }

@@ -16,5 +16,10 @@ class HotNewsCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    func configureCell(with news: News?) {
+        hotNewsTitleLabel.text = news?.title?.htmlToString
+        loadCellImages(loadImage: hotNewsImage, from: news?.path)
+    }
 
 }

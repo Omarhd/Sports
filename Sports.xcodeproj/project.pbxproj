@@ -65,6 +65,7 @@
 		6A805EC22C22B31200B4B8A7 /* DateFilterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A805EC02C22B31200B4B8A7 /* DateFilterCollectionViewCell.xib */; };
 		6A81F35F2C302701005AC486 /* Like.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A81F35E2C302701005AC486 /* Like.json */; };
 		6A81F3612C3050F6005AC486 /* VideoPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A81F3602C3050F6005AC486 /* VideoPlayerManager.swift */; };
+		6A81F3632C32819A005AC486 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A81F3622C32819A005AC486 /* GradientView.swift */; };
 		6A8C57D92C29446E008CEE9F /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 6A8C57D82C29446E008CEE9F /* Lottie */; };
 		6A8C57DC2C294475008CEE9F /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = 6A8C57DB2C294475008CEE9F /* Hero */; };
 		6A8C57E52C2959AE008CEE9F /* TabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8C57E32C2959AE008CEE9F /* TabCollectionViewCell.swift */; };
@@ -325,6 +326,7 @@
 		6A805EC02C22B31200B4B8A7 /* DateFilterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateFilterCollectionViewCell.xib; sourceTree = "<group>"; };
 		6A81F35E2C302701005AC486 /* Like.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Like.json; sourceTree = "<group>"; };
 		6A81F3602C3050F6005AC486 /* VideoPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerManager.swift; sourceTree = "<group>"; };
+		6A81F3622C32819A005AC486 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		6A8C57E32C2959AE008CEE9F /* TabCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCollectionViewCell.swift; sourceTree = "<group>"; };
 		6A8C57E42C2959AE008CEE9F /* TabCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabCollectionViewCell.xib; sourceTree = "<group>"; };
 		6A9A906D2C22CD2300AA3A09 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
@@ -1436,6 +1438,7 @@
 				6AF6F5C02BFE06C40088617E /* UIViewCornerRadius.swift */,
 				6AA6573A2C04AED200081A21 /* CustomLayout+Extensions.swift */,
 				6AE99A162C2E9805004888B6 /* CardView.swift */,
+				6A81F3622C32819A005AC486 /* GradientView.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -1724,6 +1727,7 @@
 				6AE99A0F2C2DA707004888B6 /* BottomSheetEntity.swift in Sources */,
 				6A9A90792C22F70100AA3A09 /* DateFilterCollectionViewLayout.swift in Sources */,
 				6AFB44EA2C2D487B0080AAF1 /* HomePresenter.swift in Sources */,
+				6A81F3632C32819A005AC486 /* GradientView.swift in Sources */,
 				6A9A909E2C26D5DE00AA3A09 /* MatchDetailsHeader.swift in Sources */,
 				6AE999BF2C2D5716004888B6 /* HighlightHeaderTableViewCell.swift in Sources */,
 				6AFB44E02C2D48420080AAF1 /* MomentsEntity.swift in Sources */,

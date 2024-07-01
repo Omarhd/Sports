@@ -59,6 +59,7 @@ class VideoTableViewCell: UITableViewCell, VideoPlayerCellProtocol {
             if playerItem.status == .readyToPlay {
                 print("Ready to play")
             } else if playerItem.status == .failed {
+                delegate?.failedToPLayOrLoadVideo()
                 print("Failed to load")
             }
         case .playbackLikelyToKeepUp:

@@ -33,7 +33,7 @@ protocol NewsPresenterProtocol: AnyObject {
     var numberOfSections: Int { get }
     func heightForRowInSection(in section: NewsSection) -> CGFloat
     func numberOfNews(in section: NewsSection) -> Int
-    func configureHotNewsCell(with cell: HotNewsTableViewCell, for indexPath: IndexPath)
+    func configureHotNewsCell(with cell: HotNewsTableViewCell, for indexPath: IndexPath, delegate: HotNewsCellViewControllerProtocol)
     func configureListNewsCell(with cell: ListNewsTableViewCell, for indexPath: IndexPath)
     func didSelectNews(at indexPath: IndexPath)
 }
@@ -68,9 +68,17 @@ protocol NewsRouterProtocol: AnyObject {
     func navigateToDetails(news: News)
 }
 
+protocol HotNewsCellCellProtocol: AnyObject {
+    func configureCellUI(news: [News]?)
+}
+
 // Cell --> Protocol
 protocol NewsCellCellProtocol: AnyObject {
     func configureCellUI(news: News?)
+}
+
+protocol HotNewsCellViewControllerProtocol: AnyObject {
+    func didSelectNews(indexPath: IndexPath)
 }
 
 enum NewsSection: Int, CaseIterable {

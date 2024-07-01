@@ -63,7 +63,6 @@ extension VideoPlayerViewController: UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return tableView.bounds.height
     }
-    
 }
 
 extension VideoPlayerViewController: UIScrollViewDelegate {
@@ -121,6 +120,11 @@ extension VideoPlayerViewController: VideoPlayerCellDelegate {
         } else {
             dismissViewController()
         }
+    }
+    
+    func failedToPLayOrLoadVideo() {
+        self.messageHelper.showMessage(title: "Error Loading ", body: "", theme: .warning, presentationStyle: .top, duration: .seconds(seconds: 3.0))
+        self.navigationController?.popToRootViewController(animated: true)
     }
 }
 

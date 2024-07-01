@@ -80,7 +80,7 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
         switch section {
         case .hotNews:
             let cell = tableView.dequeueReusableCell(withIdentifier: HotNewsTableViewCell.viewIdentifier(), for: indexPath) as! HotNewsTableViewCell
-            presenter?.configureHotNewsCell(with: cell, for: indexPath)
+            presenter?.configureHotNewsCell(with: cell, for: indexPath, delegate: self)
             cell.backgroundColor = .red
             return cell
             
@@ -92,7 +92,8 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100.0
+        guard let section = NewsSection(rawValue: indexPath.section) else { return 0 }
+        return presenter?.heightForRowInSection(in: section) ?? 0
     }
         
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -100,6 +101,12 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
+extension NewsViewController: HotNewsCellViewControllerProtocol {
+  
+    func didSelectNews(indexPath: IndexPath) {
+        self.presenter?.didSelectNews(at: indexPath)
+    }
+}
 
 extension NewsViewController: NewsControllerProtocol {
     

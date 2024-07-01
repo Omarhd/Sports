@@ -7,29 +7,27 @@
 
 import UIKit
 
-class HotNewsTableViewCell: UITableViewCell, NewsCellCellProtocol {
+class HotNewsTableViewCell: UITableViewCell, HotNewsCellCellProtocol {
     
     @IBOutlet weak var collectionView: UICollectionView!
-   
+    weak var delegate: HotNewsCellViewControllerProtocol?
+    var news: [News] = []
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        registerNIBs()
-    }
-    
-    fileprivate func registerNIBs() {
-        collectionView.register(HotNewsCollectionViewCell.self, forCellWithReuseIdentifier: HotNewsCollectionViewCell.viewIdentifier())
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     
-    func configureCellUI(news: News?) {
+    func configureCellUI(news: [News]?) {
+        self.news = news ?? []
+        collectionView.registerCell(cell: HotNewsCollectionViewCell.self)
+        collectionView.delegate = self
+        collectionView.dataSource = self
         collectionView.reloadData()
     }
 }
@@ -37,17 +35,21 @@ class HotNewsTableViewCell: UITableViewCell, NewsCellCellProtocol {
 extension HotNewsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return news.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HotNewsCollectionViewCell.viewIdentifier(), for: indexPath) as? HotNewsCollectionViewCell else { return UICollectionViewCell() }
-        cell.backgroundColor = randomColor()
+        cell.configureCell(with: news[indexPath.item])
+        
         return cell
     }
-}
-
-func randomColor() -> UIColor {
-    let colors: [UIColor] = [.accent, .red, .yellow, .red, .white, .black, . gray]
-    return colors.randomElement()!
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.bounds.width - 16, height: collectionView.bounds.height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.didSelectNews(indexPath: indexPath)
+    }
 }

@@ -45,15 +45,16 @@ extension NewsPresenter: NewsPresenterProtocol {
     func heightForRowInSection(in section: NewsSection) -> CGFloat {
         switch section {
         case .hotNews:
-            return hotNews.isEmpty ? (0) : (400.0)
+            return hotNews.isEmpty ? (0) : (140.0)
         case .listNews:
-            return listNews.isEmpty ? (0) : (80.0)
+            return listNews.isEmpty ? (0) : (100.0)
         }
     }
     
-    func configureHotNewsCell(with cell: HotNewsTableViewCell, for indexPath: IndexPath) {
-        var cellData: News?
-        indexPath.row < hotNews.count ? (cellData = hotNews[indexPath.row]) : ()
+    func configureHotNewsCell(with cell: HotNewsTableViewCell, for indexPath: IndexPath, delegate: HotNewsCellViewControllerProtocol) {
+        var cellData: [News]?
+        indexPath.row < hotNews.count ? (cellData = hotNews) : ()
+        cell.delegate = delegate
         cell.configureCellUI(news: cellData)
     }
     
