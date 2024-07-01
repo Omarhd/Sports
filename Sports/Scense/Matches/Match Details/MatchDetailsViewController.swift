@@ -11,6 +11,8 @@ import UIKit
 class MatchDetailsViewController: UIViewController {
 
     // MARK: Outlets
+    @IBOutlet weak var homeTeamNameLabel: UILabel!
+    @IBOutlet weak var awayTeamNameLabel: UILabel!
     @IBOutlet weak var homeTeamImage: UIImageView!
     @IBOutlet weak var awayTeamImage: UIImageView!
     @IBOutlet weak var matchTimeLabel: UILabel!
@@ -33,6 +35,9 @@ class MatchDetailsViewController: UIViewController {
 extension MatchDetailsViewController: MatchDetailsControllerProtocol {
   
     func configureTeamsUI(with match: Match) {
+        homeTeamNameLabel.text = match.details?.homeTeamDetail?.name
+        awayTeamNameLabel.text = match.details?.awayTeamDetail?.name
+        
         let homeTeamLogoUrl = URL(string: match.details?.homeTeamDetail?.logo ?? "")
         homeTeamImage.setImageWithSkeleton(with: homeTeamLogoUrl)
         

@@ -34,12 +34,21 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     
     @objc func centerButtonTapped() {
         let bottomSheetVC = BottomSheetConfigurator.viewController(input: .init())
+        
         if let sheet = bottomSheetVC.sheetPresentationController {
-            sheet.detents = [.medium()]
+            if #available(iOS 16.0, *) {
+                let customDetent = BottomSheetDetent.custom(260).detent as! UISheetPresentationController.Detent
+                sheet.detents = [customDetent]
+            } else {
+                let mediumDetent = BottomSheetDetent.medium.detent as! UISheetPresentationController.Detent
+                sheet.detents = [mediumDetent]
+            }
+            
             sheet.prefersScrollingExpandsWhenScrolledToEdge = false
             sheet.prefersEdgeAttachedInCompactHeight = true
             sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
         }
+        
         bottomSheetVC.modalPresentationStyle = .pageSheet
         present(bottomSheetVC, animated: true, completion: nil)
     }
@@ -48,12 +57,15 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
         let homeViewController = HomeConfigurator.viewController(input: .init())
         let matchesViewController = MatchesConfigurator.viewController(input: .init())
         let newsViewController = NewsConfigurator.viewController(input: .init())
-        let settingsViewController = SettingsConfigurator.viewController(input: .init())
+        let momentsViewController = MomentsConfigurator.viewController(input: .init())
+//        let settingsViewController = SettingsConfigurator.viewController(input: .init())
         
         let homeNavController = CustomNavigationController(rootViewController: homeViewController)
         let matchesNavController = CustomNavigationController(rootViewController: matchesViewController)
         let newsNavController = CustomNavigationController(rootViewController: newsViewController)
-        let settingsNavController = CustomNavigationController(rootViewController: settingsViewController)
+        let momentsNavController = CustomNavigationController(rootViewController: momentsViewController)
+
+//        let settingsNavController = CustomNavigationController(rootViewController: settingsViewController)
         
         // Create tab bar items
         homeNavController.tabBarItem = UITabBarItem(title: "Home".localized, image: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house.fill"))
@@ -62,14 +74,14 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
         
         newsNavController.tabBarItem = UITabBarItem(title: "News".localized, image: UIImage(systemName: "newspaper.circle"), selectedImage: UIImage(systemName: "newspaper.circle.fill"))
         
-        settingsNavController.tabBarItem = UITabBarItem(title: "Settings".localized, image: UIImage(systemName: "gear"), selectedImage: UIImage(systemName: "gear.circle.fill"))
+        momentsNavController.tabBarItem = UITabBarItem(title: "Moments".localized, image: UIImage(systemName: "video.circle"), selectedImage: UIImage(systemName: "video.circle.fill"))
         
         // Assign view controllers to the tab bar controller
         self.viewControllers = [
             homeNavController,
             matchesNavController,
             newsNavController,
-            settingsNavController
+            momentsNavController
         ]
     }
 
@@ -110,8 +122,8 @@ class CustomTabBar: UITabBar {
     private func setupTabBarAppearance() {
         let appearance = UITabBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundEffect = UIBlurEffect(style: .regular)
-        appearance.backgroundColor = .background
+        appearance.backgroundEffect = UIBlurEffect(style: .systemChromeMaterial)
+        appearance.backgroundColor = .clear
         
         let itemAppearance = UITabBarItemAppearance()
         itemAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.darkGray]

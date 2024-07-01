@@ -43,19 +43,15 @@ extension BottomSheetPresenter: BottomSheetPresenterProtocol {
     
     func heightForRowInSection(in section: CreateContentOptions) -> CGFloat {
         switch section {
-        case .Post: return 80.0
-        case .Story: return 80.0
-        case .Moment: return 80.0
+        case .Post: return 50.0
+        case .Story: return 50.0
+        case .Moment: return 50.0
         }
     }
     
     func configureOptionCell(in section: CreateContentOptions, for cell: OptionTableViewCell, for index: IndexPath) {
-        let cellData = options[index.row]
-        switch section {
-        case .Post: cell.configureCell(with: cellData.description)
-        case .Story: cell.configureCell(with: cellData.description)
-        case .Moment: cell.configureCell(with: cellData.description)
-        }
+        let cellData = options[index.section]
+        cell.configureCell(with: cellData.description)
     }
     
 }

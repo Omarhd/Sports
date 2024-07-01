@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="HighlightMomentCollectionViewCell" customModule="Sports" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="157" height="200"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="157" height="200"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RJa-kJ-mls">
+                        <rect key="frame" x="0.0" y="0.0" width="157" height="200"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pJr-34-VRI">
+                                <rect key="frame" x="8" y="8" width="141" height="184"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 19" translatesAutoresizingMaskIntoConstraints="NO" id="NW5-F1-HoZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="141" height="104"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="jcj-pj-aap">
+                                        <rect key="frame" x="0.0" y="124" width="141" height="60"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seven NBA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y65-do-d9u">
+                                                <rect key="frame" x="0.0" y="0.0" width="141" height="18.333333333333332"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Observations on Draft Buzz, JJ Redick, and Tra..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBg-Q7-dQc">
+                                                <rect key="frame" x="0.0" y="18.333333333333339" width="141" height="41.666666666666657"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="eTP-aX-mGe"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XmH-dV-UeW">
+                                <rect key="frame" x="48.666666666666657" y="100" width="60" height="24"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="F51-Fi-RrJ">
+                                        <rect key="frame" x="4" y="4" width="52" height="16"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="he5-bd-oED">
+                                                <rect key="frame" x="0.0" y="0.0" width="23" height="16"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="play.fill" catalog="system"/>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4:22" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2a-x7-74p">
+                                                <rect key="frame" x="27.000000000000007" y="0.0" width="25" height="16"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="12"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="7l4-rg-WoL"/>
+                                    <constraint firstAttribute="width" constant="60" id="8vf-fy-ZAX"/>
+                                    <constraint firstAttribute="trailing" secondItem="F51-Fi-RrJ" secondAttribute="trailing" constant="4" id="KLZ-Ht-Mfz"/>
+                                    <constraint firstAttribute="bottom" secondItem="F51-Fi-RrJ" secondAttribute="bottom" constant="4" id="dtI-mr-1R5"/>
+                                    <constraint firstItem="F51-Fi-RrJ" firstAttribute="leading" secondItem="XmH-dV-UeW" secondAttribute="leading" constant="4" id="gB5-X5-1fF"/>
+                                    <constraint firstItem="F51-Fi-RrJ" firstAttribute="top" secondItem="XmH-dV-UeW" secondAttribute="top" constant="4" id="lpv-7n-QEU"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" name="MomentCell"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="pJr-34-VRI" secondAttribute="bottom" constant="8" id="5O1-F5-9Kn"/>
+                            <constraint firstAttribute="trailing" secondItem="pJr-34-VRI" secondAttribute="trailing" constant="8" id="SUr-dx-Oeh"/>
+                            <constraint firstItem="XmH-dV-UeW" firstAttribute="bottom" secondItem="NW5-F1-HoZ" secondAttribute="bottom" constant="12" id="ZYd-U4-Ufo"/>
+                            <constraint firstItem="pJr-34-VRI" firstAttribute="leading" secondItem="RJa-kJ-mls" secondAttribute="leading" constant="8" id="jZ4-U6-yZS"/>
+                            <constraint firstItem="pJr-34-VRI" firstAttribute="top" secondItem="RJa-kJ-mls" secondAttribute="top" constant="8" id="lnf-vC-VbI"/>
+                            <constraint firstItem="XmH-dV-UeW" firstAttribute="centerX" secondItem="RJa-kJ-mls" secondAttribute="centerX" id="xcS-lM-vC9"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="12"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="RJa-kJ-mls" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="P8k-bn-yEQ"/>
+                <constraint firstAttribute="bottom" secondItem="RJa-kJ-mls" secondAttribute="bottom" id="V07-vz-aN2"/>
+                <constraint firstAttribute="trailing" secondItem="RJa-kJ-mls" secondAttribute="trailing" id="jS7-ac-nqC"/>
+                <constraint firstItem="RJa-kJ-mls" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="w46-uV-36w"/>
+            </constraints>
+            <size key="customSize" width="157" height="200"/>
+            <point key="canvasLocation" x="52.671755725190835" y="40.140845070422536"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Rectangle 19" width="158" height="132"/>
+        <image name="play.fill" catalog="system" width="117" height="128"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.53725490196078429" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MomentCell">
+            <color red="1" green="0.92549019607843142" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

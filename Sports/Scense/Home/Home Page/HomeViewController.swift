@@ -96,6 +96,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension HomeViewController: PostCellViewControllerProtocol {
+    
     func didTappedImage(image: UIImage) {
         presenter?.didSelectTappedImage(image: image)
     }

@@ -13,15 +13,22 @@ class CountdownTimer {
     private var timer: Timer?
     private var timeRemaining: Int
     private var updateCallback: ((String) -> Void)?
-
-    init(seconds: Int, updateCallback: @escaping (String) -> Void) {
+    private var completionCallback: (() -> Void)?
+    
+    init(seconds: Int, updateCallback: @escaping (String) -> Void, completionCallback: (() -> Void)? = nil) {
         self.totalTime = seconds
         self.timeRemaining = seconds
         self.updateCallback = updateCallback
+        self.completionCallback = completionCallback
     }
     
     func startCountdown() {
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+    }
+    
+    func stopCountdown() {
+        timer?.invalidate()
+        timer = nil
     }
     
     @objc private func updateTime() {
@@ -29,9 +36,9 @@ class CountdownTimer {
             timeRemaining -= 1
             updateCallback?(formatTime(seconds: timeRemaining))
         } else {
-            timer?.invalidate()
-            timer = nil
+            stopCountdown()
             updateCallback?("0:00")
+            completionCallback?()
         }
     }
     

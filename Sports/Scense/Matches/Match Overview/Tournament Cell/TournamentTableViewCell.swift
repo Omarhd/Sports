@@ -30,16 +30,14 @@ class TournamentTableViewCell: UITableViewCell, TournamentCellCellProtocol {
     func configureCellUI(tournament: TournamentDetails?) {
         tournamentNameLabel.text = tournament?.name
         tournamentShortNameLabel.text = tournament?.shortName
-        
+        loadCellImages(loadImage: tournamentLogo, from: tournament?.logo)
+
         switch tournament?.type {
         case .unknown: tournamentTypeLabel.text = "Unknown".localized
         case .league: tournamentTypeLabel.text = "League".localized
         case .cup: tournamentTypeLabel.text = "Cup".localized
         case nil: tournamentTypeLabel.text = "N/A".localized
         }
-        
-        guard let logoURL: URL = URL(string: tournament?.logo ?? "") else { return }
-        tournamentLogo.kf.setImage(with: logoURL, placeholder: UIImage(systemName: "basketball.fill"))
     }
     
 }

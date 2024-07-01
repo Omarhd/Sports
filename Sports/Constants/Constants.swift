@@ -10,6 +10,6 @@ import Foundation
 let MainStoryboard: String = "Main"
 let HomeStoryboard: String = "Home"
 let MatchesStoryboard: String = "Matches"
-let LiveStoryboard: String = "Live"
+let MomentsStoryboard: String = "Moments"
 let NewsStoryboard: String = "News"
 let SettingsStoryboard: String = "Settings"

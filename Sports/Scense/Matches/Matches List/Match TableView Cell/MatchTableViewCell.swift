@@ -35,16 +35,20 @@ class MatchTableViewCell: UITableViewCell, MatchCellProtocol {
 
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        countdownTimer?.stopCountdown()
+        countdownTimer = nil
+        matchTimeLabel.text = nil
+    }
+    
     // MARK: - Methods
     func configureMatchCellUI(match: Match?) {
         homeTeamNameLabel.text = match?.details?.homeTeamDetail?.name ?? "N/A".localized
         awayTeamNameLabel.text = match?.details?.awayTeamDetail?.name ?? "N/A".localized
-                
-        let homeTeamLogoUrl = URL(string: match?.details?.homeTeamDetail?.logo ?? "")
-        homeTeamImage.setImageWithSkeleton(with: homeTeamLogoUrl)
-        
-        let awayTeamLogoUrl = URL(string: match?.details?.awayTeamDetail?.logo ?? "")
-        awayTeamImage.setImageWithSkeleton(with: awayTeamLogoUrl)
+        loadCellImages(loadImage: homeTeamImage, from: match?.details?.homeTeamDetail?.logo)
+        loadCellImages(loadImage: awayTeamImage, from: match?.details?.awayTeamDetail?.logo)
+
     }
     
     func configureLiveMatchCellUI(matchStatus: MatchStatus?, match: Match?) {
@@ -172,14 +176,22 @@ class MatchTableViewCell: UITableViewCell, MatchCellProtocol {
         liveMatchTimeLabel.isHidden = false
         liveMatchAnimationImage.addSymbolEffect(.scale.byLayer)
     }
-     
+    
     func configure(seconds: Int, quarter: String) {
-//        countdownTimer?.startCountdown() // Stop any existing timer
-        countdownTimer = CountdownTimer(seconds: seconds) { [weak self] formattedTime in
-            DispatchQueue.main.async {
-                self?.matchTimeLabel.text = quarter + " - " + formattedTime
+        countdownTimer?.stopCountdown() // Stop any existing timer
+        countdownTimer = CountdownTimer(
+            seconds: seconds,
+            updateCallback: { [weak self] formattedTime in
+                DispatchQueue.main.async {
+                    self?.matchTimeLabel.text = quarter + " - " + formattedTime
+                }
+            },
+            completionCallback: { [weak self] in
+                DispatchQueue.main.async {
+                    self?.matchTimeLabel.text = quarter + " - Time's up!"
+                }
             }
-        }
+        )
         countdownTimer?.startCountdown()
     }
     

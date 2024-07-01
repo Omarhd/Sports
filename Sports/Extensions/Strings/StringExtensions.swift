@@ -30,4 +30,11 @@ extension String {
         guard let value = Double(self) else { return nil }
         return String(format: "%.2f", value)
     }
+    
+    func toURL() -> URL? {
+        guard let encodedString = self.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+            return nil
+        }        
+        return URL(string: encodedString)
+    }
 }

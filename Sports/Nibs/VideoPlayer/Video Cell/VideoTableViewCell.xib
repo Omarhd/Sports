@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="419" id="KGk-i7-Jjw" customClass="VideoTableViewCell" customModule="Sports" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="344" height="419"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="344" height="419"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHV-cv-bYx">
+                        <rect key="frame" x="0.0" y="0.0" width="344" height="419"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Se1-J2-Qii">
+                        <rect key="frame" x="20" y="12" width="304" height="395"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nd8-7z-tAh">
+                        <rect key="frame" x="0.0" y="0.0" width="344" height="419"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kik-Wd-22e">
+                                <rect key="frame" x="20" y="20" width="304" height="379"/>
+                                <subviews>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uyA-fI-8pN">
+                                        <rect key="frame" x="0.0" y="0.0" width="264" height="379"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="videoThumbnail"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jpf-kT-kiv">
+                                        <rect key="frame" x="264" y="0.0" width="40" height="379"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="eYX-X7-Tg3">
+                                                <rect key="frame" x="0.0" y="183" width="32" height="180"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Qz-gK-AFJ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="32" height="45"/>
+                                                        <color key="tintColor" name="AccentColor"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" image="heart" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="likeAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="vgP-MV-fPq"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9IM-gd-j2i">
+                                                        <rect key="frame" x="0.0" y="45" width="32" height="45"/>
+                                                        <color key="tintColor" name="AccentColor"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" image="newspaper" catalog="system"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iuz-42-wNI">
+                                                        <rect key="frame" x="0.0" y="90" width="32" height="45"/>
+                                                        <color key="tintColor" name="AccentColor"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" image="square.and.arrow.up" catalog="system"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2gp-g5-K8d">
+                                                        <rect key="frame" x="0.0" y="135" width="32" height="45"/>
+                                                        <color key="tintColor" name="AccentColor"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" image="slider.horizontal.3" catalog="system"/>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="180" id="HUV-2u-5jx"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="eYX-X7-Tg3" firstAttribute="leading" secondItem="Jpf-kT-kiv" secondAttribute="leading" id="a2G-Lb-sCV"/>
+                                            <constraint firstAttribute="bottom" secondItem="eYX-X7-Tg3" secondAttribute="bottom" constant="16" id="gYN-sL-tNb"/>
+                                            <constraint firstAttribute="width" constant="40" id="jOd-xJ-GZf"/>
+                                            <constraint firstAttribute="trailing" secondItem="eYX-X7-Tg3" secondAttribute="trailing" constant="8" id="pNU-xX-kVn"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="videoThumbnail"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Kik-Wd-22e" secondAttribute="trailing" constant="20" id="Vor-W6-AWs"/>
+                            <constraint firstItem="Kik-Wd-22e" firstAttribute="top" secondItem="nd8-7z-tAh" secondAttribute="top" constant="20" id="fvA-mr-jrg"/>
+                            <constraint firstItem="Kik-Wd-22e" firstAttribute="leading" secondItem="nd8-7z-tAh" secondAttribute="leading" constant="20" id="mzX-cI-aMy"/>
+                            <constraint firstAttribute="bottom" secondItem="Kik-Wd-22e" secondAttribute="bottom" constant="20" id="t0n-nn-frP"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" name="BackgroundColor"/>
+                <constraints>
+                    <constraint firstItem="Se1-J2-Qii" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="07y-wv-wkd"/>
+                    <constraint firstItem="nd8-7z-tAh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="7vQ-Hh-blP"/>
+                    <constraint firstAttribute="trailing" secondItem="cHV-cv-bYx" secondAttribute="trailing" id="CgK-Qx-40D"/>
+                    <constraint firstItem="cHV-cv-bYx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Es9-M0-yBY"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Se1-J2-Qii" secondAttribute="bottom" id="Kkf-74-ici"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Se1-J2-Qii" secondAttribute="trailing" id="QDc-rC-EKT"/>
+                    <constraint firstAttribute="bottom" secondItem="nd8-7z-tAh" secondAttribute="bottom" id="S7v-fy-7gM"/>
+                    <constraint firstAttribute="trailing" secondItem="nd8-7z-tAh" secondAttribute="trailing" id="fLp-D9-Ka9"/>
+                    <constraint firstItem="cHV-cv-bYx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="kUV-9G-EFB"/>
+                    <constraint firstItem="nd8-7z-tAh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="osf-9Z-hcb"/>
+                    <constraint firstAttribute="bottom" secondItem="cHV-cv-bYx" secondAttribute="bottom" id="tEM-2A-SA6"/>
+                    <constraint firstItem="Se1-J2-Qii" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="yqa-sN-YvU"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="interactionsView" destination="Jpf-kT-kiv" id="vux-ZI-ZLQ"/>
+                <outlet property="likeButton" destination="3Qz-gK-AFJ" id="y6c-eE-Ojx"/>
+                <outlet property="videoContentView" destination="cHV-cv-bYx" id="x7A-1H-thQ"/>
+                <outlet property="videoThumbnailImage" destination="Se1-J2-Qii" id="gZ8-S0-A1n"/>
+            </connections>
+            <point key="canvasLocation" x="73.282442748091597" y="51.760563380281695"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="newspaper" catalog="system" width="128" height="111"/>
+        <image name="slider.horizontal.3" catalog="system" width="128" height="99"/>
+        <image name="square.and.arrow.up" catalog="system" width="108" height="128"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.53725490196078429" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BackgroundColor">
+            <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -23,9 +23,7 @@ class HighlightsCollectionViewCell: UICollectionViewCell, highlightCollectionCel
     
     func configureCell(with highlight: HomeHighlightsEntity) {
         highlightTitleLabel.text = highlight.title
-        
-        guard let url: URL = URL(string: highlight.imageURL ?? "") else { return }
-        highlightImage.kf.setImage(with: url, placeholder: UIImage(named: "Rectangle 2"))
+        loadCellImages(loadImage: highlightImage, from: highlight.imageURL)
     }
 
 }

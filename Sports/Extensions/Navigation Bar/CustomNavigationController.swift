@@ -12,10 +12,10 @@ class CustomNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBarAppearance()
+        configureRightBarButtonItems()
     }
     
     private func setupNavigationBarAppearance() {
-        // Standard appearance with a blur effect
         let appearance = UINavigationBarAppearance()
         appearance.titleTextAttributes = [.foregroundColor: UIColor.label]
         appearance.backgroundColor = UIColor.background
@@ -36,5 +36,27 @@ class CustomNavigationController: UINavigationController {
         navigationBar.scrollEdgeAppearance = scrollEdgeAppearance
         navigationBar.compactAppearance = appearance
         navigationBar.tintColor = .label // Color of bar button items
+    }
+    
+    // MARK: - Setup Right BarButton Items
+    func configureRightBarButtonItems() {
+        let notificationButton = UIBarButtonItem(image: .notificationIcon, style: .plain, target: self, action: #selector(notificationDidTap))
+        notificationButton.tintColor = .white
+        let searchButton = UIBarButtonItem(image: .searchIcon, style: .plain, target: self, action: #selector(searchDidTap))
+        searchButton.tintColor = .white
+        self.navigationItem.rightBarButtonItems = [notificationButton, searchButton]
+    }
+    
+    @objc func searchDidTap() {
+//        pushSearchView()
+    }
+    
+    @objc func notificationDidTap() {
+    }
+    
+    func pushSearchView() {
+        if let viewController = UIStoryboard(name: "Search", bundle: .main).instantiateInitialViewController() {
+            self.navigationController?.pushViewController(viewController, animated: true)
+        }
     }
 }

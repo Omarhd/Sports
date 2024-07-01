@@ -54,9 +54,7 @@ extension NewsDetailsViewController: NewsDetailsControllerProtocol {
         title = "News Details".localized
         newsTitleLabel.text = news.title?.htmlToString
         newsContentTextView.text = news.content?.htmlToString
-        
-        guard let newsImageUrl = URL(string: news.path ?? "") else { return }
-        newsImage.kf.setImage(with: newsImageUrl)
+        loadImages(loadImage: newsImage, from: news.path)
     }
     
     func showFailureAlert(with error: String) {

@@ -26,10 +26,8 @@ class ListNewsTableViewCell: UITableViewCell, NewsCellCellProtocol {
     }
     
     func configureCellUI(news: News?) {
-        guard let imageUrl = URL(string: news?.path ?? "") else { return }
-        newsImage.kf.setImage(with: imageUrl, placeholder: UIImage(systemName: "newspaper"))
-        
         newsTitleLabel.text = news?.title
         newsDescriptionLabel.text = news?.description
+        loadCellImages(loadImage: newsImage, from: news?.path)
     }
 }

@@ -30,6 +30,11 @@ extension HomeRouter: HomeRouterProtocol {
     }
     
     func showFullStory(story: HomeStoryEntity, allStories: [HomeStoryEntity]) {
-        print(story)
+        let detailsViewController = VideoPlayerConfigurator.viewController(input: .init(videosURLs: ["https://youtu.be/_oTPT3gFUms",
+                                                                                                     "https://youtu.be/_oTPT3gFUms",
+                                                                                                     "https://youtu.be/_oTPT3gFUms"]))
+        detailsViewController.hidesBottomBarWhenPushed = true
+        detailsViewController.navigationController?.isNavigationBarHidden = true
+        viewController?.showHero(detailsViewController, navigationAnimationType: .pageIn(direction: .up))
     }
 }

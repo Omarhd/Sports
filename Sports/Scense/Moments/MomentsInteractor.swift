@@ -7,15 +7,29 @@
 //
 
 import UIKit
+import Combine
 
 class MomentsInteractor {
 
     var presenter: MomentsInteractorOutput?
-
-    init() {
+    private let session: Session
+    private let base = BuildSettingsKey.NEWS.value
+    private var anyCancellable = Set<AnyCancellable>()
+    
+    init(session: Session = .shared) {
+        self.session = session
     }
 }
+
 extension MomentsInteractor: MomentsPresenterInteractorProtocol {
+    
+    func fetchFollowingMoments() {
+        presenter?.succeedReceivedFollowing(moments: moments)
+    }
+    
+    func fetchHighlightMoments() {
+        presenter?.succeedReceivedHighlights(moments: moments)
+    }
 
 }
 

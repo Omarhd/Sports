@@ -18,7 +18,17 @@ class MomentsRouter {
 }
 // MARK: Conforming to MomentsRouterProtocol
 extension MomentsRouter: MomentsRouterProtocol {
+   
     func popViewController() {
         self.viewController?.navigationController?.popViewController(animated: true)
+    }
+    
+    func showFullMoment(story: MomentsEntity, allStories: [MomentsEntity]) {
+        let detailsViewController = VideoPlayerConfigurator.viewController(input: .init(videosURLs: ["https://youtu.be/_oTPT3gFUms",
+                                                                                                     "https://youtu.be/_oTPT3gFUms",
+                                                                                                     "https://youtu.be/_oTPT3gFUms"]))
+        detailsViewController.hidesBottomBarWhenPushed = true
+        detailsViewController.navigationController?.isNavigationBarHidden = true
+        viewController?.showHero(detailsViewController, navigationAnimationType: .pageIn(direction: .up))
     }
 }

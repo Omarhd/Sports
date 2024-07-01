@@ -11,14 +11,12 @@ import Kingfisher
 extension UIViewController {
     
     // MARK: - func of load images wit kingfisher
-    func loadKingfisherImages(loadImage: UIImageView, imageURL: String) {
-        loadImage.isHidden = false
-        if imageURL == "" {
-            loadImage.image = UIImage(systemName: "person.crop.circle.fill")
-        }else{
-            loadImage.kf.indicatorType = .activity
-            let url = URL(string: imageURL)
+    func loadImages(loadImage: UIImageView, from imagePathURL: String?) {
+        if let imagePathURL = imagePathURL, let url = URL(string: imagePathURL) {
+            loadImage.kf.indicatorType = .custom(indicator: SkeletonIndicator())
             loadImage.kf.setImage(with: url)
+        } else {
+            loadImage.image = UIImage(systemName: "basketball.fill")
         }
     }
     

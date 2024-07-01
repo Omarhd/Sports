@@ -38,10 +38,10 @@
             </objects>
             <point key="canvasLocation" x="-60" y="399"/>
         </scene>
-        <!--Settings-->
+        <!--Moments-->
         <scene sceneID="XLh-b9-nfO">
             <objects>
-                <viewControllerPlaceholder storyboardName="Settings" id="gMp-nO-Jhd" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Moments" id="gMp-nO-Jhd" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="PMc-lP-Cty"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1iG-lh-8cf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

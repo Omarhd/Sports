@@ -22,5 +22,7 @@ class StoryCollectionViewCell: UICollectionViewCell, StoriesCollectionCellProtoc
     }
 
     func configureCell(with story: HomeStoryEntity) {
+        userNameLabel.text = story.name
+        loadCellImages(loadImage: userImage, from: story.imageURL)
     }
 }

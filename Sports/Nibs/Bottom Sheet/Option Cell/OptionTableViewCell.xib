@@ -21,11 +21,11 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QxQ-sq-qTD">
                         <rect key="frame" x="140.33333333333334" y="11" width="39.333333333333343" height="22"/>
                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" name="Cell"/>
+                <color key="backgroundColor" name="AccentColor"/>
                 <constraints>
                     <constraint firstItem="QxQ-sq-qTD" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="94T-5C-EQS"/>
                     <constraint firstItem="QxQ-sq-qTD" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="tzD-op-oaY"/>
@@ -40,11 +40,11 @@
         </tableViewCell>
     </objects>
     <resources>
-        <namedColor name="BackgroundColor">
-            <color red="0.9882352941176471" green="0.99607843137254903" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.53725490196078429" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="Cell">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="BackgroundColor">
+            <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
