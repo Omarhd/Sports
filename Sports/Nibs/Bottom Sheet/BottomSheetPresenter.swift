@@ -54,6 +54,14 @@ extension BottomSheetPresenter: BottomSheetPresenterProtocol {
         cell.configureCell(with: cellData.description)
     }
     
+    func didSelect(form section: CreateContentOptions) {
+        switch section {
+        case .Story: router?.opensCamera()
+        case .Post: router?.openNewPost()
+        case .Moment: router?.opensCamera()
+        }
+    }
+    
 }
 // MARK: Conform to BottomSheetInteractorOutput
 extension BottomSheetPresenter: BottomSheetInteractorOutput {

@@ -11,5 +11,4 @@ struct UserDefaultKeys {
     static let token = "token"
     static let userObject = "user"
     static let appLanguage = "appLanguage"
-
 }

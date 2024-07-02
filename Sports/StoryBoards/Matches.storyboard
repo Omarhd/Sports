@@ -160,10 +160,10 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="120.33333333333333" height="84"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ihg-MW-8iH">
-                                                                <rect key="frame" x="0.0" y="0.0" width="120.33333333333333" height="60.666666666666664"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="120.33333333333333" height="60"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ExH-bj-Mvq">
-                                                                        <rect key="frame" x="35.333333333333336" y="5.3333333333333286" width="50.000000000000007" height="50"/>
+                                                                        <rect key="frame" x="35.333333333333336" y="5" width="50.000000000000007" height="50"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="50" id="7cU-C0-dQn"/>
                                                                             <constraint firstAttribute="width" constant="50" id="bIl-1W-Pjs"/>
@@ -175,12 +175,13 @@
                                                                     </imageView>
                                                                 </subviews>
                                                                 <constraints>
+                                                                    <constraint firstAttribute="height" constant="60" id="ahI-7k-TDQ"/>
                                                                     <constraint firstItem="ExH-bj-Mvq" firstAttribute="centerX" secondItem="Ihg-MW-8iH" secondAttribute="centerX" id="f5D-dz-G3n"/>
                                                                     <constraint firstItem="ExH-bj-Mvq" firstAttribute="centerY" secondItem="Ihg-MW-8iH" secondAttribute="centerY" id="gFj-GN-dm8"/>
                                                                 </constraints>
                                                             </view>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaJ-a6-G1V">
-                                                                <rect key="frame" x="0.0" y="64.666666666666657" width="120.33333333333333" height="19.333333333333329"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FaJ-a6-G1V">
+                                                                <rect key="frame" x="0.0" y="64" width="120.33333333333333" height="20"/>
                                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -225,10 +226,10 @@
                                                         <rect key="frame" x="240.66666666666671" y="0.0" width="120.33333333333334" height="84"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="od5-0a-s5j">
-                                                                <rect key="frame" x="0.0" y="0.0" width="120.33333333333333" height="60.666666666666664"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="120.33333333333333" height="60"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G6X-As-qhB">
-                                                                        <rect key="frame" x="35.333333333333314" y="5.3333333333333286" width="50" height="50"/>
+                                                                        <rect key="frame" x="35.333333333333314" y="5" width="50" height="50"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="50" id="FAJ-05-I5T"/>
                                                                             <constraint firstAttribute="width" constant="50" id="N8X-xA-iED"/>
@@ -241,11 +242,12 @@
                                                                 </subviews>
                                                                 <constraints>
                                                                     <constraint firstItem="G6X-As-qhB" firstAttribute="centerY" secondItem="od5-0a-s5j" secondAttribute="centerY" id="Eft-ST-xuf"/>
+                                                                    <constraint firstAttribute="height" constant="60" id="Rew-vb-LHq"/>
                                                                     <constraint firstItem="G6X-As-qhB" firstAttribute="centerX" secondItem="od5-0a-s5j" secondAttribute="centerX" id="it0-k0-wV2"/>
                                                                 </constraints>
                                                             </view>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rq4-Cs-ump">
-                                                                <rect key="frame" x="0.0" y="64.666666666666657" width="120.33333333333333" height="19.333333333333329"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rq4-Cs-ump">
+                                                                <rect key="frame" x="0.0" y="64" width="120.33333333333333" height="20"/>
                                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -325,7 +327,7 @@
                 <pageViewController storyboardIdentifier="DetailsPagesViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="dFM-sP-4sj" customClass="DetailsPagesViewController" customModule="Sports" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fUl-mM-1Og" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3689.3129770992364" y="-110.56338028169014"/>
+            <point key="canvasLocation" x="3695" y="-117"/>
         </scene>
         <!--Custom Navigation Controller-->
         <scene sceneID="30i-7R-619">
@@ -350,7 +352,7 @@
     <resources>
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <namedColor name="AccentColor">
-            <color red="0.0" green="0.53725490196078429" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.27058823529411763" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="BackgroundColor">
             <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -80,7 +80,7 @@ extension MatchOddsViewController: MatchOddsControllerProtocol {
     }
     
     func setEmptyState() {
-        setEmptyCase(imageName: "figure.soccer", title: "No Data", message: "Try again Later".localized, containerView: self.view)
+        setEmptyCase(imageName: "figure.basketball", title: "No Data", message: "Try again Later".localized, containerView: self.view)
     }
     
     func showFailureAlert(with error: String) {

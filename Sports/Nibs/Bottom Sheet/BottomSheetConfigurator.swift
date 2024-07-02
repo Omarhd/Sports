@@ -33,6 +33,8 @@ protocol BottomSheetPresenterProtocol: AnyObject {
     func heightForRowInSection(in section: CreateContentOptions) -> CGFloat
     func configureOptionCell(in section: CreateContentOptions, for cell: OptionTableViewCell, for index: IndexPath)
 
+    func didSelect(form section: CreateContentOptions)
+    
     var numberOfSections: Int { get }
 
 }
@@ -62,6 +64,8 @@ protocol BottomSheetInteractorOutput: AnyObject {
 // Presenter --> Router
 protocol BottomSheetRouterProtocol: AnyObject {
     func popViewController()
+    func opensCamera()
+    func openNewPost()
 }
 
 protocol OptionsCellProtocol: AnyObject {

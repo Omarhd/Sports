@@ -58,6 +58,11 @@ extension BottomSheetViewController: UITableViewDelegate, UITableViewDataSource 
         guard let section = CreateContentOptions(rawValue: indexPath.section) else { return 0 }
         return presenter?.heightForRowInSection(in: section) ?? 0
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let section = CreateContentOptions(rawValue: indexPath.section) else { return }
+        presenter?.didSelect(form: section)
+    }
 }
 
 extension BottomSheetViewController: BottomSheetControllerProtocol {
@@ -68,7 +73,7 @@ extension BottomSheetViewController: BottomSheetControllerProtocol {
     }
     
     func setEmptyState() {
-        setEmptyCase(imageName: "figure.soccer", title: "No Data", message: "Try again Later".localized, containerView: self.view)
+        setEmptyCase(imageName: "figure.basketball", title: "No Data", message: "Try again Later".localized, containerView: self.view)
     }
     
     func showFailureAlert(with error: String) {

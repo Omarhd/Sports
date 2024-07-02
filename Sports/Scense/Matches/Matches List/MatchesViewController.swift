@@ -77,7 +77,7 @@ extension MatchesViewController: MatchesControllerProtocol {
     }
     
     func setEmptyState() {
-        setEmptyCase(imageName: "figure.soccer", title: "No Data", message: "Try again Later".localized, containerView: contentView)
+        setEmptyCase(imageName: "figure.basketball", title: "No Data", message: "Try again Later".localized, containerView: contentView)
     }
     
     func showFailureAlert(with error: String) {
