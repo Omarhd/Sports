@@ -124,6 +124,10 @@ struct TeamDetail: Codable {
         case nameZht = "name_zht"
         case countryDetails
     }
+    
+    func displayName(isEnglish: Bool) -> String {
+        return isEnglish ? (name ?? "") : (nameZht ?? "")
+    }
 }
 
 // MARK: - CountryDetails
@@ -141,6 +145,10 @@ struct CountryDetails: Codable {
         case name, logo
         case updatedAt = "updated_at"
         case zhName = "zh_name"
+    }
+    
+    func displayName(isEnglish: Bool) -> String {
+        return isEnglish ? (name ?? "") : (zhName ?? "")
     }
 }
 
@@ -223,6 +231,10 @@ struct TournamentDetails: Codable {
         case shortName = "short_name"
         case logo, type
         case nameZht = "name_zht"
+    }
+    
+    func displayName(isEnglish: Bool) -> String {
+        return isEnglish ? (name ?? "") : (nameZht ?? "")
     }
 }
 

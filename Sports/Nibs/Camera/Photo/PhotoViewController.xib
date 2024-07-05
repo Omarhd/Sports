@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="captureButton" destination="SVa-Rc-mGd" id="B9L-UG-raM"/>
                 <outlet property="flashButton" destination="dNm-Jw-Xd5" id="qoD-2f-bii"/>
+                <outlet property="flipCameraButton" destination="gA9-2Z-M3Z" id="OYe-OV-tsj"/>
                 <outlet property="previewView" destination="Yba-Fl-bvx" id="XTs-nf-IKG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -35,10 +36,10 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="5d6-Ba-0NG">
-                    <rect key="frame" x="40" y="683" width="313" height="45"/>
+                    <rect key="frame" x="101" y="757" width="191" height="45"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SVa-Rc-mGd">
-                            <rect key="frame" x="0.0" y="0.0" width="191" height="45"/>
+                            <rect key="frame" x="0.0" y="0.0" width="69" height="45"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="tinted" title="Photo" cornerStyle="capsule"/>
                             <connections>
@@ -46,7 +47,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dNm-Jw-Xd5">
-                            <rect key="frame" x="207" y="0.0" width="45" height="45"/>
+                            <rect key="frame" x="85" y="0.0" width="45" height="45"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="45" id="ISP-Qj-iB7"/>
                             </constraints>
@@ -58,7 +59,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gA9-2Z-M3Z">
-                            <rect key="frame" x="268" y="0.0" width="45" height="45"/>
+                            <rect key="frame" x="146" y="0.0" width="45" height="45"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="45" id="jkd-AY-GVP"/>
                             </constraints>
@@ -78,11 +79,10 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5d6-Ba-0NG" secondAttribute="trailing" constant="40" id="0uX-4z-Ebj"/>
                 <constraint firstItem="Yba-Fl-bvx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="8Zo-bg-h4b"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Yba-Fl-bvx" secondAttribute="trailing" constant="16" id="TUi-2a-ERx"/>
-                <constraint firstItem="5d6-Ba-0NG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="Xg9-pn-PFU"/>
-                <constraint firstItem="5d6-Ba-0NG" firstAttribute="top" secondItem="Yba-Fl-bvx" secondAttribute="bottom" constant="8" symbolic="YES" id="eRo-S1-JXh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="5d6-Ba-0NG" secondAttribute="bottom" constant="16" id="XZR-ns-lOv"/>
+                <constraint firstItem="5d6-Ba-0NG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="h9E-3B-5K9"/>
                 <constraint firstItem="Yba-Fl-bvx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="mLq-Kq-2qv"/>
                 <constraint firstItem="Yba-Fl-bvx" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="nYx-ug-4NQ"/>
             </constraints>

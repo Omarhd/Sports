@@ -8,11 +8,10 @@
 import Foundation
 
 enum BuildSettingsKey: String {
-    case BASE_URL
-    case AUTH_BASE_URL
     case TOURNAMENTS
     case NEWS
     case HIGHLIGHTS
+    case AUTH
     
     var value: String {
         get {

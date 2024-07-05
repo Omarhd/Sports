@@ -9,6 +9,13 @@ import UIKit
 
 class PublishTableViewCell: UITableViewCell, PublishCellProtocol {
 
+    // MARK: - Outlets
+    @IBOutlet weak var publishButton: UIButton!
+    
+    // MARK: - Properties
+    weak var delegate: PublishCellDelegateProtocol?
+    
+    // MARK: - Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,6 +29,9 @@ class PublishTableViewCell: UITableViewCell, PublishCellProtocol {
     
     func configureCellUI() {
         
+    }
+    
+    @IBAction func publishAction(_ sender: Any) {
     }
     
 }

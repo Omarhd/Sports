@@ -33,6 +33,19 @@ final class NewsPresenter: NSObject {
 // MARK: Conform to NewsPresenterProtocol
 extension NewsPresenter: NewsPresenterProtocol {
     
+    func viewDidLoad() {
+        interactor?.fetchHotNews()
+
+        let newsParameters: NewsRequest = .init(pageNumber: currentPage)
+        interactor?.fetchNews(parameters: newsParameters)
+    }
+    
+    func fetchPaginationListNews() {
+        currentPage += 1
+        let newsParameters: NewsRequest = .init(pageNumber: currentPage)
+        interactor?.fetchNews(parameters: newsParameters)
+    }
+    
     func numberOfNews(in section: NewsSection) -> Int {
         switch section {
         case .hotNews:
@@ -75,13 +88,7 @@ extension NewsPresenter: NewsPresenterProtocol {
             return
         }
     }
-    
-    func viewDidLoad() {
-        interactor?.fetchHotNews()
 
-        let newsParameters: NewsRequest = .init(pageNumber: 2)
-        interactor?.fetchNews(parameters: newsParameters)
-    }
 }
 
 // MARK: Conform to NewsInteractor Output
@@ -93,7 +100,7 @@ extension NewsPresenter: NewsInteractorOutput {
     }
     
     func succeedReceivedNews(newsData: NewsEntity) {
-        listNews = newsData.list ?? []
+        listNews.append(contentsOf: newsData.list ?? [])
         listNews.isEmpty ? (view?.setEmptyState()) : (view?.reloadSection(.listNews))
     }
     

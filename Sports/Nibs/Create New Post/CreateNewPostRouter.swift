@@ -18,6 +18,7 @@ class CreateNewPostRouter {
 }
 // MARK: Conforming to CreateNewPostRouterProtocol
 extension CreateNewPostRouter: CreateNewPostRouterProtocol {
+    
     func popViewController() {
         self.viewController?.navigationController?.popViewController(animated: true)
     }

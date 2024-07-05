@@ -44,8 +44,8 @@ class MatchTableViewCell: UITableViewCell, MatchCellProtocol {
     
     // MARK: - Methods
     func configureMatchCellUI(match: Match?) {
-        homeTeamNameLabel.text = match?.details?.homeTeamDetail?.name ?? "N/A".localized
-        awayTeamNameLabel.text = match?.details?.awayTeamDetail?.name ?? "N/A".localized
+        homeTeamNameLabel.text = match?.details?.homeTeamDetail?.displayName(isEnglish: false)
+        awayTeamNameLabel.text = match?.details?.awayTeamDetail?.displayName(isEnglish: true)
         loadCellImages(loadImage: homeTeamImage, from: match?.details?.homeTeamDetail?.logo)
         loadCellImages(loadImage: awayTeamImage, from: match?.details?.awayTeamDetail?.logo)
 

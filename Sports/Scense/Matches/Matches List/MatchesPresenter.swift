@@ -13,15 +13,11 @@ final class MatchesPresenter: NSObject {
     private var view: MatchesControllerProtocol?
     private var interactor: MatchesPresenterInteractorProtocol?
     private var router: MatchesRouterProtocol?
-    
     private var matchType: MatchType = .dated
-    
     private var collapsedSections: [Bool] = []
     var selectedDateIndex: Int = 6
-
     var dates: [DateModel] = []
     var tournaments: [MatchList] = []
-    
     var numberOfDateFilter: Int { return dates.count }
     var numberOfSections: Int { return tournaments.count }
     var numberOfMatches: [MatchList] { return tournaments }

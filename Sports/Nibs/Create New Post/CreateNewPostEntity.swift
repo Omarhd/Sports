@@ -17,3 +17,11 @@ enum CreatePostSections: Int, CaseIterable {
     case content = 1
     case publish = 2
 }
+
+struct PublishPostEntity: Encodable {
+    let content: String
+}
+
+struct PublishedPostEntity: Decodable {
+    
+}

@@ -21,11 +21,11 @@ extension UIView {
         }
     }
 
-    func showLottieLoader(with name: String = "Loading") {
+    func showLottieLoader(with name: String = "Loading", width: Int = 120, height: Int = 120) {
         guard loaderView == nil else { return }
 
         let animationView = LottieAnimationView(name: name)
-        animationView.frame = CGRect(x: 0, y: 0, width: 120, height: 120)
+        animationView.frame = CGRect(x: 0, y: 0, width: width, height: height)
         animationView.center = self.center
         animationView.contentMode = .scaleAspectFill
         animationView.backgroundColor = UIColor.accent.withAlphaComponent(0.2)

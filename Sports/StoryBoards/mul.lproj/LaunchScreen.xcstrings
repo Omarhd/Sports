@@ -1,7 +1,18 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-
+    "jGf-8m-jXh.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"DunkSpace\"; ObjectID = \"jGf-8m-jXh\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "DunkSpace"
+          }
+        }
+      }
+    }
   },
   "version" : "1.0"
 }

@@ -35,11 +35,21 @@ class NewsDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         presenter?.viewDidLoad()
-        
+
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         tapGesture.numberOfTapsRequired = 1
         newsImage.isUserInteractionEnabled = true
         newsImage.addGestureRecognizer(tapGesture)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setTransparentNavigationBar()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        restoreDefaultNavigationBar()
     }
     
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
@@ -51,7 +61,6 @@ class NewsDetailsViewController: UIViewController {
 extension NewsDetailsViewController: NewsDetailsControllerProtocol {
     
     func configureNewsUI(with news: News) {
-        title = "News Details".localized
         newsTitleLabel.text = news.title?.htmlToString
         newsContentTextView.text = news.content?.htmlToString
         loadImages(loadImage: newsImage, from: news.path)

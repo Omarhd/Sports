@@ -30,6 +30,7 @@ final class NewsConfigurator {
 // Controller --> Presenter
 protocol NewsPresenterProtocol: AnyObject {
     func viewDidLoad()
+    func fetchPaginationListNews()
     var numberOfSections: Int { get }
     func heightForRowInSection(in section: NewsSection) -> CGFloat
     func numberOfNews(in section: NewsSection) -> Int
@@ -79,9 +80,4 @@ protocol NewsCellCellProtocol: AnyObject {
 
 protocol HotNewsCellViewControllerProtocol: AnyObject {
     func didSelectNews(indexPath: IndexPath)
-}
-
-enum NewsSection: Int, CaseIterable {
-    case hotNews
-    case listNews
 }

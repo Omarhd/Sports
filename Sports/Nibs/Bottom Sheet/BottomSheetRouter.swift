@@ -25,7 +25,12 @@ extension BottomSheetRouter: BottomSheetRouterProtocol {
     
     func opensCamera() {
         let camera = PhotoViewController()
-        self.viewController?.present(camera, animated: true)
+        viewController?.present(camera, animated: true)
+    }
+    
+    func openToRecordVideo() {
+        let video = VideoViewController()
+        viewController?.present(video, animated: true)
     }
     
     func openNewPost() {

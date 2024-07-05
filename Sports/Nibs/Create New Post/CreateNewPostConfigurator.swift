@@ -33,8 +33,11 @@ protocol CreateNewPostPresenterProtocol: AnyObject {
     func heightForRowInSection(in section: CreatePostSections) -> CGFloat
     func configureUserCell(for cell: UserTableViewCell, for index: IndexPath)
     func configureContentCell(for cell: ContentTableViewCell, for index: IndexPath, delegate: ImagePickerCellDelegate)
-    func configurePublishCell(for cell: PublishTableViewCell, for index: IndexPath)
+    func configurePublishCell(for cell: PublishTableViewCell, for index: IndexPath, delegate: PublishCellDelegateProtocol?)
 
+    func publishPost()
+    func succeedPublishedPost()
+    
     var numberOfSections: Int { get }
 }
 
@@ -46,16 +49,19 @@ protocol CreateNewPostControllerProtocol: AnyObject {
     func loadTableView()
     func showLoadingIndicator()
     func showFailureIndicator()
+    func succeedPublishedPost()
 }
 
 // Presenter --> Interactor
 protocol CreateNewPostPresenterInteractorProtocol: AnyObject {
     func fetchPostOptions()
+    func publishPost(with parameters: PublishPostEntity)
 }
 
 // Interactor --> Presenter
 protocol CreateNewPostInteractorOutput: AnyObject {
     func succeedReceivedPostOptions(options: [CreatePostSections])
+    func succeedPostPublished(post: PublishedPostEntity)
     func didFailedLoading(error: Error)
     func showLoading()
     func dismissLoading()
@@ -75,9 +81,15 @@ protocol ContentCellProtocol: AnyObject {
 
 protocol ImagePickerCellDelegate: AnyObject {
     func didTapSelectImage(cell: ContentTableViewCell)
+    func didTapCameraImage(cell: ContentTableViewCell)
+    func didTapLibraryImage(cell: ContentTableViewCell)
     func didRemoveImage(cell: ContentTableViewCell)
 }
 
 protocol PublishCellProtocol: AnyObject {
     func configureCellUI()
+}
+
+protocol PublishCellDelegateProtocol: AnyObject {
+    func publishPost()
 }

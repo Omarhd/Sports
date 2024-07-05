@@ -15,9 +15,9 @@ class CustomNavigationController: UINavigationController {
         configureRightBarButtonItems()
     }
     
-    private func setupNavigationBarAppearance() {
+    func setupNavigationBarAppearance() {
         let appearance = UINavigationBarAppearance()
-        appearance.titleTextAttributes = [.foregroundColor: UIColor.accent]
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.label]
         appearance.backgroundColor = UIColor.background
 
         navigationController?.navigationBar.tintColor = .accent
@@ -35,7 +35,7 @@ class CustomNavigationController: UINavigationController {
         navigationBar.standardAppearance = appearance
         navigationBar.scrollEdgeAppearance = scrollEdgeAppearance
         navigationBar.compactAppearance = appearance
-        navigationBar.tintColor = .label // Color of bar button items
+        navigationBar.tintColor = .accent // Color of bar button items
     }
     
     // MARK: - Setup Right BarButton Items
@@ -48,15 +48,50 @@ class CustomNavigationController: UINavigationController {
     }
     
     @objc func searchDidTap() {
-//        pushSearchView()
+        // Handle search button tap
     }
     
     @objc func notificationDidTap() {
+        // Handle notification button tap
     }
     
-    func pushSearchView() {
-        if let viewController = UIStoryboard(name: "Search", bundle: .main).instantiateInitialViewController() {
-            self.navigationController?.pushViewController(viewController, animated: true)
-        }
+    // MARK: - Transparent Navigation Bar for Specific Child View Controller
+    func setTransparentNavigationBar(for viewController: UIViewController) {
+        let transparentAppearance = UINavigationBarAppearance()
+        transparentAppearance.configureWithTransparentBackground()
+        transparentAppearance.backgroundColor = .clear
+        
+        viewController.navigationItem.standardAppearance = transparentAppearance
+        viewController.navigationItem.scrollEdgeAppearance = transparentAppearance
+        viewController.navigationItem.compactAppearance = transparentAppearance
+        
+        navigationController?.navigationBar.standardAppearance = transparentAppearance
+        navigationController?.navigationBar.scrollEdgeAppearance = transparentAppearance
+        navigationController?.navigationBar.compactAppearance = transparentAppearance
+        
+        navigationController?.navigationBar.setNeedsLayout()
     }
+    
+    func setClearNavigationBar() {
+        let appearance = UINavigationBarAppearance()
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.accent]
+        appearance.backgroundColor = UIColor.clear
+
+        navigationController?.navigationBar.tintColor = .accent
+        appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.label]
+        appearance.shadowColor = .clear
+        
+        navigationItem.standardAppearance = appearance
+
+        // Scroll edge appearance (blur effect when scrolling)
+        let scrollEdgeAppearance = UINavigationBarAppearance()
+        scrollEdgeAppearance.configureWithTransparentBackground()
+        
+        // Apply the appearance to the navigation bar
+        navigationBar.standardAppearance = appearance
+        navigationBar.scrollEdgeAppearance = scrollEdgeAppearance
+        navigationBar.compactAppearance = appearance
+        navigationBar.tintColor = .accent // Color of bar button items
+    }
+
 }

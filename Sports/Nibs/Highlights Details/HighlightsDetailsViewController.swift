@@ -40,6 +40,16 @@ class HighlightsDetailsViewController: UIViewController {
         highlightImage.addGestureRecognizer(tapGesture)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setTransparentNavigationBar()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        restoreDefaultNavigationBar()
+    }
+    
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
         guard let image = highlightImage.image else { return }
         presenter?.didSelectTappedImage(image: image)
@@ -49,7 +59,6 @@ class HighlightsDetailsViewController: UIViewController {
 extension HighlightsDetailsViewController: HighlightsDetailsControllerProtocol {
     
     func configureHighlightsUI(with highlight: HighlightsNews) {
-        title = "News Details".localized
         highlightTitleLabel.text = highlight.headline?.htmlToString
         loadImages(loadImage: highlightImage, from: highlight.thumbnail)
     }

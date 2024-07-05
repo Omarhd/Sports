@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 extension UIView {
     
@@ -25,6 +26,16 @@ extension UIView {
         }
 
         return nil
+    }
+    
+    // MARK: - func of load images wit kingfisher
+    func loadImages(loadImage: UIImageView, from imagePathURL: String?) {
+        if let imagePathURL = imagePathURL, let url = URL(string: imagePathURL) {
+            loadImage.kf.indicatorType = .custom(indicator: SkeletonIndicator())
+            loadImage.kf.setImage(with: url)
+        } else {
+            loadImage.image = UIImage(systemName: "basketball.fill")
+        }
     }
 }
 

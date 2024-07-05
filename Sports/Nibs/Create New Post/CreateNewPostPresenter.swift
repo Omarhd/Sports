@@ -17,6 +17,10 @@ final class CreateNewPostPresenter: NSObject {
     private var options: [CreatePostSections] = []
     internal var numberOfSections: Int { return options.count }
     
+    // MARK: - Publish Post Parameters
+    var content: String?
+    var image: UIImage?
+    
     // MARK: - Init
     init(view: CreateNewPostControllerProtocol?,
          interactor: CreateNewPostPresenterInteractorProtocol?,
@@ -32,6 +36,15 @@ extension CreateNewPostPresenter: CreateNewPostPresenterProtocol {
     func viewDidLoad() {
         interactor?.fetchPostOptions()
         view?.setPageTitle(with: "New Post".localized)
+    }
+    
+    func publishPost() {
+        let parameters: PublishPostEntity = .init(content: content ?? "")
+        interactor?.publishPost(with: parameters)
+    }
+    
+    func succeedPublishedPost() {
+        router?.popViewController()
     }
     
     func numberOfRowsInSection(in section: CreatePostSections) -> Int {
@@ -57,16 +70,21 @@ extension CreateNewPostPresenter: CreateNewPostPresenterProtocol {
     
     func configureContentCell(for cell: ContentTableViewCell, for index: IndexPath, delegate: ImagePickerCellDelegate) {
         cell.delegate = delegate
-        cell.configureCellUI(with: UIImage(systemName: "paperclip"))
+        cell.configureCellUI(with: nil)
     }
     
-    func configurePublishCell(for cell: PublishTableViewCell, for index: IndexPath) {
+    func configurePublishCell(for cell: PublishTableViewCell, for index: IndexPath, delegate: PublishCellDelegateProtocol?) {
+        cell.delegate = delegate
         cell.configureCellUI()
     }
 
 }
 // MARK: Conform to CreateNewPostInteractorOutput
 extension CreateNewPostPresenter: CreateNewPostInteractorOutput {
+   
+    func succeedPostPublished(post: PublishedPostEntity) {
+        view?.succeedPublishedPost()
+    }
     
     func succeedReceivedPostOptions(options: [CreatePostSections]) {
         self.options = options

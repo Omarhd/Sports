@@ -8,6 +8,12 @@
 
 import Foundation
 
+// MARK: - Sections
+enum NewsSection: Int, CaseIterable {
+    case hotNews
+    case listNews
+}
+
 // MARK: - News Request
 struct NewsRequest: Encodable {
     let pageNumber: Int

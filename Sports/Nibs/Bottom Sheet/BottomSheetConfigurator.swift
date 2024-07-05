@@ -66,6 +66,7 @@ protocol BottomSheetRouterProtocol: AnyObject {
     func popViewController()
     func opensCamera()
     func openNewPost()
+    func openToRecordVideo()
 }
 
 protocol OptionsCellProtocol: AnyObject {

@@ -45,11 +45,11 @@ class MatchH2HTableViewCell: UITableViewCell, MatchH2HCellProtocol {
         homeTeamNameLabel.text = match?.homeTeamDetail?.name
         awayTeamNameLabel.text = match?.awayTeamDetail?.name
         
-        let homeTeamLogoUrl = URL(string: match?.homeTeamDetail?.logo ?? "")
-        homeTeamImage.setImageWithSkeleton(with: homeTeamLogoUrl)
+        let homeTeamLogoUrl = match?.homeTeamDetail?.logo
+        loadImages(loadImage: homeTeamImage, from: homeTeamLogoUrl)
         
-        let awayTeamLogoUrl = URL(string: match?.awayTeamDetail?.logo ?? "")
-        awayTeamImage.setImageWithSkeleton(with: awayTeamLogoUrl)
+        let awayTeamLogoUrl = match?.awayTeamDetail?.logo
+        loadImages(loadImage: awayTeamImage, from: awayTeamLogoUrl)
         
         let homeTeamFinalScore = totalPoints(match?.the6 ?? [])
         let homeQuarterOneScore = scoreToInt(match?.the6?[2])

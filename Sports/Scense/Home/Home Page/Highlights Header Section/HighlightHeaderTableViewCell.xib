@@ -19,16 +19,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="9bZ-nG-j6A">
-                        <rect key="frame" x="16" y="8" width="288" height="54"/>
+                        <rect key="frame" x="16" y="0.0" width="288" height="70"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Highlights" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6A-lc-WSb">
-                                <rect key="frame" x="0.0" y="0.0" width="74" height="54"/>
+                                <rect key="frame" x="0.0" y="0.0" width="74" height="70"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ww3-mS-O6Z">
-                                <rect key="frame" x="220.66666666666666" y="0.0" width="67.333333333333343" height="54"/>
+                                <rect key="frame" x="220.66666666666666" y="0.0" width="67.333333333333343" height="70"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="See All">
                                     <fontDescription key="titleFontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
@@ -44,8 +44,8 @@
                 <color key="backgroundColor" name="BackgroundColor"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="9bZ-nG-j6A" secondAttribute="trailing" constant="16" id="AYS-m1-fNb"/>
-                    <constraint firstAttribute="bottom" secondItem="9bZ-nG-j6A" secondAttribute="bottom" constant="8" id="LMK-k8-DGM"/>
-                    <constraint firstItem="9bZ-nG-j6A" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="ZrJ-fq-vN1"/>
+                    <constraint firstAttribute="bottom" secondItem="9bZ-nG-j6A" secondAttribute="bottom" id="LMK-k8-DGM"/>
+                    <constraint firstItem="9bZ-nG-j6A" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ZrJ-fq-vN1"/>
                     <constraint firstItem="9bZ-nG-j6A" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="ftl-k9-xAb"/>
                 </constraints>
             </tableViewCellContentView>

@@ -12,25 +12,25 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="223" id="KGk-i7-Jjw" customClass="ContentTableViewCell" customModule="Sports" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="223"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="208" id="KGk-i7-Jjw" customClass="ContentTableViewCell" customModule="Sports" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="208"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="223"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="208"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="EQn-kw-5Gj">
-                        <rect key="frame" x="16" y="16" width="288" height="191"/>
+                        <rect key="frame" x="16" y="16" width="288" height="176"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hLQ-jc-5Yb">
-                                <rect key="frame" x="0.0" y="0.0" width="288" height="51.666666666666664"/>
+                                <rect key="frame" x="0.0" y="0.0" width="288" height="36.666666666666664"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="WAA-d5-prW">
-                                <rect key="frame" x="0.0" y="70.333333333333357" width="288" height="118.66666666666664"/>
+                                <rect key="frame" x="0.0" y="55.333333333333314" width="288" height="118.66666666666669"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="WAA-d5-prW" secondAttribute="height" multiplier="21:9" id="Jlf-Ds-vKi"/>
                                 </constraints>
@@ -44,7 +44,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L7h-uP-jUa">
-                                <rect key="frame" x="0.0" y="191" width="288" height="22"/>
+                                <rect key="frame" x="0.0" y="176" width="288" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="rOz-Kb-0OA"/>
                                 </constraints>
@@ -73,7 +73,7 @@
                 <outlet property="postImage" destination="WAA-d5-prW" id="Zfl-6r-hah"/>
                 <outlet property="removeImageButton" destination="L7h-uP-jUa" id="YSg-14-nFx"/>
             </connections>
-            <point key="canvasLocation" x="109.9236641221374" y="27.112676056338028"/>
+            <point key="canvasLocation" x="109.9236641221374" y="21.83098591549296"/>
         </tableViewCell>
     </objects>
     <resources>

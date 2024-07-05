@@ -30,11 +30,11 @@ class MatchDetailsHeader: UIView {
     }
     
     private func setupUI() {
-        let homeTeamLogoUrl = URL(string: match?.details?.homeTeamDetail?.logo ?? "")
-        homeTeamImage.setImageWithSkeleton(with: homeTeamLogoUrl)
+        let homeTeamLogoUrl = match?.details?.homeTeamDetail?.logo
+        loadImages(loadImage: homeTeamImage, from: homeTeamLogoUrl)
         
-        let awayTeamLogoUrl = URL(string: match?.details?.awayTeamDetail?.logo ?? "")
-        awayTeamImage.setImageWithSkeleton(with: awayTeamLogoUrl)
+        let awayTeamLogoUrl = match?.details?.awayTeamDetail?.logo
+        loadImages(loadImage: awayTeamImage, from: awayTeamLogoUrl)
 
         matchScore.text = "0 - 0"
     }

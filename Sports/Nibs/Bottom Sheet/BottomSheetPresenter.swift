@@ -58,7 +58,7 @@ extension BottomSheetPresenter: BottomSheetPresenterProtocol {
         switch section {
         case .Story: router?.opensCamera()
         case .Post: router?.openNewPost()
-        case .Moment: router?.opensCamera()
+        case .Moment: router?.openToRecordVideo()
         }
     }
     

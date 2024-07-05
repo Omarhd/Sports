@@ -61,7 +61,7 @@ class CreateNewPostViewController: UITableViewController {
             return contentCell
         case .publish:
             guard let publishCell = tableView.dequeueReusableCell(withIdentifier: PublishTableViewCell.viewIdentifier(), for: indexPath) as? PublishTableViewCell else { return UITableViewCell() }
-            presenter?.configurePublishCell(for: publishCell, for: indexPath)
+            presenter?.configurePublishCell(for: publishCell, for: indexPath, delegate: self)
             
             return publishCell
         }
@@ -76,22 +76,46 @@ class CreateNewPostViewController: UITableViewController {
 extension CreateNewPostViewController: ImagePickerCellDelegate {
     
     func didTapSelectImage(cell: ContentTableViewCell) {
-        imagePickerManager.pickImage(self) { [weak self] image in
-            guard let self = self else { return }
-            if let indexPath = self.tableView.indexPath(for: cell) {
-                cell.configureCellUI(with: image)
-                cell.removeImageButton.isHidden = false
-            }
+        imagePickerManager.pickImage(self) { image in
+            cell.configureCellUI(with: image)
+            cell.removeImageButton.isHidden = false
+        }
+    }
+    
+    func didTapCameraImage(cell: ContentTableViewCell) {
+        imagePickerManager.pickImageFromCamera(self) { image in
+            cell.configureCellUI(with: image)
+            cell.removeImageButton.isHidden = false
+        }
+    }
+    
+    func didTapLibraryImage(cell: ContentTableViewCell) {
+        imagePickerManager.pickImageFromGallery(self) { image in
+            cell.configureCellUI(with: image)
+            cell.removeImageButton.isHidden = false
         }
     }
     
     func didRemoveImage(cell: ContentTableViewCell) {
         cell.postImage.image = nil
+        cell.postImage.isHidden = true
         cell.removeImageButton.isHidden = true
     }
 }
 
+extension CreateNewPostViewController: PublishCellDelegateProtocol {
+    
+    func publishPost() {
+        presenter?.publishPost()
+    }
+}
+
 extension CreateNewPostViewController: CreateNewPostControllerProtocol {
+    
+    func succeedPublishedPost() {
+        messageHelper.showMessage(title: "", body: "", theme: .info, presentationStyle: .top, duration: .seconds(seconds: 3.0))
+        presenter?.succeedPublishedPost()
+    }
     
     func setPageTitle(with title: String) {
         self.title = title
@@ -103,7 +127,7 @@ extension CreateNewPostViewController: CreateNewPostControllerProtocol {
     }
     
     func setEmptyState() {
-        setEmptyCase(imageName: "ffigure.basketball", title: "No Data", message: "Try again Later".localized, containerView: self.view)
+        setEmptyCase(imageName: "figure.basketball", title: "No Data", message: "Try again Later".localized, containerView: self.view)
     }
     
     func showFailureAlert(with error: String) {

@@ -43,7 +43,6 @@ extension HomeRouter: HomeRouterProtocol {
     func showPostDetails(with post: Post) {
         let postDetailsViewController = PostDetailsConfigurator.viewController(input: .init(post: post))
         postDetailsViewController.hidesBottomBarWhenPushed = true
-        // Set the back button title for the current view controller
         let backButton = UIBarButtonItem()
         backButton.title = ""
         viewController?.navigationItem.backBarButtonItem = backButton
@@ -53,7 +52,6 @@ extension HomeRouter: HomeRouterProtocol {
     func navigateToHighlightsDetails(highlight: HighlightsNews) {
         let highlightsDetailsViewController = HighlightsDetailsConfigurator.viewController(input: .init(highlight: highlight))
         highlightsDetailsViewController.hidesBottomBarWhenPushed = true
-        // Set the back button title for the current view controller
         let backButton = UIBarButtonItem()
         backButton.title = ""
         viewController?.navigationItem.backBarButtonItem = backButton
@@ -65,7 +63,6 @@ extension HomeRouter: HomeRouterProtocol {
             let vc = SFSafariViewController(url: url)
             viewController?.present(vc, animated: true, completion: nil)
         } else {
-            // Handle invalid URL case
             print("Invalid URL")
         }
     }

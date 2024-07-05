@@ -20,6 +20,11 @@ class ContentTableViewCell: UITableViewCell, ContentCellProtocol {
     override func awakeFromNib() {
         super.awakeFromNib()
 
+        // Initialize InputAccessoryView
+        let inputAccessoryView = InputAccessoryView(frame: CGRect(x: 0, y: 0, width: contentView.frame.width, height: 60))
+        inputAccessoryView.delegate = self
+        postContent.inputAccessoryView = inputAccessoryView
+
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         tapGesture.numberOfTapsRequired = 1
         postImage.isUserInteractionEnabled = true
@@ -35,6 +40,7 @@ class ContentTableViewCell: UITableViewCell, ContentCellProtocol {
     
     func configureCellUI(with image: UIImage?) {
         postImage.image = image
+        postImage.image == nil ? (postImage.isHidden = true) : (postImage.isHidden = false)
     }
     
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
@@ -43,5 +49,21 @@ class ContentTableViewCell: UITableViewCell, ContentCellProtocol {
     
     @IBAction func removeImageAction(_ sender: Any) {
         delegate?.didRemoveImage(cell: self)
+    }
+}
+
+extension ContentTableViewCell: InputAccessoryViewControllerDelegate {
+    
+    // MARK: - InputAccessoryViewControllerDelegate methods
+    func uploadImage() {
+        delegate?.didTapLibraryImage(cell: self)
+    }
+
+    func takeImage() {
+        delegate?.didTapCameraImage(cell: self)
+    }
+    
+    func doneTyping() {
+        contentView.endEditing(true)
     }
 }

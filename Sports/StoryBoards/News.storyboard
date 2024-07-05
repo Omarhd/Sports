@@ -66,7 +66,7 @@
             </objects>
             <point key="canvasLocation" x="1573.2824427480916" y="-277.46478873239437"/>
         </scene>
-        <!--News Details-->
+        <!--News Details View Controller-->
         <scene sceneID="VWi-TX-SHb">
             <objects>
                 <viewController storyboardIdentifier="NewsDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="r5j-e1-LAh" customClass="NewsDetailsViewController" customModule="Sports" customModuleProvider="target" sceneMemberID="viewController">
@@ -75,16 +75,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fjF-Iq-aHb">
-                                <rect key="frame" x="0.0" y="103.00000000000001" width="393" height="168.33333333333337"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="299.33333333333331"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="fjF-Iq-aHb" secondAttribute="height" multiplier="21:9" id="Viu-IM-gOH"/>
+                                    <constraint firstAttribute="width" secondItem="fjF-Iq-aHb" secondAttribute="height" multiplier="21:16" id="Viu-IM-gOH"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="NewsImage"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Wwg-YG-oN9">
-                                <rect key="frame" x="16" y="287.33333333333331" width="361" height="548.66666666666674"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Wwg-YG-oN9">
+                                <rect key="frame" x="16" y="315.33333333333331" width="361" height="520.66666666666674"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDq-Xm-VJL">
                                         <rect key="frame" x="0.0" y="0.0" width="361" height="20.333333333333332"/>
@@ -92,8 +93,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4jV-n8-GvD">
-                                        <rect key="frame" x="0.0" y="36.333333333333371" width="361" height="512.33333333333337"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="4" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4jV-n8-GvD">
+                                        <rect key="frame" x="0.0" y="28.333333333333343" width="361" height="492.33333333333326"/>
                                         <color key="backgroundColor" name="BackgroundColor"/>
                                         <attributedString key="attributedText">
                                             <fragment>
@@ -106,6 +107,9 @@
                                         </attributedString>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" calendarEvent="YES" flightNumber="YES" lookupSuggestion="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="useFontLineHeight" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </textView>
                                 </subviews>
                             </stackView>
@@ -118,11 +122,11 @@
                             <constraint firstAttribute="trailing" secondItem="Wwg-YG-oN9" secondAttribute="trailing" constant="16" id="G0D-7n-bgY"/>
                             <constraint firstAttribute="bottom" secondItem="Wwg-YG-oN9" secondAttribute="bottom" constant="16" id="Zmu-Fo-Jbe"/>
                             <constraint firstItem="fjF-Iq-aHb" firstAttribute="leading" secondItem="cPd-vO-rEq" secondAttribute="leading" id="bcb-Ur-qL2"/>
-                            <constraint firstItem="fjF-Iq-aHb" firstAttribute="top" secondItem="cPd-vO-rEq" secondAttribute="top" id="h1T-Rz-4SQ"/>
+                            <constraint firstItem="fjF-Iq-aHb" firstAttribute="top" secondItem="mfb-Id-Wzb" secondAttribute="top" id="h1T-Rz-4SQ"/>
                             <constraint firstItem="Wwg-YG-oN9" firstAttribute="leading" secondItem="mfb-Id-Wzb" secondAttribute="leading" constant="16" id="tg4-ce-AUY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="News Details" id="Tob-sD-Sim">
+                    <navigationItem key="navigationItem" id="Tob-sD-Sim">
                         <barButtonItem key="backBarButtonItem" title="   " id="iU0-qY-MWZ"/>
                     </navigationItem>
                     <connections>
@@ -161,7 +165,7 @@
         <image name="bell" catalog="system" width="125" height="128"/>
         <image name="newspaper" catalog="system" width="128" height="111"/>
         <namedColor name="AccentColor">
-            <color red="0.0" green="0.53725490196078429" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.27058823529411763" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="BackgroundColor">
             <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

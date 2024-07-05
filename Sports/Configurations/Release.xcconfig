@@ -11,8 +11,8 @@
 SLASH = /
 
 ACCENT_COLOR = AccentColor
-BASE_URL = https:/${SLASH}www.google.com
 
 TOURNAMENTS = http:${SLASH}/199.241.1.88:4049/api/
 NEWS = http:${SLASH}/www.77577.live/api/
 HIGHLIGHTS = http:${SLASH}/sportsapi4.com/forums/api/
+AUTH = http:${SLASH}/199.241.1.88:40052/api/

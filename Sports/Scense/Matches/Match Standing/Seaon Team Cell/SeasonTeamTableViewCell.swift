@@ -42,8 +42,8 @@ class SeasonTeamTableViewCell: UITableViewCell, SeasonTeamCellProtocol {
         divisionLabel.text = team?.division
         teamAverageAgainstPointsLabel.text = team?.pointsAgainstAvg?.description
         
-        let teamLogoUrl = URL(string: team?.teamInfo?.logo ?? "")
-        teamImage.setImageWithSkeleton(with: teamLogoUrl)
+        let teamLogoUrl = team?.teamInfo?.logo
+        loadCellImages(loadImage: teamImage, from: teamLogoUrl)
     }
     
 }

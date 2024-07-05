@@ -21,6 +21,8 @@
 	<string>$(SLASH)</string>
 	<key>TOURNAMENTS</key>
 	<string>$(TOURNAMENTS)</string>
+	<key>AUTH</key>
+	<string>$(AUTH)</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

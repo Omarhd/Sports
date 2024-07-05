@@ -8,7 +8,6 @@
 
 import UIKit
 import Hero
-import SkeletonView
 
 class MatchesViewController: UIViewController {
     
@@ -43,8 +42,6 @@ class MatchesViewController: UIViewController {
         collectionView.registerCell(cell: DateFilterCollectionViewCell.self)
         tableView.registerCell(cell: TournamentHeaderTableViewCell.self)
         tableView.registerCell(cell: MatchTableViewCell.self)
-        tableView.showGradientSkeleton()
-        tableView.startSkeletonAnimation()
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -37,18 +37,11 @@ class NewsViewController: UIViewController {
         tableView.registerCell(cell: HotNewsTableViewCell.self)
         tableView.registerCell(cell: ListNewsSectionHeaderTableViewCell.self)
         tableView.registerCell(cell: ListNewsTableViewCell.self)
-        tableView.showGradientSkeleton()
-        tableView.startSkeletonAnimation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         enableHero()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-//        disableHero()
     }
 }
 
@@ -99,6 +92,14 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.presenter?.didSelectNews(at: indexPath)
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == (presenter?.numberOfNews(in: .listNews) ?? 0) - 1 {
+            print("Last cell reached!")
+            presenter?.fetchPaginationListNews()
+        }
+    }
+
 }
 
 extension NewsViewController: HotNewsCellViewControllerProtocol {

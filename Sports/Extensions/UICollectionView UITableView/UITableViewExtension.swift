@@ -37,6 +37,18 @@ extension UITableView {
         self.showsVerticalScrollIndicator   = false
     }
     
+    func setupLoadingSpinner(loadingView: UIView?) {
+        loadingView?.showLottieLoader(width: 50, height: 50)
+        loadingView?.frame = CGRect(x: 0, y: 0, width: self.bounds.width, height: 50)
+        self.tableFooterView = loadingView
+    }
+    //MARK: - Setup Refresh Control
+    func setupRefreshControl(refreshControl: UIRefreshControl, target: UIViewController, selectorAction: Selector) {
+        refreshControl.addTarget(target, action: selectorAction, for: .valueChanged)
+        self.refreshControl = refreshControl
+    }
+
+    
     func registerCell<Cell : UITableViewCell>(cell : Cell.Type) {
         let nibName = String(describing: cell.self) // transform classCellName to String
         self.register(UINib(nibName: nibName, bundle: nil), forCellReuseIdentifier: nibName)
