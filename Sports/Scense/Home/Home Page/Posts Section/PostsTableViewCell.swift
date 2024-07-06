@@ -50,7 +50,7 @@ class PostsTableViewCell: UITableViewCell, PostCellProtocol {
     
     func configureCell(with post: Post?) {
         userNameLabel.text = post?.user.name
-        userUserNameLabel.text = post?.user.username
+        userUserNameLabel.text = post?.user.name
         
         postContentLabel.text = post?.content
         postLikesCountLabel.text = "22"

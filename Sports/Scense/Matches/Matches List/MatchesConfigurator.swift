@@ -20,8 +20,8 @@ final class MatchesConfigurator {
         let interactor = MatchesInteractor()
         let router = MatchesRouter(viewController: view)
         let presenter = MatchesPresenter(view: view,
-                                      interactor: interactor,
-                                      router: router)
+                                         interactor: interactor,
+                                         router: router)
         view.presenter = presenter
         interactor.presenter = presenter
         return view
@@ -48,6 +48,9 @@ protocol MatchesPresenterProtocol: AnyObject {
     var heightForSectionHeader: CGFloat { get }
     var isSectionCollapsed: [Bool] { get }
     var numberOfMatches: [MatchList] { get }
+    
+    // MARK: - User Functionality
+    func userDidPressed()
 }
 
 // Presenter --> Controller
@@ -82,6 +85,8 @@ protocol MatchesInteractorOutput: AnyObject {
 protocol MatchesRouterProtocol: AnyObject {
     func popViewController()
     func navigateToDetails(match: Match)
+    func navigateToProfile()
+    func navigateToLogin()
 }
 
 // Filter Cell --> Protocol

@@ -64,7 +64,12 @@ extension CreateNewPostPresenter: CreateNewPostPresenterProtocol {
     }
     
     func configureUserCell(for cell: UserTableViewCell, for index: IndexPath) {
-        let user: User = .init(name: "Oamr", imageURL: "", username: "@omar", followed: true)
+        let user: User = .init(id: 0,
+                               name: "John Doe",
+                               email: "mail@mail.mail",
+                               emailVerifiedAt: "",
+                               createdAt: "",
+                               updatedAt: "")
         cell.configureCellUI(with: user)
     }
     

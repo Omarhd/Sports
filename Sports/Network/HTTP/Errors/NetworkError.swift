@@ -8,7 +8,7 @@
 import Foundation
 
 enum RequestError: Error, Identifiable {
-    case decode
+    case decode(Data)
     case invalidURL
     case noResponse
     case notFound

@@ -38,9 +38,9 @@ extension HomeInteractor: HomePresenterInteractorProtocol {
                 switch Result {
                 case .failure(let error):
                     self?.presenter?.didFailedLoading(error: error)
+                    self?.presenter?.dismissLoading()
                 case .finished:
                     self?.presenter?.dismissLoading()
-                    break
                 }
             } receiveValue: { [weak self] highlights in
                 self?.presenter?.succeedReceivedHighlights(highlights: highlights)

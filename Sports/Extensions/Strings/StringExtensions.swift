@@ -45,4 +45,19 @@ extension String {
         }
         return false
     }
+    
+    var isValidEmail: Bool {
+        let emailRegEx = "^.+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2}[A-Za-z]*$"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: self)
+    }
+    
+    var isValidPassword: Bool {
+        return self.count >= 8
+    }
+    
+    var isNotEmpty: Bool {
+        return !isEmpty
+    }
+
 }

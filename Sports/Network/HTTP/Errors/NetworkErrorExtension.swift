@@ -8,29 +8,32 @@
 import Foundation
 
 extension RequestError: LocalizedError {
-   
+    
     public var errorDescription: String? {
         switch self {
         case .invalidURL:
-            return NSLocalizedString("Invalid URL".localized, comment: "Request Error".localized)
+            return NSLocalizedString("Invalid URL", comment: "Request Error")
         case .badRequest:
-            return NSLocalizedString("No matching location found.".localized, comment: "Request Error".localized)
+            return NSLocalizedString("No matching location found.", comment: "Request Error")
         case .noResponse:
-            return NSLocalizedString("No Response".localized, comment: "Request Error".localized)
+            return NSLocalizedString("No Response", comment: "Request Error")
         case .unauthorized:
-            return NSLocalizedString("Unauthorized".localized, comment: "Request Error".localized)
+            return NSLocalizedString("Unauthorized", comment: "Request Error")
         case .unexpectedStatusCode:
-            return NSLocalizedString("Unexpected Status Code.".localized, comment: "Request Error".localized)
-        case .decode:
-            return NSLocalizedString("Decoding Error".localized, comment: "Request Error".localized)
+            return NSLocalizedString("Unexpected Status Code.", comment: "Request Error")
+        case .decode(let data):
+            do {
+                let errorResponse = try ErrorResponse.decode(from: data)
+                return errorResponse.compactErrorString()
+            } catch {
+                return NSLocalizedString("Decoding Error", comment: "Request Error")
+            }
         case .unknown:
-            return NSLocalizedString("Unknown Error".localized, comment: "Request Error".localized)
+            return NSLocalizedString("Unknown Error", comment: "Request Error")
         case .apiError(let message):
-            return NSLocalizedString("API Error".localized, comment: message)
+            return NSLocalizedString("API Error: \(message)", comment: "Request Error")
         case .notFound:
-            return NSLocalizedString("API Error".localized, comment: "Not Found".localized)
-
+            return NSLocalizedString("Not Found", comment: "Request Error")
         }
     }
-    
 }

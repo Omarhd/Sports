@@ -53,7 +53,7 @@ extension PostDetailsViewController: PostDetailsControllerProtocol {
     func configurePostUI(with post: Post?) {
         title = "Post Details".localized
         userNameLabel.text = post?.user.name
-        userUserNameLabel.text = post?.user.username
+        userUserNameLabel.text = post?.user.name
         
         postContentLabel.text = post?.content
         postLikesCountLabel.text = "22"

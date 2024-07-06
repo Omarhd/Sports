@@ -18,16 +18,26 @@ extension UITextField {
     
     func setupValidation(type: VerificationType, validationView: UIView) {
         addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        addTarget(self, action: #selector(textFieldDidEndEditing), for: .editingDidEnd)
         
+        // Set default border color
         validationView.layer.borderWidth = 1.0
         validationView.layer.cornerRadius = 5.0
         validationView.layer.masksToBounds = true
+        validationView.layer.borderColor = UIColor.clear.cgColor
         
         self.validationType = type
-        validate(type: type, validationView: validationView)
     }
     
     @objc private func textFieldDidChange() {
+        guard let validationView = superview else { return }
+        
+        if let type = validationType {
+            validate(type: type, validationView: validationView)
+        }
+    }
+    
+    @objc private func textFieldDidEndEditing() {
         guard let validationView = superview else { return }
         
         if let type = validationType {
@@ -39,25 +49,25 @@ extension UITextField {
         switch type {
         case .name:
             if isValidName() {
-                validationView.layer.borderColor = UIColor.green.cgColor
+                validationView.layer.borderColor = UIColor.clear.cgColor
             } else {
                 validationView.layer.borderColor = UIColor.red.cgColor
             }
         case .email:
             if isValidEmail() {
-                validationView.layer.borderColor = UIColor.green.cgColor
+                validationView.layer.borderColor = UIColor.clear.cgColor
             } else {
                 validationView.layer.borderColor = UIColor.red.cgColor
             }
         case .password:
             if isValidPassword() {
-                validationView.layer.borderColor = UIColor.green.cgColor
+                validationView.layer.borderColor = UIColor.clear.cgColor
             } else {
                 validationView.layer.borderColor = UIColor.red.cgColor
             }
         case .confirmPassword:
             if isValidConfirmPassword() {
-                validationView.layer.borderColor = UIColor.green.cgColor
+                validationView.layer.borderColor = UIColor.clear.cgColor
             } else {
                 validationView.layer.borderColor = UIColor.red.cgColor
             }
@@ -82,7 +92,9 @@ extension UITextField {
     }
     
     private func isValidConfirmPassword() -> Bool {
-        guard let text = self.text, let passwordField = superview?.viewWithTag(tag - 1) as? UITextField else { return false }
+        guard let text = self.text, let passwordField = superview?.subviews.compactMap({ $0 as? UITextField }).first(where: { $0.validationType == .password }) else {
+            return false
+        }
         return text == passwordField.text
     }
     

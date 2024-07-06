@@ -11,16 +11,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Auth-->
-        <scene sceneID="f8K-nb-WXi">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Auth" id="qL7-2b-BEM" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="fT4-OB-aSM"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Tr2-b1-vk7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="863" y="-440"/>
-        </scene>
         <!--Matches-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
@@ -105,7 +95,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
                                 </state>
                                 <connections>
-                                    <segue destination="qL7-2b-BEM" kind="presentation" identifier="toProfile" id="mnR-BN-z2Z"/>
+                                    <action selector="userAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="93d-qh-iAN"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -132,6 +122,7 @@
                         <outlet property="tableView" destination="PPS-dA-yaf" id="CaC-Dl-uwJ"/>
                         <outlet property="todayButton" destination="G3s-eu-RGP" id="cHg-sa-esb"/>
                         <outlet property="todayButtonConstraint" destination="QTW-2E-fU2" id="6vZ-IE-7p6"/>
+                        <outlet property="userButton" destination="BJb-rA-giq" id="H7u-A6-9MX"/>
                         <segue destination="qmm-8v-VJT" kind="show" identifier="toMatchDetails" id="Pyp-mX-Rub"/>
                     </connections>
                 </viewController>

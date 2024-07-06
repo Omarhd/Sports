@@ -35,7 +35,7 @@ final class NetworkService: NetworkRequestable {
                         case 401:
                             throw RequestError.unauthorized
                         case 422:
-                            throw RequestError.decode
+                            throw RequestError.decode(data)
                         case 404:
                             throw RequestError.notFound
                         default:

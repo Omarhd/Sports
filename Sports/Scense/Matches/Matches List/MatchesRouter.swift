@@ -29,4 +29,15 @@ extension MatchesRouter: MatchesRouterProtocol {
         detailsViewController.hidesBottomBarWhenPushed = true
         viewController?.showHero(detailsViewController, navigationAnimationType: .zoomOut)
     }
+    
+    func navigateToProfile() {
+        
+    }
+    
+    func navigateToLogin() {
+        let signInViewController = SignInConfigurator.viewController(input: .init())
+        let root = CustomNavigationController(rootViewController: signInViewController)
+        root.navigationBar.topItem?.backButtonTitle = ""
+        viewController?.present(root, animated: true)
+    }
 }

@@ -13,6 +13,7 @@ final class MatchesPresenter: NSObject {
     private var view: MatchesControllerProtocol?
     private var interactor: MatchesPresenterInteractorProtocol?
     private var router: MatchesRouterProtocol?
+    private var defaults: UserDefaults?
     private var matchType: MatchType = .dated
     private var collapsedSections: [Bool] = []
     var selectedDateIndex: Int = 6
@@ -114,6 +115,11 @@ extension MatchesPresenter: MatchesPresenterProtocol {
             interactor?.fetchLiveMatches(parameters: liveMatchParameters)
         }
         collapsedSections = Array(repeating: false, count: numberOfSections)
+    }
+    
+    // MARK: - User Functionality
+    func userDidPressed() {
+        defaults?.hasSavedUser(forKey: UserDefaultKeys.userObject) ?? false ? (router?.navigateToProfile()) : (router?.navigateToLogin())
     }
     
 }

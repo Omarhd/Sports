@@ -12,6 +12,7 @@ import Hero
 class MatchesViewController: UIViewController {
     
     // MARK: Outlets
+    @IBOutlet weak var userButton: UIButton!
     @IBOutlet weak var todayButton: UIButton!
     @IBOutlet weak var todayButtonConstraint: NSLayoutConstraint!
     @IBOutlet weak var liveSwitcher: UISwitch!
@@ -58,6 +59,11 @@ class MatchesViewController: UIViewController {
     @IBAction func todayAction(_ sender: Any) {
         presenter?.setToday(for: 6)
     }
+    
+    @IBAction func userAction(_ sender: Any) {
+        presenter?.userDidPressed()
+    }
+    
 }
 
 extension MatchesViewController: MatchesControllerProtocol {

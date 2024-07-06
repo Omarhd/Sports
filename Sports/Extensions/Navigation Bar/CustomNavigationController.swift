@@ -45,6 +45,7 @@ class CustomNavigationController: UINavigationController {
         let searchButton = UIBarButtonItem(image: .searchIcon, style: .plain, target: self, action: #selector(searchDidTap))
         searchButton.tintColor = .white
         self.navigationItem.rightBarButtonItems = [notificationButton, searchButton]
+        self.navigationItem.backButtonTitle = " "
     }
     
     @objc func searchDidTap() {

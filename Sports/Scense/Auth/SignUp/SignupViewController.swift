@@ -15,7 +15,7 @@ class SignupViewController: UITableViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
-    @IBOutlet weak var signUpBarButton: UIBarButtonItem!
+    @IBOutlet weak var signUpBarButton: UIButton!
     
     @IBOutlet weak var nameValidationView: UIView!
     @IBOutlet weak var emailValidationView: UIView!
@@ -66,8 +66,7 @@ class SignupViewController: UITableViewController {
 extension SignupViewController: SignupControllerProtocol {
     
     func showFailureAlert(with error: String) {
-        messageHelper.showMessage(title: "\(error)", body: "Error While Fetching Data".localized, theme: .error, presentationStyle: .top, duration: .seconds(seconds: 3.0))
-        setEmptyCase(imageName: "", title: "No Data".localized, message: "Try again Later".localized, containerView: self.view)
+        messageHelper.showMessage(title: "Error".localized, body: error, theme: .error, presentationStyle: .top, duration: .forever)
     }
     
     func showLoadingIndicator() {

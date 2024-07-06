@@ -25,13 +25,14 @@ extension SignupInteractor: SignupPresenterInteractorProtocol {
     func signup(with parameters: signupRequest) {
         self.presenter?.showLoading()
         guard let url = URL(string: base + "register") else { fatalError("Invalid URL") }
-        let newsList: AnyPublisher<SignupEntity, Error> = session.postRequest(to: url, with: parameters)
+        let signUpRequest: AnyPublisher<SignupEntity, Error> = session.postRequest(to: url, with: parameters)
         
-        newsList.receive(on: RunLoop.main)
+        signUpRequest.receive(on: RunLoop.main)
             .sink { [weak self] Result in
                 switch Result {
                 case .failure(let error):
                     self?.presenter?.didFailedSignup(error: error)
+                    self?.presenter?.dismissLoading()
                 case .finished:
                     self?.presenter?.dismissLoading()
                 }

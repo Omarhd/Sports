@@ -19,15 +19,28 @@ struct Post: Decodable {
     let user: User
 }
 
-struct User: Decodable {
-    let name: String
-    let imageURL: String
-    let username: String
-    let followed: Bool
+// MARK: - User
+struct User: Codable {
+    let id: Int?
+    let name, email: String?
+    let emailVerifiedAt: String?
+    let createdAt, updatedAt: String?
+
+    enum CodingKeys: String, CodingKey {
+        case id, name, email
+        case emailVerifiedAt = "email_verified_at"
+        case createdAt = "created_at"
+        case updatedAt = "updated_at"
+    }
 }
 
 // Creating a sample instance
-let user = User(name: "John Doe", imageURL: "userImageURL", username: "johndoe123", followed: true)
+let user: User = .init(id: 0,
+                       name: "John Doe",
+                       email: "mail@mail.mail",
+                       emailVerifiedAt: "",
+                       createdAt: "",
+                       updatedAt: "")
 let post = Post(id: 1,
                 content: "Today's game showed how great Team India is. With passion and dedication, they continue to fight and achieve. Proud to be part of this journey! IndiaBasketball #ShineOn #HoopsHeroes",
                 imageURL: "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1240w,f_auto,q_auto:best/rockcms/2024-06/240626-Zaccharie-Risacher-nba-draft-ac-819p-76185c.jpg", user: user)
