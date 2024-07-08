@@ -132,7 +132,6 @@ extension CreateNewPostViewController: CreateNewPostControllerProtocol {
     
     func showFailureAlert(with error: String) {
         messageHelper.showMessage(title: "\(error)", body: "Error While Fetching Data".localized, theme: .error, presentationStyle: .top, duration: .forever)
-        setEmptyCase(imageName: "", title: "No Data".localized, message: "Try again Later".localized, containerView: self.view)
     }
     
     func showLoadingIndicator() {

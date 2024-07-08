@@ -12,7 +12,6 @@ class CustomNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBarAppearance()
-        configureRightBarButtonItems()
     }
     
     func setupNavigationBarAppearance() {
@@ -36,24 +35,6 @@ class CustomNavigationController: UINavigationController {
         navigationBar.scrollEdgeAppearance = scrollEdgeAppearance
         navigationBar.compactAppearance = appearance
         navigationBar.tintColor = .accent // Color of bar button items
-    }
-    
-    // MARK: - Setup Right BarButton Items
-    func configureRightBarButtonItems() {
-        let notificationButton = UIBarButtonItem(image: .notificationIcon, style: .plain, target: self, action: #selector(notificationDidTap))
-        notificationButton.tintColor = .white
-        let searchButton = UIBarButtonItem(image: .searchIcon, style: .plain, target: self, action: #selector(searchDidTap))
-        searchButton.tintColor = .white
-        self.navigationItem.rightBarButtonItems = [notificationButton, searchButton]
-        self.navigationItem.backButtonTitle = " "
-    }
-    
-    @objc func searchDidTap() {
-        // Handle search button tap
-    }
-    
-    @objc func notificationDidTap() {
-        // Handle notification button tap
     }
     
     // MARK: - Transparent Navigation Bar for Specific Child View Controller

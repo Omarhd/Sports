@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewsViewController: UIViewController {
+class NewsViewController: CustomViewController {
     
     // MARK: Outlets
     @IBOutlet private weak var tableView: UITableView!

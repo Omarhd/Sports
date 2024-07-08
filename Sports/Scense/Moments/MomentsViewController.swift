@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MomentsViewController: UIViewController {
+class MomentsViewController: CustomViewController {
     
     // MARK: Outlets
     @IBOutlet weak var tableView: UITableView!

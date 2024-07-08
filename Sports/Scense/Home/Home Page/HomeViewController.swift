@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: CustomViewController {
    
     // MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -132,7 +132,6 @@ extension HomeViewController: HomeControllerProtocol {
     
     func showFailureAlert(with error: String) {
         messageHelper.showMessage(title: "\(error)", body: "Error While Fetching Data".localized, theme: .error, presentationStyle: .top, duration: .forever)
-        setEmptyCase(imageName: "", title: "No Data".localized, message: "Try again Later".localized, containerView: self.view)
     }
     
     func showLoadingIndicator() {
