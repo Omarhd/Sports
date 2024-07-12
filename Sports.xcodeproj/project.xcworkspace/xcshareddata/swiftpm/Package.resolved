@@ -1,4 +1,5 @@
 {
+  "originHash" : "bf70e7538c26752225e520da7c6e327b7752eedbf110d85674c736d1c38480e1",
   "pins" : [
     {
       "identity" : "hero",
@@ -46,5 +47,5 @@
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

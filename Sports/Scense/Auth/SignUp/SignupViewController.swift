@@ -21,6 +21,7 @@ class SignupViewController: UITableViewController {
     @IBOutlet weak var emailValidationView: UIView!
     @IBOutlet weak var passwordValidationView: UIView!
     @IBOutlet weak var confirmPasswordValidationView: UIView!
+ 
     // MARK: Properties
     var presenter: SignupPresenterProtocol?
     let messageHelper: SwiftMessagesHelper
@@ -41,12 +42,29 @@ class SignupViewController: UITableViewController {
         super.viewDidLoad()
         presenter?.viewDidLoad()
         
-        nameTextField.setupValidation(type: .name, validationView: nameValidationView)
-        emailTextField.setupValidation(type: .email, validationView: emailValidationView)
-        passwordTextField.setupValidation(type: .password, validationView: passwordValidationView)
-        confirmPasswordTextField.setupValidation(type: .confirmPassword, validationView: confirmPasswordValidationView)
+        nameTextField.addTarget(self, action: #selector(nameTextFieldDidChange(_:)), for: .editingChanged)
+        emailTextField.addTarget(self, action: #selector(emailTextFieldDidChange(_:)), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(passwordTextFieldDidChange(_:)), for: .editingChanged)
+        confirmPasswordTextField.addTarget(self, action: #selector(confirmPasswordTextFieldDidChange(_:)), for: .editingChanged)
 
     }
+    
+    @objc private func nameTextFieldDidChange(_ textField: UITextField) {
+        presenter?.nameDidChange(textField.text)
+    }
+
+    @objc private func emailTextFieldDidChange(_ textField: UITextField) {
+        presenter?.emailDidChange(textField.text)
+    }
+    
+    @objc private func passwordTextFieldDidChange(_ textField: UITextField) {
+        presenter?.passwordDidChange(textField.text)
+    }
+    
+    @objc private func confirmPasswordTextFieldDidChange(_ textField: UITextField) {
+        presenter?.confirmPasswordDidChange(textField.text)
+    }
+
     
     @IBAction func signUpAction(_ sender: Any) {
         guard let name = nameTextField.text, !name.isEmpty else { return }
@@ -60,10 +78,13 @@ class SignupViewController: UITableViewController {
                                               confirmPassword: confirmPassword)
         presenter?.signUP(with: parameters)
     }
-    
 }
 
 extension SignupViewController: SignupControllerProtocol {
+    
+    func updateSignUpButton(isEnabled: Bool) {
+        signUpBarButton.isEnabled = isEnabled
+    }
     
     func showFailureAlert(with error: String) {
         messageHelper.showMessage(title: "Error".localized, body: error, theme: .error, presentationStyle: .top, duration: .forever)
@@ -76,6 +97,4 @@ extension SignupViewController: SignupControllerProtocol {
     func showFailureIndicator() {
         self.view.hideLottieLoader()
     }
-    
 }
-

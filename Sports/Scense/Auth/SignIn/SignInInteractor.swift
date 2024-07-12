@@ -24,7 +24,7 @@ extension SignInInteractor: SignInPresenterInteractorProtocol {
     
     func signup(with parameters: SignInRequest) {
         self.presenter?.showLoading()
-        guard let url = URL(string: base + "register") else { fatalError("Invalid URL") }
+        guard let url = URL(string: base + "login") else { fatalError("Invalid URL") }
         let signInRequest: AnyPublisher<SignInEntity, Error> = session.postRequest(to: url, with: parameters)
         
         signInRequest.receive(on: RunLoop.main)

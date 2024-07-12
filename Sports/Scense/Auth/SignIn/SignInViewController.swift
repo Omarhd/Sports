@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Combine
 
 class SignInViewController: UITableViewController {
     
@@ -23,6 +24,7 @@ class SignInViewController: UITableViewController {
     // MARK: Properties
     var presenter: SignInPresenterProtocol?
     let messageHelper: SwiftMessagesHelper
+    private var cancellables = Set<AnyCancellable>()
     
     // MARK: - Initialiser
     init(messageHelper: SwiftMessagesHelper = .shared) {
@@ -40,8 +42,16 @@ class SignInViewController: UITableViewController {
         super.viewDidLoad()
         presenter?.viewDidLoad()
         
-        emailTextField.setupValidation(type: .email, validationView: emailValidationView)
-        passwordTextField.setupValidation(type: .password, validationView: passwordValidationView)
+        emailTextField.addTarget(self, action: #selector(emailTextFieldDidChange(_:)), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(passwordTextFieldDidChange(_:)), for: .editingChanged)
+    }
+    
+    @objc private func emailTextFieldDidChange(_ textField: UITextField) {
+        presenter?.emailDidChange(textField.text)
+    }
+    
+    @objc private func passwordTextFieldDidChange(_ textField: UITextField) {
+        presenter?.passwordDidChange(textField.text)
     }
     
     @IBAction func signInAction(_ sender: Any) {
@@ -59,6 +69,10 @@ class SignInViewController: UITableViewController {
 
 extension SignInViewController: SignInControllerProtocol {
     
+    func updateSignInButton(isEnabled: Bool) {
+        signInButton.isEnabled = isEnabled
+    }
+
     func showFailureAlert(with error: String) {
         messageHelper.showMessage(title: "Error".localized, body: error, theme: .error, presentationStyle: .top, duration: .forever)
         self.signInButton.isEnabled = true
@@ -77,4 +91,3 @@ extension SignInViewController: SignInControllerProtocol {
         self.signUpButton.isEnabled = true
     }
 }
-

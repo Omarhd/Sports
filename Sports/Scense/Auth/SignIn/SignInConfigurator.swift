@@ -32,6 +32,11 @@ protocol SignInPresenterProtocol: AnyObject {
     func viewDidLoad()
     func signIn(with parameters: SignInRequest)
     func pushToSignup()
+    func emailDidChange(_ email: String?)
+    func passwordDidChange(_ password: String?)
+    func setupBindings()
+    func isValidEmail(_ email: String?) -> Bool
+    func isValidPassword(_ password: String?) -> Bool
 }
 
 // Presenter --> Controller
@@ -39,6 +44,7 @@ protocol SignInControllerProtocol: AnyObject {
     func showFailureAlert(with error: String)
     func showLoadingIndicator()
     func showFailureIndicator()
+    func updateSignInButton(isEnabled: Bool)
 }
 
 // Presenter --> Interactor

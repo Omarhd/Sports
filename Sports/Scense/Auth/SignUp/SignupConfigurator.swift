@@ -31,6 +31,15 @@ final class SignupConfigurator {
 protocol SignupPresenterProtocol: AnyObject {
     func viewDidLoad()
     func signUP(with parameters: signupRequest)
+    func nameDidChange(_ name: String?)
+    func emailDidChange(_ email: String?)
+    func passwordDidChange(_ password: String?)
+    func confirmPasswordDidChange(_ confirmPassword: String?)
+    func setupBindings()
+    func isValidName(_ name: String?) -> Bool
+    func isValidEmail(_ email: String?) -> Bool
+    func isValidPassword(_ password: String?) -> Bool
+    func isValidConfirmPassword(_ password: String?, _ confirmPassword: String?) -> Bool
 }
 
 // Presenter --> Controller
@@ -38,6 +47,7 @@ protocol SignupControllerProtocol: AnyObject {
     func showFailureAlert(with error: String)
     func showLoadingIndicator()
     func showFailureIndicator()
+    func updateSignUpButton(isEnabled: Bool)
 }
 
 // Presenter --> Interactor
