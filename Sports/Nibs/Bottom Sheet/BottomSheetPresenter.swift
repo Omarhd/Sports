@@ -61,8 +61,8 @@ extension BottomSheetPresenter: BottomSheetPresenterProtocol {
         case .Moment: router?.openToRecordVideo()
         }
     }
-    
 }
+
 // MARK: Conform to BottomSheetInteractorOutput
 extension BottomSheetPresenter: BottomSheetInteractorOutput {
     

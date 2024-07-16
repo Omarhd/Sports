@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupKeyboard()
         checkAppLang()
         Localizer.doTheExChange()
-        
+        setAppShortcut(application)
         return true
     }
 
@@ -87,5 +87,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return tabBarController
     }
 
+    fileprivate func setAppShortcut(_ application: UIApplication) {
+
+        let matchesShortcut = UIApplicationShortcutItem(
+            type: "Matches",
+            localizedTitle: "Matches",
+            localizedSubtitle: nil,
+            icon: UIApplicationShortcutIcon(systemImageName: "sportscourt.fill"),
+            userInfo: nil
+        )
+        
+        let newsShortcut = UIApplicationShortcutItem(
+            type: "News",
+            localizedTitle: "News",
+            localizedSubtitle: nil,
+            icon: UIApplicationShortcutIcon(systemImageName: "newspaper.fill"),
+            userInfo: nil
+        )
+        
+        let quickContentShortcut = UIApplicationShortcutItem(
+            type: "Quick Content",
+            localizedTitle: "Quick Content",
+            localizedSubtitle: nil,
+            icon: UIApplicationShortcutIcon(systemImageName: "square.and.pencil"),
+            userInfo: nil
+        )
+        
+        application.shortcutItems = [matchesShortcut, newsShortcut, quickContentShortcut]
+    }
 }
 
